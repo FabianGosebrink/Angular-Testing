@@ -13,7 +13,6 @@ export class AsyncPipeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('AsyncPipeComponent ngOnInit');
+    console.log(' AsyncPipeComponent ngOnInit');
   }
-
 }

@@ -1,3 +1,4 @@
+import { getInnerHtml, queryDebugElement } from '../../../helpers/DOM-helpers';
 import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Rx';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -26,9 +27,9 @@ describe('AsyncPipeComponent', () => {
   });
 
   it('should correctly visualize the emitted values from the stream', () => {
-    expect(fixture.debugElement.query(By.css('span')).nativeElement.innerHTML).toBe('');
+    expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('');
     component.name$ = Observable.of('Fabian');
     fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('span')).nativeElement.innerHTML).toBe('Fabian');
+    expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
   });
 });
