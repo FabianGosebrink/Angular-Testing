@@ -1,11 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { Observable } from 'rxjs/Observable';
 
 import { getInnerHtml } from '../../../helpers/DOM-helpers';
 import { CustomHttpService } from '../../services/http-service/http.service';
 import { WithExternalServiceComponent } from './with-external-service.component';
-import { Observable } from 'rxjs/Observable';
 
 describe('WithExternalServiceComponent', () => {
   let component: WithExternalServiceComponent;
@@ -14,7 +14,7 @@ describe('WithExternalServiceComponent', () => {
 
   const responseObject = {
     name: 'Luke Skywalker'
-  }
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

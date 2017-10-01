@@ -8,13 +8,15 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { AsyncService } from './services/async-service/async.service';
 import { BasicService } from './services/basic-service/basic.service';
 import { CustomHttpService } from './services/http-service/http.service';
+import { FilterPipe } from './pipes/filterPipe/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AsyncPipeComponent,
     HighlightDirective,
-    WithExternalServiceComponent
+    WithExternalServiceComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule
