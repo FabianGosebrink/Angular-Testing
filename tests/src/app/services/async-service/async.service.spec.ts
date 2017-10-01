@@ -1,9 +1,9 @@
-import { Observer } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { async, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Rx';
 
 import { AsyncService } from './async.service';
-import { Observable } from 'rxjs/Observable';
 
 describe('AsyncService', () => {
 
@@ -28,7 +28,7 @@ describe('AsyncService', () => {
       });
     });
 
-    it('should get the name', async(() => {
+    it('should get the name (async)', async(() => {
 
       service.getNameASync().subscribe((name: string) => {
         expect(name).toBe('Fabian');
@@ -36,7 +36,7 @@ describe('AsyncService', () => {
 
     }));
 
-    it('should get the name fakeasync', fakeAsync(() => {
+    it('should get the name (fakeasync)', fakeAsync(() => {
 
       let value;
       service.getNameASync().subscribe((name: string) => {
@@ -115,7 +115,7 @@ describe('AsyncService', () => {
       });
     });
 
-    it('should get the name', async(() => {
+    it('should get the name (async)', async(() => {
 
       service.getNameASync().subscribe((name: string) => {
         expect(name).toBe('FakeFabian');
@@ -123,7 +123,7 @@ describe('AsyncService', () => {
 
     }));
 
-    it('should get the name fakeasync', fakeAsync(() => {
+    it('should get the name (fakeasync)', fakeAsync(() => {
 
       let value;
       service.getNameASync().subscribe((name: string) => {
