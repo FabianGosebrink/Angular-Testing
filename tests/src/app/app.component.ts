@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Welcome to app!';
+  points = 1;
+
+  plus1() {
+    this.points++;
+  }
+
+  minus1() {
+    this.points--;
+  }
+
+  reset() {
+    this.points = 0;
+  }
 }

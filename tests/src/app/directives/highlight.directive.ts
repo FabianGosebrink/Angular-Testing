@@ -1,10 +1,18 @@
-import { Directive } from '@angular/core';
+import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHoverhighlight]'
 })
-export class HighlightDirective {
 
-  constructor() { }
+export class HoverHighlightDirective {
 
+  @HostBinding('style.background-color') backgroundColor: string;
+
+  @HostListener('mouseover') onHover() {
+    this.backgroundColor = 'blue';
+  }
+
+  @HostListener('mouseout') onLeave() {
+    this.backgroundColor = 'inherit';
+  }
 }
