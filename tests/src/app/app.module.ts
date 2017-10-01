@@ -9,6 +9,7 @@ import { AsyncService } from './services/async-service/async.service';
 import { BasicService } from './services/basic-service/basic.service';
 import { CustomHttpService } from './services/http-service/http.service';
 import { FilterPipe } from './pipes/filterPipe/filter.pipe';
+import { InlineTemplateComponent } from './components/inline-template/inline-template.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterPipe } from './pipes/filterPipe/filter.pipe';
     AsyncPipeComponent,
     HighlightDirective,
     WithExternalServiceComponent,
-    FilterPipe
+    FilterPipe,
+    InlineTemplateComponent
   ],
   imports: [
     BrowserModule
