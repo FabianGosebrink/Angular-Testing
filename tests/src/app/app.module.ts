@@ -10,6 +10,8 @@ import { BasicService } from './services/basic-service/basic.service';
 import { CustomHttpService } from './services/http-service/http.service';
 import { FilterPipe } from './pipes/filterPipe/filter.pipe';
 import { InlineTemplateComponent } from './components/inline-template/inline-template.component';
+import { WithInputComponent } from './components/with-input/with-input.component';
+import { WithOutputComponent } from './components/with-output/with-output.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { InlineTemplateComponent } from './components/inline-template/inline-tem
     HighlightDirective,
     WithExternalServiceComponent,
     FilterPipe,
-    InlineTemplateComponent
+    InlineTemplateComponent,
+    WithInputComponent,
+    WithOutputComponent
   ],
   imports: [
     BrowserModule
