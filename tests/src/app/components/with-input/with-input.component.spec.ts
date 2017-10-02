@@ -32,5 +32,5 @@ describe('WithInputComponent', () => {
 
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('Fabian');
-  }); 
+  });
 });
