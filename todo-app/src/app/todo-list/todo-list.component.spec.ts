@@ -79,17 +79,18 @@ describe('TodoListComponent', () => {
     expect(fixture.nativeElement.querySelector('s')).toBeDefined();
   });
 
-  it('css class is applied when item is done', () => {
+  it('css class \'inactive\' is applied when item is done', () => {
     const todo = new Todo();
     todo.description = 'toShow';
     todo.done = true;
     component.items = [todo];
     fixture.detectChanges();
-    let classes: any = fixture.debugElement.query(By.css('s')).classes;
-    expect(classes.inactive).toBeTruthy();
+    const classList = fixture.nativeElement.querySelector('s').classList;
+    expect(classList).toContain('inactive');
+
   });
 
-  it('s is invisble when item is not done', () => {
+  it('s is invisible when item is not done', () => {
     const todo = new Todo();
     todo.description = 'toShow';
     component.items = [todo];
