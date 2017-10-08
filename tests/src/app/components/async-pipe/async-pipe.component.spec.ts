@@ -1,8 +1,7 @@
-import { getInnerHtml, queryDebugElement } from '../../../helpers/DOM-helpers';
-import { By } from '@angular/platform-browser';
-import { Observable } from 'rxjs/Rx';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Observable } from 'rxjs/Rx';
 
+import { getInnerHtml } from '../../../helpers/DOM-helpers';
 import { AsyncPipeComponent } from './async-pipe.component';
 
 describe('AsyncPipeComponent', () => {
@@ -26,10 +25,12 @@ describe('AsyncPipeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should correctly visualize the emitted values from the stream', () => {
+  it('should correctly visualize the emitted values from the stream', async () => {
     expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('');
     component.name$ = Observable.of('Fabian');
     fixture.detectChanges();
-    expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
+    fixture.whenStable().then(() => {
+      expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
+    });
   });
 });

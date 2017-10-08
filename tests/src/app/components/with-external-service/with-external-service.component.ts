@@ -14,6 +14,6 @@ export class WithExternalServiceComponent implements OnInit {
   constructor(private httpService: CustomHttpService) { }
 
   ngOnInit() {
-    this.result$ = this.httpService.getSinglePerson(1);
+    this.result$ = this.httpService.getSingle(1);
   }
 }

@@ -39,10 +39,10 @@ describe('WithExternalServiceComponent', () => {
     expect(component.result$).not.toBeDefined();
     expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe('');
 
-    const spy = spyOn(service, 'getSinglePerson').and.returnValue(Observable.of(responseObject));
+    const spy = spyOn(service, 'getSingle').and.returnValue(Observable.of(responseObject));
 
     fixture.detectChanges();
-    expect(spy.calls.any()).toBe(true, 'getSinglePerson called');
+    expect(spy.calls.any()).toBe(true, 'getSingle called');
     expect(component.result$).toBeDefined();
 
     // component.result$.subscribe((response: any) => {

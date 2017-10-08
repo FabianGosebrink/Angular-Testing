@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { BasicService } from './basic.service';
 
@@ -11,7 +11,6 @@ describe('BasicService', () => {
         providers: [BasicService]
       });
     });
-
 
     it('should be created', inject([BasicService], (service: BasicService) => {
       expect(service).toBeTruthy();
@@ -54,6 +53,7 @@ describe('BasicService', () => {
 
   });
 
+
   describe('Testing service functions', () => {
 
     let service: BasicService;
@@ -66,8 +66,13 @@ describe('BasicService', () => {
       service = TestBed.get(BasicService);
     });
 
-    it('should greet properly: injection method 1', () => {
+    it('should add properly: injection method 1', () => {
       expect(service.add(2, 3)).toBe(5);
+    });
+
+    it('should add properly: (Spy)', () => {
+      spyOn(service, 'add').and.returnValue(6);
+      expect(service.add(2, 3)).toBe(6);
     });
   });
 

@@ -1,6 +1,5 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { getInnerHtml } from '../../../helpers/DOM-helpers';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InlineTemplateComponent } from './inline-template.component';
 
