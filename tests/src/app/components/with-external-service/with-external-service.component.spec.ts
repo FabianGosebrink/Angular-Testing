@@ -45,11 +45,6 @@ describe('WithExternalServiceComponent', () => {
     expect(spy.calls.any()).toBe(true, 'getSingle called');
     expect(component.result$).toBeDefined();
 
-    // component.result$.subscribe((response: any) => {
-    //   expect(response.name).toEqual(responseObject.name);
-    // });
-
     expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe(responseObject.name);
-
   });
 });

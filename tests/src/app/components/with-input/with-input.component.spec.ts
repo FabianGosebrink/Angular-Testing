@@ -17,20 +17,21 @@ describe('WithInputComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WithInputComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should correctly render the passed @Input value', () => {
+  it('should correctly render the passed @Input value', async(() => {
 
     expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('');
 
     component.name = 'Fabian';
 
     fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('Fabian');
-  });
+    fixture.whenStable().then(() => {
+      expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('Fabian');
+    });
+  }));
 });

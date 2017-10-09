@@ -32,20 +32,20 @@ describe('WithOutputComponent', () => {
     expect(component.greet.emit).toHaveBeenCalledWith('Hi');
   });
 
-  it('should test the emitter with a simple subscribe', async(() => {
+  it('should test the emitter with a simple subscribe', () => {
     component.greet.subscribe((d) => {
       expect(d).toBe('Hi');
     });
 
     component.doGreet();
-  }));
+  });
 
-  it('should fire the event emitter when triggering an event', async(() => {
+  it('should fire the event emitter when triggering an event', () => {
     component.greet.subscribe((d) => {
       expect(d).toBe('Hi');
     });
 
     fixture.debugElement.triggerEventHandler('greet', <Event>{});
-  }));
+  });
 
 });

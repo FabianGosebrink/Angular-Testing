@@ -28,14 +28,6 @@ describe('AsyncService', () => {
       });
     });
 
-    it('should get the name (async)', async(() => {
-
-      service.getNameASync().subscribe((name: string) => {
-        expect(name).toBe('Fabian');
-      });
-
-    }));
-
     it('should get the name (fakeasync)', fakeAsync(() => {
 
       let value;

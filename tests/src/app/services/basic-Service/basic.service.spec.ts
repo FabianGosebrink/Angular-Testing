@@ -32,9 +32,7 @@ describe('BasicService', () => {
     it('should have a service instance', () => {
       expect(service).toBeDefined();
     });
-
   });
-
 
   describe('Injecting via TestBed.get()', () => {
     let service: BasicService;

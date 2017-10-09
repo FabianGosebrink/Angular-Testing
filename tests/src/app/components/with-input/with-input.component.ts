@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-with-input',
@@ -7,7 +7,6 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 
 export class WithInputComponent implements OnChanges {
-
   @Input() name: string;
 
   public ngOnChanges(changes: SimpleChanges): void {
