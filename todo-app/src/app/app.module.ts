@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ShellComponent } from './shell/shell.component';
-import { ToTestComponent } from './to-test/to-test.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
@@ -14,8 +13,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     AppComponent,
     ShellComponent,
     TodoFormComponent,
-    TodoListComponent,
-    ToTestComponent
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
