@@ -20,8 +20,6 @@ describe('HighlightDirective', () => {
     inputEl = fixture.debugElement.query(By.css('#forTesting'));
   });
 
-
-
   it('should create an instance', () => {
     const directive = new HoverHighlightDirective();
     expect(directive).toBeTruthy();

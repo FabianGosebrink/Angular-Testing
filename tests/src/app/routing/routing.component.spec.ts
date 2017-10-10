@@ -1,14 +1,9 @@
 import { Location } from '@angular/common';
-import { TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import {
-    HomeComponent,
-    SearchComponent,
-    RouterComponent,
-    routes
-} from './routing.component';
+import { HomeComponent, RouterComponent, routes, SearchComponent } from './routing.component';
 
 describe('Router: App', () => {
 
