@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 import { Todo } from '../models/todo.models';
 import { Observable } from 'rxjs/Rx';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CoreModule } from '../core/core.module';
 import { TodoService } from '../core/todo.service';
@@ -17,7 +17,7 @@ describe('ShellComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CoreModule, FormsModule],
+      imports: [CoreModule, ReactiveFormsModule],
       declarations: [ShellComponent, TodoFormComponent, TodoListComponent]
     })
       .compileComponents();

@@ -1,5 +1,6 @@
+import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TodoFormComponent } from './todo-form.component';
 
@@ -9,7 +10,7 @@ describe('TodoFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule],
+      imports: [ReactiveFormsModule],
       declarations: [TodoFormComponent]
     })
       .compileComponents();
@@ -31,45 +32,47 @@ describe('TodoFormComponent', () => {
       expect(desc).toBe('hello');
     });
 
-    component.description = 'hello';
+    fixture.detectChanges();
+    component.form.setValue({ todoDescription: 'hello' });
     component.addTodo();
   });
 
   it('eventemitter shall be called when button is clicked', () => {
     spyOn(component.onAddTodo, 'emit');
-    component.description = 'emitted';
+
+    fixture.detectChanges();
+    component.form.setValue({ todoDescription: 'emitted' });
+
     const button = fixture.nativeElement.querySelector('button');
+    fixture.detectChanges();
     button.click();
 
     expect(component.onAddTodo.emit).toHaveBeenCalledWith('emitted');
   });
 
-  it('button should be disabled when description is empty', () => {
-    component.description = '';
+  it('button should be disabled when description is empty', async(() => {
     fixture.detectChanges();
-    const button = fixture.nativeElement.querySelector('button');
+    component.form.setValue({ todoDescription: '' });
+
+    expect(component.form.valid).toBe(false);
+
+    const button = fixture.debugElement.query(By.css('button')).nativeElement;
+
     expect(button.disabled).toBe(true);
+  }));
 
-    component.description = 'test';
+  it('addTodo() resets the description', () => {
     fixture.detectChanges();
+    component.form.setValue({ todoDescription: 'test' });
 
-    expect(button.disabled).toBe(false);
-  });
-
-  it('addTodo() shall reset the description', () => {
-    component.description = 'test';
     component.addTodo();
-    expect(component.description).toBe('');
+
+    expect(component.form.value.todoDescription).toBeNull();
   });
 
-  it('input attribute \'name\' shall be \'description\'', () => {
-    const input = fixture.nativeElement.querySelector('input');
-    expect(input.name).toBe('description');
-  });
-
-  it('component description proeprty gets reflected on UI', fakeAsync(() => {
-    component.description = 'test';
+  it('component description property gets reflected on UI', fakeAsync(() => {
     fixture.detectChanges();
+    component.form.setValue({ todoDescription: 'test' });
     tick();
     const input = fixture.nativeElement.querySelector('input');
     expect(input.value).toBe('test');

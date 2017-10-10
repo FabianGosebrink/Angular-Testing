@@ -1,5 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -12,7 +12,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [CoreModule,
-        FormsModule],
+        ReactiveFormsModule],
       declarations: [
         AppComponent,
         ShellComponent,
