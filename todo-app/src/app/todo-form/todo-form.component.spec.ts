@@ -1,6 +1,6 @@
-import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 
 import { TodoFormComponent } from './todo-form.component';
 
@@ -26,7 +26,7 @@ describe('TodoFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('addTodo method shall emit the output', () => {
+  it('addTodo method should emit the output', () => {
 
     component.onAddTodo.subscribe((desc: string) => {
       expect(desc).toBe('hello');
@@ -37,7 +37,7 @@ describe('TodoFormComponent', () => {
     component.addTodo();
   });
 
-  it('eventemitter shall be called when button is clicked', () => {
+  it('eventemitter should be called when button is clicked', () => {
     spyOn(component.onAddTodo, 'emit');
 
     fixture.detectChanges();
@@ -61,7 +61,20 @@ describe('TodoFormComponent', () => {
     expect(button.disabled).toBe(true);
   }));
 
-  it('addTodo() resets the description', () => {
+  it('input should have class invalid when description is empty', async(() => {
+    fixture.detectChanges();
+    component.form.setValue({ todoDescription: '' });
+
+    const input = fixture.debugElement.query(By.css('input'));
+
+    expect(input.classes['ng-valid']).toBe(false);
+    expect(input.classes['ng-invalid']).toBe(true);
+    component.form.setValue({ todoDescription: 'test' });
+    fixture.detectChanges();
+    expect(input.classes['ng-valid']).toBe(true);
+  }));
+
+  it('addTodo() should reset the description', () => {
     fixture.detectChanges();
     component.form.setValue({ todoDescription: 'test' });
 
