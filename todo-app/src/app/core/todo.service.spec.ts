@@ -38,7 +38,7 @@ describe('TodoService', () => {
     tick(200);
     expect(items.length).toBe(0);
 
-    service.addTodo(new Todo());
+    service.addTodo('description');
 
     service.getAllTodos().subscribe((result: Todo[]) => {
       items = result;
@@ -48,14 +48,11 @@ describe('TodoService', () => {
   }));
 
   it('should update todoitems correctly', fakeAsync(() => {
-    const todo = new Todo();
-    todo.description = 'description';
+    const addedToDo = service.addTodo('description');
 
-    service.addTodo(todo);
+    addedToDo.description = 'Fabian';
 
-    todo.description = 'Fabian';
-
-    const singleTodo = service.updateTodo(todo);
+    const singleTodo = service.updateTodo(addedToDo);
 
     expect(singleTodo.description).toBe('Fabian');
     let items: Todo[];
@@ -67,11 +64,7 @@ describe('TodoService', () => {
   }));
 
   it('should delete todoitems correctly', fakeAsync(() => {
-    const todo = new Todo();
-    todo.id = 'Guid';
-    todo.description = 'description';
-
-    service.addTodo(todo);
+    const addedToDo = service.addTodo('description');
 
     let items: Todo[];
     service.getAllTodos().subscribe((result: Todo[]) => {
@@ -80,7 +73,7 @@ describe('TodoService', () => {
     tick(200);
     expect(items.length).toBe(1);
 
-    service.deleteTodo(todo.id);
+    service.deleteTodo(addedToDo.id);
 
     service.getAllTodos().subscribe((result: Todo[]) => {
       items = result;

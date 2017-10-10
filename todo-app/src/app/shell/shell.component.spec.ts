@@ -78,8 +78,8 @@ describe('ShellComponent', () => {
   });
 
   it('markAsDone shall updateTodo and set \'done\' to \'done\'', fakeAsync(() => {
-    const todo = new Todo();
-    const addedToDo = service.addTodo(todo);
+    // const todo = new Todo();
+    const addedToDo = service.addTodo('todo');
 
     let notDoneTodo: Todo;
     service.getSingleTodo(addedToDo.id).subscribe((item: Todo) => {

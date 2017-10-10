@@ -19,9 +19,7 @@ export class ShellComponent implements OnInit {
   }
 
   addTodo(description: string) {
-    const todoToAdd: Todo = new Todo();
-    todoToAdd.description = description;
-    this.todoService.addTodo(todoToAdd);
+    this.todoService.addTodo(description);
     this.todoService.getAllTodos().subscribe((items: Todo[]) => this.items = items);
   }
 

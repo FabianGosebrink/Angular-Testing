@@ -21,7 +21,7 @@ describe('todo-app App', () => {
     page.getTextField().sendKeys('exampleTodo');
 
     browser.takeScreenshot().then(png => {
-      const stream = fs.createWriteStream('screenshot-1.png');
+      const stream = fs.createWriteStream(`screenshot-1.png`);
       stream.write(new Buffer(png, 'base64'));
       stream.end();
     });

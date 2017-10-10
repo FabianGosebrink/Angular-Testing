@@ -28,10 +28,12 @@ export class TodoService {
     });
   }
 
-  addTodo(toAdd: Todo): Todo {
+  addTodo(description: string): Todo {
+    const toAdd: Todo = new Todo();
     toAdd.created = new Date();
     toAdd.id = this.guid();
     toAdd.done = false;
+    toAdd.description = description;
     this.existingTodos.push(toAdd);
     return toAdd;
   }
