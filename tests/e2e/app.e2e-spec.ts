@@ -7,7 +7,7 @@ describe('angularworkshop App', () => {
     page = new AppPage();
   });
 
-  it('Should display Letslearn title', () => {
+  it('Should display correct title', () => {
     page.navigateTo();
     expect(page.getTitle()).toEqual('Welcome to app!');
   });
