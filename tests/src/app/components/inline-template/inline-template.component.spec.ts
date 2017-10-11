@@ -32,8 +32,8 @@ describe('InlineTemplateComponent', () => {
   it('should display the name', () => {
     expect(component.name).toBe(undefined);
     fixture.detectChanges();
-    const allDivs = fixture.debugElement.queryAll(By.css('div'));
+    const div = fixture.debugElement.query(By.css('div'));
 
-    expect(allDivs[1].nativeElement.innerHTML).toBe(component.name);
+    expect(div.nativeElement.innerHTML).toBe(component.name);
   });
 });
