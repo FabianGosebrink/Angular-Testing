@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, Observer } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
 import { Todo } from '../models/todo.models';
+import { Observer } from 'rxjs/Observer';
 
 @Injectable()
 export class TodoService {
-
   private existingTodos: Todo[] = [];
 
-  constructor() { }
+  constructor() {}
 
   getAllTodos(): Observable<Todo[]> {
     return Observable.create((observer: Observer<Todo[]>) => {
@@ -39,7 +39,9 @@ export class TodoService {
   }
 
   updateTodo(toUpdate: Todo): Todo {
-    this.existingTodos.map(obj => this.existingTodos.find(o => o.id === obj.id));
+    this.existingTodos.map(obj =>
+      this.existingTodos.find(o => o.id === obj.id)
+    );
     return toUpdate;
   }
 
@@ -53,7 +55,19 @@ export class TodoService {
         .toString(16)
         .substring(1);
     }
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-      s4() + '-' + s4() + s4() + s4();
+    return (
+      s4() +
+      s4() +
+      '-' +
+      s4() +
+      '-' +
+      s4() +
+      '-' +
+      s4() +
+      '-' +
+      s4() +
+      s4() +
+      s4()
+    );
   }
 }

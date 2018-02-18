@@ -8,12 +8,13 @@ describe('TodoListComponent', () => {
   let component: TodoListComponent;
   let fixture: ComponentFixture<TodoListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TodoListComponent]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [TodoListComponent]
+      }).compileComponents();
     })
-      .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoListComponent);
@@ -25,7 +26,7 @@ describe('TodoListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('method \'markAsDone\' calls eventEmitter', () => {
+  it('method "markAsDone" calls eventEmitter', () => {
     spyOn(component.onMarkAsDone, 'emit');
     const item = new Todo();
     component.markAsDone(item);
@@ -51,7 +52,8 @@ describe('TodoListComponent', () => {
     fixture.detectChanges();
     const allItems = fixture.debugElement.queryAll(By.css('li'));
 
-    const renderedText = allItems[0].nativeElement.querySelector('span').innerHTML;
+    const renderedText = allItems[0].nativeElement.querySelector('span')
+      .innerHTML;
     expect(renderedText).toBe(todo.description);
   });
 
@@ -79,7 +81,7 @@ describe('TodoListComponent', () => {
     expect(fixture.nativeElement.querySelector('s')).toBeDefined();
   });
 
-  it('css class \'inactive\' is applied when item is done', () => {
+  it('css class "inactive" is applied when item is done', () => {
     const todo = new Todo();
     todo.description = 'toShow';
     todo.done = true;
@@ -87,7 +89,6 @@ describe('TodoListComponent', () => {
     fixture.detectChanges();
     const classList = fixture.nativeElement.querySelector('s').classList;
     expect(classList).toContain('inactive');
-
   });
 
   it('s is invisible when item is not done', () => {
@@ -98,6 +99,5 @@ describe('TodoListComponent', () => {
 
     expect(fixture.nativeElement.querySelector('span')).toBeDefined();
     expect(fixture.nativeElement.querySelector('s')).toBeNull();
-
   });
 });

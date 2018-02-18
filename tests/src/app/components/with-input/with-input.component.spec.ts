@@ -7,12 +7,13 @@ describe('WithInputComponent', () => {
   let component: WithInputComponent;
   let fixture: ComponentFixture<WithInputComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [WithInputComponent]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [WithInputComponent]
+      }).compileComponents();
     })
-      .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WithInputComponent);
@@ -23,15 +24,21 @@ describe('WithInputComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should correctly render the passed @Input value', async(() => {
+  it(
+    'should correctly render the passed @Input value',
+    async(() => {
+      expect(
+        fixture.debugElement.query(By.css('p')).nativeElement.innerHTML
+      ).toBe('');
 
-    expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('');
+      component.name = 'Fabian';
 
-    component.name = 'Fabian';
-
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toBe('Fabian');
-    });
-  }));
+      fixture.detectChanges();
+      fixture.whenStable().then(() => {
+        expect(
+          fixture.debugElement.query(By.css('p')).nativeElement.innerHTML
+        ).toBe('Fabian');
+      });
+    })
+  );
 });

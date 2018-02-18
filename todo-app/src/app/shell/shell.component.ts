@@ -8,19 +8,21 @@ import { Todo } from '../models/todo.models';
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.css']
 })
-
 export class ShellComponent implements OnInit {
-
   items: Todo[] = [];
-  constructor(public todoService: TodoService) { }
+  constructor(public todoService: TodoService) {}
 
   ngOnInit() {
-    this.todoService.getAllTodos().subscribe((items: Todo[]) => this.items = items);
+    this.todoService
+      .getAllTodos()
+      .subscribe((items: Todo[]) => (this.items = items));
   }
 
   addTodo(description: string) {
     this.todoService.addTodo(description);
-    this.todoService.getAllTodos().subscribe((items: Todo[]) => this.items = items);
+    this.todoService
+      .getAllTodos()
+      .subscribe((items: Todo[]) => (this.items = items));
   }
 
   markAsDone(todo: Todo) {

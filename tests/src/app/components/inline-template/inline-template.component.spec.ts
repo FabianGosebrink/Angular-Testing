@@ -10,8 +10,7 @@ describe('InlineTemplateComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [InlineTemplateComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

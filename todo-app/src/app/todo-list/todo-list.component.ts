@@ -8,14 +8,12 @@ import { Todo } from '../models/todo.models';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-
   @Input() items: Todo[] = [];
   @Output() onMarkAsDone = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   markAsDone(item: Todo) {
     this.onMarkAsDone.emit(item);

@@ -6,7 +6,6 @@ import { DummyComponent } from './dummy.component';
 import { HoverHighlightDirective } from './highlight.directive';
 
 describe('HighlightDirective', () => {
-
   let component: DummyComponent;
   let fixture: ComponentFixture<DummyComponent>;
   let inputEl: DebugElement;
@@ -36,4 +35,3 @@ describe('HighlightDirective', () => {
     expect(inputEl.nativeElement.style.backgroundColor).toBe('inherit');
   });
 });
-

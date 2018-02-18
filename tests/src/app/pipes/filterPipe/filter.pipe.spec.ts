@@ -1,7 +1,6 @@
 import { FilterPipe } from './filter.pipe';
 
 describe('FilterPipe', () => {
-
   let filterPipe: FilterPipe;
 
   // synchronous beforeEach
@@ -14,9 +13,7 @@ describe('FilterPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-
   it('filterPipe should filter', () => {
-
     const items = [];
 
     items.push({ id: 1, name: 'Hans' });
@@ -31,7 +28,6 @@ describe('FilterPipe', () => {
   });
 
   it('filterPipe should filter two items', () => {
-
     const items = [];
 
     items.push({ id: 1, name: 'Hans' });

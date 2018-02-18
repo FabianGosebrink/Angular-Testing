@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { TodoService } from './todo.service';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   providers: [TodoService]
 })
-export class CoreModule { }
+export class CoreModule {}

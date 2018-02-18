@@ -1,5 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
@@ -7,15 +12,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
-
   @Output() onAddTodo = new EventEmitter();
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = new FormGroup({
-      todoDescription: new FormControl('', Validators.required),
+      todoDescription: new FormControl('', Validators.required)
     });
   }
 

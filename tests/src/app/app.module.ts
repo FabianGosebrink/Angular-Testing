@@ -24,10 +24,8 @@ import { CustomHttpService } from './services/http-service/http.service';
     WithInputComponent,
     WithOutputComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [AsyncService, BasicService, CustomHttpService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

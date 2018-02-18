@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./async-pipe.component.css']
 })
 export class AsyncPipeComponent implements OnInit {
-
   name$: Observable<string>;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     // console.log('AsyncPipeComponent ngOnInit');

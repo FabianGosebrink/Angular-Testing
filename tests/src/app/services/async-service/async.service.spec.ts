@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { async, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Rx';
+import { of } from 'rxjs/observable/of';
+import { Observer } from 'rxjs/Observer';
 
 import { AsyncService } from './async.service';
 
 describe('AsyncService', () => {
-
   describe('AsyncService with real service', () => {
     let service: AsyncService;
 
@@ -28,21 +28,23 @@ describe('AsyncService', () => {
       });
     });
 
-    it('should get the name (fakeasync)', fakeAsync(() => {
+    it(
+      'should get the name (fakeasync)',
+      fakeAsync(() => {
+        let value;
+        service.getNameASync().subscribe((name: string) => {
+          value = name;
+        });
 
-      let value;
-      service.getNameASync().subscribe((name: string) => {
-        value = name;
-      });
+        expect(value).not.toBeDefined();
+        tick(250);
+        expect(value).not.toBeDefined();
 
-      expect(value).not.toBeDefined();
-      tick(250);
-      expect(value).not.toBeDefined();
-
-      tick(250);
-      expect(value).toBeDefined();
-      expect(value).toBe('Fabian');
-    }));
+        tick(250);
+        expect(value).toBeDefined();
+        expect(value).toBe('Fabian');
+      })
+    );
   });
 
   describe('AsyncService with a spy', () => {
@@ -61,23 +63,21 @@ describe('AsyncService', () => {
     });
 
     it('should get the name', () => {
-      const spy = spyOn(service, 'getNameASync').and.returnValue(Observable.of('SpyFabian'));
+      const spy = spyOn(service, 'getNameASync').and.returnValue(
+        of('SpyFabian')
+      );
 
       service.getNameASync().subscribe((name: string) => {
         expect(name).toBe('SpyFabian');
       });
       expect(spy.calls.any()).toBe(true, 'getNameASync called');
     });
-
   });
 
   describe('AsyncService with fake service', () => {
-
     @Injectable()
     class AsyncFakeService {
-
       getNameASync(): Observable<string> {
-
         return Observable.create((observer: Observer<string>) => {
           setTimeout(() => {
             observer.next('FakeFabian');
@@ -107,28 +107,31 @@ describe('AsyncService', () => {
       });
     });
 
-    it('should get the name (async)', async(() => {
+    it(
+      'should get the name (async)',
+      async(() => {
+        service.getNameASync().subscribe((name: string) => {
+          expect(name).toBe('FakeFabian');
+        });
+      })
+    );
 
-      service.getNameASync().subscribe((name: string) => {
-        expect(name).toBe('FakeFabian');
-      });
+    it(
+      'should get the name (fakeasync)',
+      fakeAsync(() => {
+        let value;
+        service.getNameASync().subscribe((name: string) => {
+          value = name;
+        });
 
-    }));
+        expect(value).not.toBeDefined();
+        tick(250);
+        expect(value).not.toBeDefined();
 
-    it('should get the name (fakeasync)', fakeAsync(() => {
-
-      let value;
-      service.getNameASync().subscribe((name: string) => {
-        value = name;
-      });
-
-      expect(value).not.toBeDefined();
-      tick(250);
-      expect(value).not.toBeDefined();
-
-      tick(250);
-      expect(value).toBeDefined();
-      expect(value).toBe('FakeFabian');
-    }));
+        tick(250);
+        expect(value).toBeDefined();
+        expect(value).toBe('FakeFabian');
+      })
+    );
   });
 });

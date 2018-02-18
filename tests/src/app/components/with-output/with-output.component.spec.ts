@@ -6,12 +6,13 @@ describe('WithOutputComponent', () => {
   let component: WithOutputComponent;
   let fixture: ComponentFixture<WithOutputComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [WithOutputComponent]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [WithOutputComponent]
+      }).compileComponents();
     })
-      .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WithOutputComponent);
@@ -33,7 +34,7 @@ describe('WithOutputComponent', () => {
   });
 
   it('should test the emitter with a simple subscribe', () => {
-    component.greet.subscribe((d) => {
+    component.greet.subscribe(d => {
       expect(d).toBe('Hi');
     });
 
@@ -41,11 +42,10 @@ describe('WithOutputComponent', () => {
   });
 
   it('should fire the event emitter when triggering an event', () => {
-    component.greet.subscribe((d) => {
+    component.greet.subscribe(d => {
       expect(d).toBe('Hi');
     });
 
     fixture.debugElement.triggerEventHandler('greet', <Event>{});
   });
-
 });

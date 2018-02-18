@@ -1,10 +1,12 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { CustomHttpService } from './http.service';
 
 describe('CustomHttpService', () => {
-
   let service: CustomHttpService;
   let httpMock: HttpTestingController;
 
@@ -28,7 +30,10 @@ describe('CustomHttpService', () => {
       expect(data.name).toBe('Luke Skywalker');
     });
 
-    const req = httpMock.expectOne(`http://replace.with.api/anything/1`, 'call to api');
+    const req = httpMock.expectOne(
+      `http://replace.with.api/anything/1`,
+      'call to api'
+    );
     expect(req.request.method).toBe('GET');
 
     req.flush({
@@ -43,7 +48,10 @@ describe('CustomHttpService', () => {
       expect(data.firstname).toBe('firstname');
     });
 
-    const req = httpMock.expectOne(`http://replace.with.api/anything`, 'post to api');
+    const req = httpMock.expectOne(
+      `http://replace.with.api/anything`,
+      'post to api'
+    );
     expect(req.request.method).toBe('POST');
 
     req.flush({
@@ -58,7 +66,10 @@ describe('CustomHttpService', () => {
       expect(data.firstname).toBe('firstname');
     });
 
-    const req = httpMock.expectOne(`http://replace.with.api/anything/3`, 'put to api');
+    const req = httpMock.expectOne(
+      `http://replace.with.api/anything/3`,
+      'put to api'
+    );
     expect(req.request.method).toBe('PUT');
 
     req.flush({
@@ -73,7 +84,10 @@ describe('CustomHttpService', () => {
       expect(data).toBe(3);
     });
 
-    const req = httpMock.expectOne(`http://replace.with.api/anything/3`, 'delete to api');
+    const req = httpMock.expectOne(
+      `http://replace.with.api/anything/3`,
+      'delete to api'
+    );
     expect(req.request.method).toBe('DELETE');
 
     req.flush(3);

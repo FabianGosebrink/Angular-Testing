@@ -15,12 +15,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     TodoFormComponent,
     TodoListComponent
   ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, CoreModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

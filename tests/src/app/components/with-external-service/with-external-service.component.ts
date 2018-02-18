@@ -8,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./with-external-service.component.css']
 })
 export class WithExternalServiceComponent implements OnInit {
-
   result$: Observable<any>;
 
-  constructor(private httpService: CustomHttpService) { }
+  constructor(private httpService: CustomHttpService) {}
 
   ngOnInit() {
     this.result$ = this.httpService.getSingle(1);

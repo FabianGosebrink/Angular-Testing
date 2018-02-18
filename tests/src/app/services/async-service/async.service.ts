@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Rx';
+import { Observable } from 'rxjs/observable';
+import { Observer } from 'rxjs/Observer';
 
 @Injectable()
 export class AsyncService {
-
-  constructor() { }
+  constructor() {}
 
   getNameASync(): Observable<string> {
-
     return Observable.create((observer: Observer<string>) => {
       setTimeout(() => {
         observer.next('Fabian');
