@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-    template: `<span id="forTesting" appHoverhighlight>anyValue</span>`
+  template: `<span id="forTesting" appHoverhighlight>anyValue</span>`
 })
-
-export class DummyComponent {
-}
+export class DummyComponent {}
