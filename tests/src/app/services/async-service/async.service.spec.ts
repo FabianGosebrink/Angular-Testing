@@ -22,11 +22,14 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it('should get the name', async(() => {
-      service.getNameASync().subscribe((name: string) => {
-        expect(name).toBe('Fabian');
-      });
-    }));
+    it(
+      'should get the name',
+      async(() => {
+        service.getNameASync().subscribe((name: string) => {
+          expect(name).toBe('Fabian');
+        });
+      })
+    );
 
     it(
       'should get the name (fakeasync)',
@@ -99,12 +102,6 @@ describe('AsyncService', () => {
 
     it('should be created', () => {
       expect(service).toBeTruthy();
-    });
-
-    it('should get the name', () => {
-      service.getNameASync().subscribe((name: string) => {
-        expect(name).toBe('FakeFabian');
-      });
     });
 
     it(
