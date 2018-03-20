@@ -22,14 +22,11 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
-      'should get the name',
-      async(() => {
-        service.getNameASync().subscribe((name: string) => {
-          expect(name).toBe('Fabian');
-        });
-      })
-    );
+    it('should get the name', async(() => {
+      service.getNameASync().subscribe((name: string) => {
+        expect(name).toBe('Fabian');
+      });
+    }));
 
     it(
       'should get the name (fakeasync)',
@@ -85,7 +82,7 @@ describe('AsyncService', () => {
           setTimeout(() => {
             observer.next('FakeFabian');
             observer.complete();
-          }, 1000);
+          }, 500);
         });
       }
     }
@@ -104,8 +101,14 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
+    it('should get the name', () => {
+      service.getNameASync().subscribe((name: string) => {
+        expect(name).toBe('FakeFabian');
+      });
+    });
+
     it(
-      'should get the name',
+      'should get the name (async)',
       async(() => {
         service.getNameASync().subscribe((name: string) => {
           expect(name).toBe('FakeFabian');
@@ -122,10 +125,10 @@ describe('AsyncService', () => {
         });
 
         expect(value).not.toBeDefined();
-        tick(500);
+        tick(250);
         expect(value).not.toBeDefined();
 
-        tick(500);
+        tick(250);
         expect(value).toBeDefined();
         expect(value).toBe('FakeFabian');
       })
