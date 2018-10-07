@@ -1,0 +1,9 @@
+<ul style="list-style-type:none" id="todolist">
+  <li *ngFor="let item of items">
+
+    <s *ngIf="item.done" class="inactive">{{item.description}}</s>
+    <span *ngIf="!item.done">{{item.description}}</span>
+
+    <button (click)="markAsDone(item)" id="doneButton">Done</button>
+  </li>
+</ul>

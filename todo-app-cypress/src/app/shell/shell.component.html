@@ -1,0 +1,6 @@
+<p>
+  <app-todo-form (todoAdded)="addTodo($event)"></app-todo-form>
+</p>
+<p>
+  <app-todo-list [items]="items" (markedAsDone)="markAsDone($event)"></app-todo-list>
+</p>
