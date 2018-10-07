@@ -1,9 +1,8 @@
 import {
   HttpClientTestingModule,
-  HttpTestingController
+  HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-
 import { CustomHttpService } from './http.service';
 
 describe('CustomHttpService', () => {
@@ -13,7 +12,7 @@ describe('CustomHttpService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [CustomHttpService]
+      providers: [CustomHttpService],
     });
 
     // inject the service
@@ -37,7 +36,7 @@ describe('CustomHttpService', () => {
     expect(req.request.method).toBe('GET');
 
     req.flush({
-      name: 'Luke Skywalker'
+      name: 'Luke Skywalker',
     });
 
     httpMock.verify();
@@ -55,7 +54,7 @@ describe('CustomHttpService', () => {
     expect(req.request.method).toBe('POST');
 
     req.flush({
-      firstname: 'firstname'
+      firstname: 'firstname',
     });
 
     httpMock.verify();
@@ -73,7 +72,7 @@ describe('CustomHttpService', () => {
     expect(req.request.method).toBe('PUT');
 
     req.flush({
-      firstname: 'firstname'
+      firstname: 'firstname',
     });
 
     httpMock.verify();

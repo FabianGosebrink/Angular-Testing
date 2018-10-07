@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
 import { InlineTemplateComponent } from './inline-template.component';
 
 describe('InlineTemplateComponent', () => {
@@ -9,7 +8,7 @@ describe('InlineTemplateComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InlineTemplateComponent]
+      declarations: [InlineTemplateComponent],
     }).compileComponents();
   });
 

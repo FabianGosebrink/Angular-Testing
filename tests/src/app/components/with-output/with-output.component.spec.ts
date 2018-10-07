@@ -1,18 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WithOutputComponent } from './with-output.component';
 
 describe('WithOutputComponent', () => {
   let component: WithOutputComponent;
   let fixture: ComponentFixture<WithOutputComponent>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [WithOutputComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [WithOutputComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WithOutputComponent);

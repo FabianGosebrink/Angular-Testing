@@ -1,21 +1,17 @@
 import { inject, TestBed } from '@angular/core/testing';
-
 import { BasicService } from './basic.service';
 
 describe('BasicService', () => {
   describe('Injecting in every single Test', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [BasicService]
+        providers: [BasicService],
       });
     });
 
-    it(
-      'should be created',
-      inject([BasicService], (service: BasicService) => {
-        expect(service).toBeTruthy();
-      })
-    );
+    it('should be created', inject([BasicService], (service: BasicService) => {
+      expect(service).toBeTruthy();
+    }));
   });
 
   describe('Injecting in a seperate foreach (Suite)', () => {
@@ -23,15 +19,12 @@ describe('BasicService', () => {
 
     beforeEach(() =>
       TestBed.configureTestingModule({
-        providers: [BasicService]
-      })
-    );
+        providers: [BasicService],
+      }));
 
-    beforeEach(
-      inject([BasicService], (s: BasicService) => {
-        service = s;
-      })
-    );
+    beforeEach(inject([BasicService], (s: BasicService) => {
+      service = s;
+    }));
 
     it('should have a service instance', () => {
       expect(service).toBeDefined();
@@ -43,7 +36,7 @@ describe('BasicService', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [BasicService]
+        providers: [BasicService],
       });
 
       service = TestBed.get(BasicService);
@@ -59,7 +52,7 @@ describe('BasicService', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [BasicService]
+        providers: [BasicService],
       });
 
       service = TestBed.get(BasicService);

@@ -2,22 +2,22 @@ import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 
 @Component({
-  template: `Search`
+  template: `Search`,
 })
 export class SearchComponent {}
 
 @Component({
-  template: `Home`
+  template: `Home`,
 })
 export class HomeComponent {}
 
 @Component({
-  template: `<router-outlet></router-outlet>`
+  template: `<router-outlet></router-outlet>`,
 })
 export class RouterComponent {}
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
 ];

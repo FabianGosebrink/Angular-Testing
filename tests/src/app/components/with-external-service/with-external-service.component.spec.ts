@@ -1,9 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-
+import { of } from 'rxjs';
 import { getInnerHtml } from '../../../helpers/DOM-helpers';
 import { CustomHttpService } from '../../services/http-service/http.service';
 import { WithExternalServiceComponent } from './with-external-service.component';
@@ -14,18 +12,16 @@ describe('WithExternalServiceComponent', () => {
   let service: CustomHttpService;
 
   const responseObject = {
-    name: 'Luke Skywalker'
+    name: 'Luke Skywalker',
   };
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        imports: [BrowserModule, HttpClientTestingModule],
-        declarations: [WithExternalServiceComponent],
-        providers: [CustomHttpService]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [BrowserModule, HttpClientTestingModule],
+      declarations: [WithExternalServiceComponent],
+      providers: [CustomHttpService],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WithExternalServiceComponent);

@@ -2,12 +2,11 @@ import { Location } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-
 import {
   HomeComponent,
   RouterComponent,
   routes,
-  SearchComponent
+  SearchComponent,
 } from './routing.component';
 
 describe('Router: App', () => {
@@ -18,7 +17,7 @@ describe('Router: App', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes(routes)],
-      declarations: [HomeComponent, SearchComponent, RouterComponent]
+      declarations: [HomeComponent, SearchComponent, RouterComponent],
     });
 
     router = TestBed.get(Router);
