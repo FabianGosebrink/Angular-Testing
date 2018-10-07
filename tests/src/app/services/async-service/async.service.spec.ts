@@ -101,11 +101,11 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it('should get the name', () => {
+    it('should get the name', async(() => {
       service.getNameASync().subscribe((name: string) => {
         expect(name).toBe('FakeFabian');
       });
-    });
+    }));
 
     it(
       'should get the name (async)',
