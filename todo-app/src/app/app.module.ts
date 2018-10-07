@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ShellComponent } from './shell/shell.component';
@@ -13,10 +12,10 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     AppComponent,
     ShellComponent,
     TodoFormComponent,
-    TodoListComponent
+    TodoListComponent,
   ],
   imports: [BrowserModule, CoreModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

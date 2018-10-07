@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { browser, by, element } from 'protractor/built';
+import { browser } from 'protractor/built';
 import { AppPage } from './app.po';
 
 describe('todo-app App', () => {

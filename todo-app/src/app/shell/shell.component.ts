@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 import { TodoService } from '../core/todo.service';
-import { Todo } from '../models/todo.models';
+import { Todo } from '../models/todo.model';
 
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.css']
+  styleUrls: ['./shell.component.css'],
 })
 export class ShellComponent implements OnInit {
   items: Todo[] = [];

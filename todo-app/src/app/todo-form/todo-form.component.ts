@@ -3,30 +3,31 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  Validators
+  Validators,
 } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
-  styleUrls: ['./todo-form.component.css']
+  styleUrls: ['./todo-form.component.css'],
 })
 export class TodoFormComponent implements OnInit {
-  @Output() onAddTodo = new EventEmitter();
+  @Output()
+  todoAdded = new EventEmitter();
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.form = new FormGroup({
-      todoDescription: new FormControl('', Validators.required)
+      todoDescription: new FormControl('', Validators.required),
     });
   }
 
   addTodo() {
     const payload = Object.assign({}, this.form.value);
     // console.log(payload.todoDescription);
-    this.onAddTodo.emit(payload.todoDescription);
+    this.todoAdded.emit(payload.todoDescription);
     this.form.reset();
   }
 }

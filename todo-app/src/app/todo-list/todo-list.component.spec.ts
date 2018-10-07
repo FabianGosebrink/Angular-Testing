@@ -1,20 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
-import { Todo } from '../models/todo.models';
+import { Todo } from '../models/todo.model';
 import { TodoListComponent } from './todo-list.component';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
   let fixture: ComponentFixture<TodoListComponent>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [TodoListComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [TodoListComponent],
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoListComponent);
@@ -27,11 +24,11 @@ describe('TodoListComponent', () => {
   });
 
   it('method "markAsDone" calls eventEmitter', () => {
-    spyOn(component.onMarkAsDone, 'emit');
+    spyOn(component.markedAsDone, 'emit');
     const item = new Todo();
     component.markAsDone(item);
 
-    expect(component.onMarkAsDone.emit).toHaveBeenCalledWith(item);
+    expect(component.markedAsDone.emit).toHaveBeenCalledWith(item);
   });
 
   it('should correctly render the passed @Input value', () => {
@@ -63,11 +60,11 @@ describe('TodoListComponent', () => {
     component.items = [todo];
     fixture.detectChanges();
 
-    spyOn(component.onMarkAsDone, 'emit');
+    spyOn(component.markedAsDone, 'emit');
     const button = fixture.nativeElement.querySelector('button');
     button.click();
 
-    expect(component.onMarkAsDone.emit).toHaveBeenCalledWith(todo);
+    expect(component.markedAsDone.emit).toHaveBeenCalledWith(todo);
   });
 
   it('span is invisble when item is done', () => {

@@ -1,6 +1,5 @@
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-
-import { Todo } from '../models/todo.models';
+import { Todo } from '../models/todo.model';
 import { TodoService } from './todo.service';
 
 describe('TodoService', () => {
@@ -8,7 +7,7 @@ describe('TodoService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TodoService]
+      providers: [TodoService],
     });
 
     service = TestBed.get(TodoService);
@@ -18,78 +17,66 @@ describe('TodoService', () => {
     expect(service).toBeTruthy();
   });
 
-  it(
-    'should get todoitems correctly',
-    fakeAsync(() => {
-      let items;
-      service.getAllTodos().subscribe((result: Todo[]) => {
-        items = result;
-      });
+  it('should get todoitems correctly', fakeAsync(() => {
+    let items;
+    service.getAllTodos().subscribe((result: Todo[]) => {
+      items = result;
+    });
 
-      expect(items).not.toBeDefined();
-      tick(200);
-      expect(items).toBeDefined();
-    })
-  );
+    expect(items).not.toBeDefined();
+    tick(200);
+    expect(items).toBeDefined();
+  }));
 
-  it(
-    'should add todoitems correctly',
-    fakeAsync(() => {
-      let items: Todo[];
-      service.getAllTodos().subscribe((result: Todo[]) => {
-        items = result;
-      });
-      tick(200);
-      expect(items.length).toBe(0);
+  it('should add todoitems correctly', fakeAsync(() => {
+    let items: Todo[];
+    service.getAllTodos().subscribe((result: Todo[]) => {
+      items = result;
+    });
+    tick(200);
+    expect(items.length).toBe(0);
 
-      service.addTodo('description');
+    service.addTodo('description');
 
-      service.getAllTodos().subscribe((result: Todo[]) => {
-        items = result;
-      });
-      tick(200);
-      expect(items.length).toBe(1);
-    })
-  );
+    service.getAllTodos().subscribe((result: Todo[]) => {
+      items = result;
+    });
+    tick(200);
+    expect(items.length).toBe(1);
+  }));
 
-  it(
-    'should update todoitems correctly',
-    fakeAsync(() => {
-      const addedToDo = service.addTodo('description');
+  it('should update todoitems correctly', fakeAsync(() => {
+    const addedToDo = service.addTodo('description');
 
-      addedToDo.description = 'Fabian';
+    addedToDo.description = 'Fabian';
 
-      const singleTodo = service.updateTodo(addedToDo);
+    const singleTodo = service.updateTodo(addedToDo);
 
-      expect(singleTodo.description).toBe('Fabian');
-      let items: Todo[];
-      service.getAllTodos().subscribe((result: Todo[]) => {
-        items = result;
-      });
-      tick(200);
-      expect(items[0].description).toBe('Fabian');
-    })
-  );
+    expect(singleTodo.description).toBe('Fabian');
+    let items: Todo[];
+    service.getAllTodos().subscribe((result: Todo[]) => {
+      items = result;
+    });
+    tick(200);
+    expect(items[0].description).toBe('Fabian');
+  }));
 
-  it(
-    'should delete todoitems correctly',
-    fakeAsync(() => {
-      const addedToDo = service.addTodo('description');
+  it('should delete todoitems correctly', fakeAsync(() => {
+    const addedToDo = service.addTodo('description');
 
-      let items: Todo[];
-      service.getAllTodos().subscribe((result: Todo[]) => {
-        items = result;
-      });
-      tick(200);
-      expect(items.length).toBe(1);
+    let items: Todo[];
+    service.getAllTodos().subscribe((result: Todo[]) => {
+      items = result;
+    });
+    tick(200);
+    expect(items.length).toBe(1);
 
-      service.deleteTodo(addedToDo.id);
+    service.deleteTodo(addedToDo.id);
 
-      service.getAllTodos().subscribe((result: Todo[]) => {
-        items = result;
-      });
-      tick(200);
-      expect(items.length).toBe(0);
-    })
-  );
+    service.getAllTodos().subscribe((result: Todo[]) => {
+      items = result;
+    });
+    tick(200);
+    expect(items.length).toBe(0);
+  }));
 });
