@@ -22,7 +22,7 @@ describe('AsyncPipeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should correctly visualize the emitted values from the stream', () => {
+  it('should correctly visualize the emitted values from the stream', async(() => {
     fixture.detectChanges();
 
     expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('');
@@ -31,5 +31,5 @@ describe('AsyncPipeComponent', () => {
       fixture.detectChanges();
       expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
     });
-  });
+  }));
 });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-async-pipe',
@@ -12,11 +13,6 @@ export class AsyncPipeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.name$ = Observable.create((observer: Observer<string>) => {
-      setTimeout(() => {
-        observer.next('Fabian');
-        observer.complete();
-      }, 3000);
-    });
+    this.name$ = of('Fabian').pipe(delay(2000));
   }
 }

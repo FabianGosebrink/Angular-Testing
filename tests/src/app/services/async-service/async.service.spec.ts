@@ -57,9 +57,7 @@ describe('AsyncService', () => {
     });
 
     it('should get the name', () => {
-      const spy = spyOn(service, 'getNameASync').and.returnValue(
-        of('SpyFabian')
-      );
+      const spy = spyOn(service, 'getNameASync').and.returnValue(of('SpyFabian'));
 
       service.getNameASync().subscribe((name: string) => {
         expect(name).toBe('SpyFabian');
