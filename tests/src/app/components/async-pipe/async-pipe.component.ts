@@ -13,6 +13,6 @@ export class AsyncPipeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.name$ = of('Fabian').pipe(delay(2000));
+    this.name$ = of('Fabian').pipe(delay(200));
   }
 }
