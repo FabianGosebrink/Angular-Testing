@@ -23,9 +23,8 @@ describe('AsyncPipeComponent', () => {
   });
 
   it('should correctly visualize the emitted values from the stream', async(() => {
-    fixture.detectChanges();
-
     expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('');
+    fixture.detectChanges();
 
     fixture.whenStable().then(() => {
       fixture.detectChanges();
