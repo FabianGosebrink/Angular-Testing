@@ -12,6 +12,11 @@ export class AsyncPipeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log('AsyncPipeComponent ngOnInit');
+    this.name$ = Observable.create((observer: Observer<string>) => {
+      setTimeout(() => {
+        observer.next('Fabian');
+        observer.complete();
+      }, 3000);
+    });
   }
 }
