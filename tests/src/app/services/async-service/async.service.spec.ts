@@ -32,10 +32,10 @@ describe('AsyncService', () => {
       });
 
       expect(value).not.toBeDefined();
-      tick(250);
+      tick(500);
       expect(value).not.toBeDefined();
 
-      tick(250);
+      tick(1500);
       expect(value).toBeDefined();
       expect(value).toBe('Fabian');
     }));
