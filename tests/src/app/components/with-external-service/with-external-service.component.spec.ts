@@ -2,7 +2,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
 import { of } from 'rxjs';
-import { getInnerHtml } from '../../../helpers/DOM-helpers';
+import { delay } from 'rxjs/operators';
+import { getInnerHtml, queryDebugElement } from '../../../helpers/DOM-helpers';
 import { CustomHttpService } from '../../services/http-service/http.service';
 import { WithExternalServiceComponent } from './with-external-service.component';
 
@@ -33,18 +34,20 @@ describe('WithExternalServiceComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('(IntegrationTest) should get data when loaded', () => {
-    expect(component.result$).not.toBeDefined();
-    expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe('');
+  it('(IntegrationTest) should get data when loaded', async(() => {
+    expect(queryDebugElement<WithExternalServiceComponent>(fixture, 'span')).toBeFalsy();
 
-    const spy = spyOn(service, 'getSingle').and.returnValue(of(responseObject));
+    const spy = spyOn(service, 'getSingle').and.returnValue(of(responseObject).pipe(delay(500)));
+    fixture.detectChanges(); // ngOnInit()
 
-    fixture.detectChanges();
-    expect(spy.calls.any()).toBe(true, 'getSingle called');
-    expect(component.result$).toBeDefined();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(spy.calls.any()).toBe(true, 'getSingle called');
+      expect(queryDebugElement<WithExternalServiceComponent>(fixture, 'span')).toBeDefined();
+      expect(queryDebugElement<WithExternalServiceComponent>(fixture, 'pre')).toBeDefined();
+      expect(component.result$).toBeDefined();
 
-    expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe(
-      responseObject.name
-    );
-  });
+      expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe('Luke Skywalker');
+    });
+  }));
 });
