@@ -2,7 +2,7 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { CustomHttpService } from './http.service';
 
 describe('CustomHttpService', () => {
@@ -93,4 +93,13 @@ describe('CustomHttpService', () => {
 
     httpMock.verify();
   });
+
+  it('should return available languages', async(() => {
+    service.getlanguages().subscribe(x => {
+      expect(x).toContain('en');
+      expect(x).toContain('de');
+      expect(x).toContain('it');
+      expect(x).toBeDefined();
+    });
+  }));
 });

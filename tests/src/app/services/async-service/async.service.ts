@@ -10,7 +10,7 @@ export class AsyncService {
       setTimeout(() => {
         observer.next('Fabian');
         observer.complete();
-      }, 500);
+      }, 2000);
     });
   }
 }

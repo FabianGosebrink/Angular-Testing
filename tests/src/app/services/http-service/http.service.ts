@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable()
 export class CustomHttpService {
@@ -22,5 +23,14 @@ export class CustomHttpService {
 
   delete(id: number) {
     return this.httpClient.delete(`http://replace.with.api/anything/${id}`);
+  }
+
+  getlanguages() {
+    return Observable.create((observer: Observer<string>) => {
+      setTimeout(() => {
+        observer.next(`['en', 'de', 'it']`);
+        observer.complete();
+      }, 1000);
+    });
   }
 }
