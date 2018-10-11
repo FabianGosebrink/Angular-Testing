@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { async, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Observable, Observer, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { AsyncService } from './async.service';
 
 describe('AsyncService', () => {
@@ -56,14 +57,14 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it('should get the name', () => {
-      const spy = spyOn(service, 'getNameASync').and.returnValue(of('SpyFabian'));
+    it('should get the name', async(() => {
+      const spy = spyOn(service, 'getNameASync').and.returnValue(of('SpyFabian').pipe(delay(500)));
 
       service.getNameASync().subscribe((name: string) => {
         expect(name).toBe('SpyFabian');
       });
       expect(spy.calls.any()).toBe(true, 'getNameASync called');
-    });
+    }));
   });
 
   describe('AsyncService with fake service', () => {
