@@ -8,7 +8,7 @@ describe('WithOutputComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WithOutputComponent],
-    }).compileComponents();
+    });
   }));
 
   beforeEach(() => {
@@ -30,19 +30,11 @@ describe('WithOutputComponent', () => {
     expect(component.greet.emit).toHaveBeenCalledWith('Hi');
   });
 
-  it('should test the emitter with a simple subscribe', () => {
+  it('should test the emitter with a simple subscribe', async(() => {
     component.greet.subscribe(d => {
       expect(d).toBe('Hi');
     });
 
     component.doGreet();
-  });
-
-  it('should fire the event emitter when triggering an event', () => {
-    component.greet.subscribe(d => {
-      expect(d).toBe('Hi');
-    });
-
-    fixture.debugElement.triggerEventHandler('greet', <Event>{});
-  });
+  }));
 });

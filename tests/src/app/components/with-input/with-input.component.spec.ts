@@ -9,7 +9,7 @@ describe('WithInputComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WithInputComponent],
-    }).compileComponents();
+    });
   }));
 
   beforeEach(() => {

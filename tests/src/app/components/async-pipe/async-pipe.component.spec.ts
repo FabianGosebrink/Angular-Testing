@@ -9,7 +9,7 @@ describe('AsyncPipeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AsyncPipeComponent],
-    }).compileComponents();
+    });
   }));
 
   beforeEach(() => {

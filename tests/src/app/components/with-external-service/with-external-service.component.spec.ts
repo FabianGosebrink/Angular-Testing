@@ -21,7 +21,7 @@ describe('WithExternalServiceComponent', () => {
       imports: [BrowserModule, HttpClientTestingModule],
       declarations: [WithExternalServiceComponent],
       providers: [CustomHttpService],
-    }).compileComponents();
+    });
   }));
 
   beforeEach(() => {
@@ -35,19 +35,29 @@ describe('WithExternalServiceComponent', () => {
   });
 
   it('(IntegrationTest) should get data when loaded', async(() => {
-    expect(queryDebugElement<WithExternalServiceComponent>(fixture, 'span')).toBeFalsy();
+    expect(
+      queryDebugElement<WithExternalServiceComponent>(fixture, 'span')
+    ).toBeFalsy();
 
-    const spy = spyOn(service, 'getSingle').and.returnValue(of(responseObject).pipe(delay(500)));
+    const spy = spyOn(service, 'getSingle').and.returnValue(
+      of(responseObject).pipe(delay(500))
+    );
     fixture.detectChanges(); // ngOnInit()
 
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       expect(spy.calls.any()).toBe(true, 'getSingle called');
-      expect(queryDebugElement<WithExternalServiceComponent>(fixture, 'span')).toBeDefined();
-      expect(queryDebugElement<WithExternalServiceComponent>(fixture, 'pre')).toBeDefined();
+      expect(
+        queryDebugElement<WithExternalServiceComponent>(fixture, 'span')
+      ).toBeDefined();
+      expect(
+        queryDebugElement<WithExternalServiceComponent>(fixture, 'pre')
+      ).toBeDefined();
       expect(component.result$).toBeDefined();
 
-      expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe('Luke Skywalker');
+      expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe(
+        'Luke Skywalker'
+      );
     });
   }));
 });
