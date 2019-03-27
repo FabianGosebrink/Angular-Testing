@@ -24,7 +24,7 @@ describe('CustomHttpService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get the correct star wars character', () => {
+  it('should get the correct star wars character', async(() => {
     service.getSingle(1).subscribe((data: any) => {
       expect(data.name).toBe('Luke Skywalker');
     });
@@ -40,7 +40,7 @@ describe('CustomHttpService', () => {
     });
 
     httpMock.verify();
-  });
+  }));
 
   it('should post the correct data', () => {
     service.post<any>({ firstname: 'firstname' }).subscribe((data: any) => {
