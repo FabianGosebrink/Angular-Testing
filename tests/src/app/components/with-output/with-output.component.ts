@@ -3,7 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-with-output',
   templateUrl: './with-output.component.html',
-  styleUrls: ['./with-output.component.css'],
+  styleUrls: ['./with-output.component.css']
 })
 export class WithOutputComponent implements OnInit {
   @Output() greet = new EventEmitter<string>();
@@ -14,4 +14,8 @@ export class WithOutputComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  greetFromNested(event) {
+    console.log(event);
+  }
 }
