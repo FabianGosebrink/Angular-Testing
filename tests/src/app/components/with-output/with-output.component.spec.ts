@@ -3,7 +3,7 @@ import { WithOutputComponent } from './with-output.component';
 import { WithOutputNestedComponent } from '../with-output-nested/with-output-nested.component';
 import { By } from '@angular/platform-browser';
 
-fdescribe('WithOutputComponent', () => {
+describe('WithOutputComponent', () => {
   let component: WithOutputComponent;
   let nestedComponent: WithOutputNestedComponent;
   let fixture: ComponentFixture<WithOutputComponent>;
