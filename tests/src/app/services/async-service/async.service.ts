@@ -6,7 +6,7 @@ export class AsyncService {
   constructor() {}
 
   getNameASync(): Observable<string> {
-    return Observable.create((observer: Observer<string>) => {
+    return new Observable((observer: Observer<string>) => {
       setTimeout(() => {
         observer.next('Fabian');
         observer.complete();

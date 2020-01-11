@@ -71,7 +71,7 @@ describe('AsyncService', () => {
     @Injectable()
     class AsyncFakeService {
       getNameASync(): Observable<string> {
-        return Observable.create((observer: Observer<string>) => {
+        return new Observable((observer: Observer<string>) => {
           setTimeout(() => {
             observer.next('FakeFabian');
             observer.complete();

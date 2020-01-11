@@ -95,7 +95,7 @@ describe('CustomHttpService', () => {
   });
 
   it('should return available languages', async(() => {
-    service.getlanguages().subscribe(x => {
+    service.getLanguages().subscribe(x => {
       expect(x).toContain('en');
       expect(x).toContain('de');
       expect(x).toContain('it');

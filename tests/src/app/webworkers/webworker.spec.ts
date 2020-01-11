@@ -1,4 +1,4 @@
-fdescribe('web worker tests', () => {
+describe('web worker tests', () => {
   it('web worker can be created', () => {
     const myWorker = new Worker('assets/worker.js');
     expect(myWorker).toBeTruthy();

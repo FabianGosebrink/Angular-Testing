@@ -25,8 +25,8 @@ export class CustomHttpService {
     return this.httpClient.delete(`http://replace.with.api/anything/${id}`);
   }
 
-  getlanguages() {
-    return Observable.create((observer: Observer<string>) => {
+  getLanguages() {
+    return new Observable((observer: Observer<string>) => {
       setTimeout(() => {
         observer.next(`['en', 'de', 'it']`);
         observer.complete();
