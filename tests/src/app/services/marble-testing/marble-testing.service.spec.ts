@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { cold } from 'jasmine-marbles';
 import { MarbleTestingService } from './marble-testing.service';
-import { getTestScheduler, cold } from 'jasmine-marbles';
 
 export class MarbleTestingServiceMock {
   getValues() {

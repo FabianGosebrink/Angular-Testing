@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { WithOutputComponent } from './with-output.component';
-import { WithOutputNestedComponent } from '../with-output-nested/with-output-nested.component';
 import { By } from '@angular/platform-browser';
+import { WithOutputNestedComponent } from '../with-output-nested/with-output-nested.component';
+import { WithOutputComponent } from './with-output.component';
 
 describe('WithOutputComponent', () => {
   let component: WithOutputComponent;
@@ -56,17 +56,6 @@ describe('WithOutputComponent', () => {
     );
   });
 
-  it('should emit the nested Eventemitter when clicking the nested button', () => {
-    spyOn(nestedComponent.greetFromNested, 'emit');
-
-    const button = nestedFixture.nativeElement.querySelector('button');
-    button.click();
-
-    expect(nestedComponent.greetFromNested.emit).toHaveBeenCalledWith(
-      'Hi from nested'
-    );
-  });
-
   it('should call the parent component method when eventEmitter fires', () => {
     spyOn(component, 'greetFromNested');
     const nestedComp = fixture.debugElement.query(
@@ -81,8 +70,10 @@ describe('WithOutputComponent', () => {
     const nestedComp = fixture.debugElement.query(
       By.directive(WithOutputNestedComponent)
     );
+
     const nestedButton = nestedComp.query(By.css('button'));
-    nestedButton.nativeElement.click();
+    // nestedButton.nativeElement.click();
+    nestedButton.triggerEventHandler('click', {});
     expect(component.greetFromNested).toHaveBeenCalledWith('Hi from nested');
   });
 });
