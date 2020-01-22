@@ -1,7 +1,7 @@
 import { ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-export function queryDebugElement<T>(
+export function getDebugElement<T>(
   fixture: ComponentFixture<T>,
   searchItem: string
 ) {
@@ -11,13 +11,15 @@ export function queryDebugElement<T>(
 export function getNativeHtmlElement<T>(
   fixture: ComponentFixture<T>,
   searchItem: string
-) {
-  return queryDebugElement(fixture, searchItem).nativeElement;
+): HTMLElement {
+  const debugElement = getDebugElement(fixture, searchItem);
+  return debugElement ? debugElement.nativeElement : null;
 }
 
 export function getInnerHtml<T>(
   fixture: ComponentFixture<T>,
   searchItem: string
 ) {
-  return getNativeHtmlElement(fixture, searchItem).innerHTML;
+  const nativeElement = getNativeHtmlElement(fixture, searchItem);
+  return nativeElement ? nativeElement.innerHTML : null;
 }

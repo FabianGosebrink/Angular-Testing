@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plain-html-events.component.css']
 })
 export class PlainHtmlEventsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  blurFunction() {
+    // ...
   }
-
 }

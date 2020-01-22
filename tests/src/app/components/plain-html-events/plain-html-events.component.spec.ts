@@ -9,7 +9,7 @@ describe('PlainHtmlEventsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PlainHtmlEventsComponent]
-    }).compileComponents();
+    });
   }));
 
   beforeEach(() => {
@@ -29,9 +29,9 @@ describe('PlainHtmlEventsComponent', () => {
 
   it('click on button click element', () => {
     const button = helpers.getNativeHtmlElement(fixture, 'button');
-    spyOn(button, 'click');
+    const spy = spyOn(button, 'click');
     button.click();
-    expect(button.click).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalled();
   });
 
   it('button click changes InnerHtml of span in specific text', () => {
@@ -48,10 +48,27 @@ describe('PlainHtmlEventsComponent', () => {
     expect(input).toBeTruthy();
   });
 
-  it('input blur event gets called', () => {
+  it('input gets focus on focus event', () => {
     const input = helpers.getNativeHtmlElement(fixture, 'input');
-    spyOn(input, 'blur');
+    const focusedElement = helpers.getNativeHtmlElement(fixture, ':focus');
+    expect(focusedElement).toBeFalsy();
+    input.focus();
+    expect(document.activeElement).toBe(input);
+  });
+
+  it('blur events lets loose the focus', () => {
+    const input = helpers.getNativeHtmlElement(fixture, 'input');
+    input.focus();
+    expect(document.activeElement).toBe(input);
     input.blur();
-    expect(input.blur).toHaveBeenCalledTimes(1);
+    expect(document.activeElement).not.toBe(input);
+  });
+
+  it('blur events calls blur method', () => {
+    spyOn(component, 'blurFunction');
+    const input = helpers.getDebugElement(fixture, 'input');
+    input.triggerEventHandler('focus', null);
+    input.triggerEventHandler('blur', null);
+    expect(component.blurFunction).toHaveBeenCalled();
   });
 });
