@@ -1,17 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WithOutputNestedComponent } from './with-output-nested.component';
 
 describe('WithOutputNestedComponent', () => {
   let component: WithOutputNestedComponent;
   let fixture: ComponentFixture<WithOutputNestedComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ WithOutputNestedComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [WithOutputNestedComponent],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WithOutputNestedComponent);

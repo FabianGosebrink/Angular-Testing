@@ -8,18 +8,9 @@ export function getDebugElement<T>(
   return fixture.debugElement.query(By.css(searchItem));
 }
 
-export function getNativeHtmlElement<T>(
-  fixture: ComponentFixture<T>,
-  searchItem: string
-): HTMLElement {
-  const debugElement = getDebugElement(fixture, searchItem);
-  return debugElement ? debugElement.nativeElement : null;
-}
-
 export function getInnerHtml<T>(
   fixture: ComponentFixture<T>,
   searchItem: string
 ) {
-  const nativeElement = getNativeHtmlElement(fixture, searchItem);
-  return nativeElement ? nativeElement.innerHTML : null;
+  return fixture.debugElement.query(By.css(searchItem)).nativeElement.innerHTML;
 }

@@ -1,5 +1,4 @@
 import {
-  async,
   ComponentFixture,
   fakeAsync,
   TestBed,
@@ -19,17 +18,17 @@ describe('ShellComponent', () => {
   let fixture: ComponentFixture<ShellComponent>;
   let service: TodoService;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CoreModule, ReactiveFormsModule],
       declarations: [ShellComponent, TodoFormComponent, TodoListComponent],
-    }).compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ShellComponent);
     component = fixture.componentInstance;
-    service = TestBed.get(TodoService);
+    service = TestBed.inject(TodoService);
   });
 
   it('should create', () => {

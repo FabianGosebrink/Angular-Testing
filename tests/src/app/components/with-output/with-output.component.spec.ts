@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { WithOutputNestedComponent } from '../with-output-nested/with-output-nested.component';
 import { WithOutputComponent } from './with-output.component';
@@ -9,11 +9,11 @@ describe('WithOutputComponent', () => {
   let fixture: ComponentFixture<WithOutputComponent>;
   let nestedFixture: ComponentFixture<WithOutputNestedComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WithOutputComponent, WithOutputNestedComponent]
+      declarations: [WithOutputComponent, WithOutputNestedComponent],
     });
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WithOutputComponent);
@@ -37,13 +37,16 @@ describe('WithOutputComponent', () => {
     expect(component.greet.emit).toHaveBeenCalledWith('Hi');
   });
 
-  it('should test the emitter with a simple subscribe', async(() => {
-    component.greet.subscribe(d => {
-      expect(d).toBe('Hi');
-    });
+  it(
+    'should test the emitter with a simple subscribe',
+    waitForAsync(() => {
+      component.greet.subscribe((d) => {
+        expect(d).toBe('Hi');
+      });
 
-    component.doGreet();
-  }));
+      component.doGreet();
+    })
+  );
 
   it('should emit the nested Eventemitter when clicking the nested button', () => {
     spyOn(nestedComponent.greetFromNested, 'emit');

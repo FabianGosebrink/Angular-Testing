@@ -20,7 +20,8 @@ describe('BasicService', () => {
     beforeEach(() =>
       TestBed.configureTestingModule({
         providers: [BasicService],
-      }));
+      })
+    );
 
     beforeEach(inject([BasicService], (s: BasicService) => {
       service = s;
@@ -39,7 +40,7 @@ describe('BasicService', () => {
         providers: [BasicService],
       });
 
-      service = TestBed.get(BasicService);
+      service = TestBed.inject(BasicService);
     });
 
     it('should have a service instance', () => {
@@ -55,7 +56,7 @@ describe('BasicService', () => {
         providers: [BasicService],
       });
 
-      service = TestBed.get(BasicService);
+      service = TestBed.inject(BasicService);
     });
 
     it('should add properly: injection method 1', () => {
