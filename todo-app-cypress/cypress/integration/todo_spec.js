@@ -1,10 +1,10 @@
 describe('My First Test', () => {
   beforeEach(function() {
     cy.visit('http://localhost:4200');
-    cy.get('#addtodobutton').as('addtodobutton');
-    cy.get('#todoinput').as('todoinput');
-    cy.get('#todolist').as('todolist');
-    cy.get('#addtodoform').as('addtodoform');
+  });
+
+  it('Application has the correct link!', () => {
+    cy.url().should('eq', 'http://localhost:4200/');
   });
 
   it('Application has the correct title!', () => {
@@ -16,35 +16,35 @@ describe('My First Test', () => {
   });
 
   it('Button has correct naming', () => {
-    cy.get('@addtodobutton').should('contain', 'Add Todo');
+    cy.get('#addtodobutton').should('contain', 'Add Todo');
   });
 
   it('Add Todo button is disabled when input is empty', () => {
-    cy.get('@addtodobutton').should('have.attr', 'disabled');
+    cy.get('#addtodobutton').should('have.attr', 'disabled');
   });
 
   it('Add Todo button is enabled when input is not empty', () => {
-    cy.get('@addtodobutton')
+    cy.get('#addtodobutton')
       .should('have.attr', 'disabled')
-      .get('@todoinput')
+      .get('#todoinput')
       .type('SomeTodo')
-      .get('@addtodobutton')
+      .get('#addtodobutton')
       .should('not.have.attr', 'disabled');
   });
 
   it('Submit Form should clear Input', () => {
-    cy.get('@todoinput')
+    cy.get('#todoinput')
       .type('SomeTodo')
-      .get('@addtodoform')
+      .get('#addtodoform')
       .submit()
-      .get('@todoinput')
+      .get('#todoinput')
       .should('have.value', '');
   });
 
   it('After submitting form list should contain element', () => {
-    cy.get('@todoinput')
+    cy.get('#todoinput')
       .type('SomeTodo')
-      .get('@addtodoform')
+      .get('#addtodoform')
       .submit()
       .get('#todolist>li')
       .its('length')
@@ -52,9 +52,9 @@ describe('My First Test', () => {
   });
 
   it("After clicking 'done' the item should contain done css class", () => {
-    cy.get('@todoinput')
+    cy.get('#todoinput')
       .type('SomeTodo')
-      .get('@addtodoform')
+      .get('#addtodoform')
       .submit()
       .get('#doneButton')
       .click()
