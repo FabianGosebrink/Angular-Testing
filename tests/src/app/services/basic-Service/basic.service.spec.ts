@@ -32,7 +32,7 @@ describe('BasicService', () => {
     });
   });
 
-  describe('Injecting via TestBed.get()', () => {
+  describe('Injecting via TestBed.inject()', () => {
     let service: BasicService;
 
     beforeEach(() => {
