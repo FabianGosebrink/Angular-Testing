@@ -1,5 +1,5 @@
 describe('My First Test', () => {
-  beforeEach(function() {
+  beforeEach(() => {
     cy.visit('http://localhost:4200');
   });
 
