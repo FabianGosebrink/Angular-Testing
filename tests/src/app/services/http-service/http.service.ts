@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
+import { Observable, Observer, timer } from 'rxjs';
+import { mapTo } from 'rxjs/operators';
 
 @Injectable()
 export class CustomHttpService {
@@ -26,11 +27,6 @@ export class CustomHttpService {
   }
 
   getLanguages() {
-    return new Observable((observer: Observer<string>) => {
-      setTimeout(() => {
-        observer.next(`['en', 'de', 'it']`);
-        observer.complete();
-      }, 1000);
-    });
+    return timer(1000).pipe(mapTo(`['en', 'de', 'it']`));
   }
 }
