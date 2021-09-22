@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
-import { Observable, Observer, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { Observable, Observer, of, timer } from 'rxjs';
+import { delay, mapTo } from 'rxjs/operators';
 import { AsyncService } from './async.service';
 
 describe('AsyncService', () => {
@@ -20,18 +20,15 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
-      'should get the name',
-      waitForAsync(() => {
-        service.getNameASync().subscribe((name: string) => {
-          expect(name).toBe('Fabian');
-        });
-      })
-    );
+    it('should get the name', () => {
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('Fabian');
+      });
+    });
 
     it('should get the name (fakeasync)', fakeAsync(() => {
       let value;
-      service.getNameASync().subscribe((name: string) => {
+      service.getName().subscribe((name: string) => {
         value = name;
       });
 
@@ -63,28 +60,23 @@ describe('AsyncService', () => {
     it(
       'should get the name',
       waitForAsync(() => {
-        const spy = spyOn(service, 'getNameASync').and.returnValue(
+        const spy = spyOn(service, 'getName').and.returnValue(
           of('SpyFabian').pipe(delay(500))
         );
 
-        service.getNameASync().subscribe((name: string) => {
+        service.getName().subscribe((name: string) => {
           expect(name).toBe('SpyFabian');
         });
-        expect(spy.calls.any()).toBe(true, 'getNameASync called');
+        expect(spy.calls.any()).toBe(true);
       })
     );
   });
 
   describe('AsyncService with fake service', () => {
     @Injectable()
-    class AsyncFakeService {
-      getNameASync(): Observable<string> {
-        return new Observable((observer: Observer<string>) => {
-          setTimeout(() => {
-            observer.next('FakeFabian');
-            observer.complete();
-          }, 500);
-        });
+    class AsyncServiceMock {
+      getName(): Observable<string> {
+        return timer(500).pipe(mapTo('FakeFabian'));
       }
     }
 
@@ -92,7 +84,7 @@ describe('AsyncService', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [{ provide: AsyncService, useClass: AsyncFakeService }],
+        providers: [{ provide: AsyncService, useClass: AsyncServiceMock }],
       });
 
       service = TestBed.inject(AsyncService);
@@ -105,7 +97,7 @@ describe('AsyncService', () => {
     it(
       'should get the name (async)',
       waitForAsync(() => {
-        service.getNameASync().subscribe((name: string) => {
+        service.getName().subscribe((name: string) => {
           expect(name).toBe('FakeFabian');
         });
       })
@@ -113,7 +105,7 @@ describe('AsyncService', () => {
 
     it('should get the name (fakeasync)', fakeAsync(() => {
       let value;
-      service.getNameASync().subscribe((name: string) => {
+      service.getName().subscribe((name: string) => {
         value = name;
       });
 
