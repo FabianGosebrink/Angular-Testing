@@ -38,5 +38,7 @@ describe('FilterPipe', () => {
     const filtered = filterPipe.transform(items, 'name', 'Hans');
 
     expect(filtered.length).toBe(2);
+
+    expect(filtered).toMatchSnapshot();
   });
 });
