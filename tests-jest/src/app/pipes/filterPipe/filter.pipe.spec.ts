@@ -8,12 +8,12 @@ describe('FilterPipe', () => {
     filterPipe = new FilterPipe();
   });
 
-  it('create an instance', () => {
+  test('create an instance', () => {
     const pipe = new FilterPipe();
     expect(pipe).toBeTruthy();
   });
 
-  it('filterPipe should filter', () => {
+  test('filterPipe should filter', () => {
     const items = [];
 
     items.push({ id: 1, name: 'Hans' });
@@ -27,7 +27,7 @@ describe('FilterPipe', () => {
     expect(filtered.length).toBe(1);
   });
 
-  it('filterPipe should filter two items', () => {
+  test('filterPipe should filter two items', () => {
     const items = [];
 
     items.push({ id: 1, name: 'Hans' });

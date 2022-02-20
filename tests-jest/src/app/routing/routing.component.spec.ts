@@ -33,7 +33,7 @@ describe('Router: App', () => {
     router.initialNavigation();
   });
 
-  it('navigate to "" redirects you to /home', fakeAsync(() => {
+  test('navigate to "" redirects you to /home', fakeAsync(() => {
     fixture.detectChanges();
 
     router.navigate(['']);
@@ -42,7 +42,7 @@ describe('Router: App', () => {
     expect(location.path()).toBe('/home');
   }));
 
-  it(
+  test(
     'navigate to "search" takes you to /search',
     waitForAsync(() => {
       fixture.detectChanges();

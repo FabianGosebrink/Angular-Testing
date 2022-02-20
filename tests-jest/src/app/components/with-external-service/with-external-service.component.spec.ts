@@ -30,11 +30,11 @@ describe('WithExternalServiceComponent', () => {
     service = TestBed.inject(CustomHttpService);
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it(
+  test(
     'should get data when loaded',
     waitForAsync(() => {
       expect(

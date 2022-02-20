@@ -20,11 +20,11 @@ describe('CustomHttpService', () => {
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  it('should be created', () => {
+  test('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it(
+  test(
     'should get the correct star wars character',
     waitForAsync(() => {
       service.getSingle(1).subscribe((data: any) => {
@@ -45,12 +45,10 @@ describe('CustomHttpService', () => {
     })
   );
 
-  it('should post the correct data', () => {
-    service
-      .post<any>({ firstname: 'firstname' })
-      .subscribe((data: any) => {
-        expect(data.firstname).toBe('firstname');
-      });
+  test('should post the correct data', () => {
+    service.post<any>({ firstname: 'firstname' }).subscribe((data: any) => {
+      expect(data.firstname).toBe('firstname');
+    });
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything`,
@@ -65,12 +63,10 @@ describe('CustomHttpService', () => {
     httpMock.verify();
   });
 
-  it('should put the correct data', () => {
-    service
-      .put<any>(3, { firstname: 'firstname' })
-      .subscribe((data: any) => {
-        expect(data.firstname).toBe('firstname');
-      });
+  test('should put the correct data', () => {
+    service.put<any>(3, { firstname: 'firstname' }).subscribe((data: any) => {
+      expect(data.firstname).toBe('firstname');
+    });
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/3`,
@@ -85,7 +81,7 @@ describe('CustomHttpService', () => {
     httpMock.verify();
   });
 
-  it('should delete the correct data', () => {
+  test('should delete the correct data', () => {
     service.delete(3).subscribe((data: any) => {
       expect(data).toBe(3);
     });
@@ -101,7 +97,7 @@ describe('CustomHttpService', () => {
     httpMock.verify();
   });
 
-  it(
+  test(
     'should return available languages',
     waitForAsync(() => {
       service.getLanguages().subscribe((x) => {

@@ -23,12 +23,12 @@ describe('WithOutputComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
     expect(nestedComponent).toBeTruthy();
   });
 
-  it('should test the emitter with a Jasmine spy', () => {
+  test('should test the emitter with a Jasmine spy', () => {
     jest.spyOn(component.greet, 'emit');
 
     const button = fixture.nativeElement.querySelector('button');
@@ -37,7 +37,7 @@ describe('WithOutputComponent', () => {
     expect(component.greet.emit).toHaveBeenCalledWith('Hi');
   });
 
-  it(
+  test(
     'should test the emitter with a simple subscribe',
     waitForAsync(() => {
       component.greet.subscribe((d) => {
@@ -48,7 +48,7 @@ describe('WithOutputComponent', () => {
     })
   );
 
-  it('should emit the nested Eventemitter when clicking the nested button', () => {
+  test('should emit the nested Eventemitter when clicking the nested button', () => {
     jest.spyOn(nestedComponent.greetFromNested, 'emit');
 
     const button = nestedFixture.nativeElement.querySelector('button');
@@ -59,7 +59,7 @@ describe('WithOutputComponent', () => {
     );
   });
 
-  it('should call the parent component method when eventEmitter fires', () => {
+  test('should call the parent component method when eventEmitter fires', () => {
     jest.spyOn(component, 'greetFromNested');
     const nestedComp = fixture.debugElement.query(
       By.directive(WithOutputNestedComponent)
@@ -68,7 +68,7 @@ describe('WithOutputComponent', () => {
     expect(component.greetFromNested).toHaveBeenCalledWith('Hi from nested');
   });
 
-  it('should call the parent component method when the nested button is clicked', () => {
+  test('should call the parent component method when the nested button is clicked', () => {
     jest.spyOn(component, 'greetFromNested');
     const nestedComp = fixture.debugElement.query(
       By.directive(WithOutputNestedComponent)

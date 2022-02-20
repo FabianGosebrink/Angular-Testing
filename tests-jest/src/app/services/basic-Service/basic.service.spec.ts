@@ -9,9 +9,12 @@ describe('BasicService', () => {
       });
     });
 
-    it('should be created', inject([BasicService], (service: BasicService) => {
-      expect(service).toBeTruthy();
-    }));
+    test('should be created', inject(
+      [BasicService],
+      (service: BasicService) => {
+        expect(service).toBeTruthy();
+      }
+    ));
   });
 
   describe('Injecting in a seperate foreach (Suite)', () => {
@@ -27,7 +30,7 @@ describe('BasicService', () => {
       service = s;
     }));
 
-    it('should have a service instance', () => {
+    test('should have a service instance', () => {
       expect(service).toBeDefined();
     });
   });
@@ -43,7 +46,7 @@ describe('BasicService', () => {
       service = TestBed.inject(BasicService);
     });
 
-    it('should have a service instance', () => {
+    test('should have a service instance', () => {
       expect(service).toBeDefined();
     });
   });
@@ -59,11 +62,11 @@ describe('BasicService', () => {
       service = TestBed.inject(BasicService);
     });
 
-    it('should add properly: injection method 1', () => {
+    test('should add properly: injection method 1', () => {
       expect(service.add(2, 3)).toBe(5);
     });
 
-    it('should add properly: (Spy)', () => {
+    test('should add properly: (Spy)', () => {
       jest.spyOn(service, 'add').mockReturnValue(6);
       expect(service.add(2, 3)).toBe(6);
     });

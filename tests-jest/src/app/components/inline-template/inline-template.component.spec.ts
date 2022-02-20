@@ -17,17 +17,17 @@ describe('InlineTemplateComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set the name', () => {
+  test('should set the name', () => {
     expect(component.name).toBe(undefined);
     fixture.detectChanges();
     expect(component.name).not.toBe('');
   });
 
-  it('should display the name', () => {
+  test('should display the name', () => {
     expect(component.name).toBe(undefined);
     fixture.detectChanges();
     const div = fixture.debugElement.query(By.css('div'));

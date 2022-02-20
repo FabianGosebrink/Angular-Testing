@@ -17,11 +17,11 @@ describe('WithInputComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it(
+  test(
     'should correctly render the passed @Input value',
     waitForAsync(() => {
       expect(

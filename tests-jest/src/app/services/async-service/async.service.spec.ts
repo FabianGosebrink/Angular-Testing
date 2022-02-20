@@ -16,11 +16,11 @@ describe('AsyncService', () => {
       service = TestBed.inject(AsyncService);
     });
 
-    it('should be created', () => {
+    test('should be created', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
+    test(
       'should get the name',
       waitForAsync(() => {
         service.getName().subscribe((name: string) => {
@@ -29,7 +29,7 @@ describe('AsyncService', () => {
       })
     );
 
-    it('should get the name (fakeasync)', fakeAsync(() => {
+    test('should get the name (fakeasync)', fakeAsync(() => {
       let value;
       service.getName().subscribe((name: string) => {
         value = name;
@@ -56,11 +56,11 @@ describe('AsyncService', () => {
       service = TestBed.inject(AsyncService);
     });
 
-    it('should be created', () => {
+    test('should be created', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
+    test(
       'should get the name',
       waitForAsync(() => {
         const spy = jest
@@ -93,11 +93,11 @@ describe('AsyncService', () => {
       service = TestBed.inject(AsyncService);
     });
 
-    it('should be created', () => {
+    test('should be created', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
+    test(
       'should get the name (async)',
       waitForAsync(() => {
         service.getName().subscribe((name: string) => {
@@ -106,7 +106,7 @@ describe('AsyncService', () => {
       })
     );
 
-    it('should get the name (fakeasync)', fakeAsync(() => {
+    test('should get the name (fakeasync)', fakeAsync(() => {
       let value;
       service.getName().subscribe((name: string) => {
         value = name;

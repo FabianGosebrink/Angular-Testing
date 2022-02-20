@@ -6,7 +6,7 @@ describe('AppModule', () => {
     TestBed.configureTestingModule({ providers: [AppModule] });
     pipe = TestBed.inject(AppModule);
   });
-  it('can load instance', () => {
+  test('can load instance', () => {
     expect(pipe).toBeTruthy();
   });
 });

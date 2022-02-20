@@ -18,12 +18,12 @@ describe('HighlightDirective', () => {
     inputEl = fixture.debugElement.query(By.css('#forTesting'));
   });
 
-  it('should create an instance', () => {
+  test('should create an instance', () => {
     const directive = new HoverHighlightDirective();
     expect(directive).toBeTruthy();
   });
 
-  it('hovering over span shall trigger colors', () => {
+  test('hovering over span shall trigger colors', () => {
     inputEl.triggerEventHandler('mouseover', null);
     fixture.detectChanges();
     expect(inputEl.nativeElement.style.backgroundColor).toBe('blue');
