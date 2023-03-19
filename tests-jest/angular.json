@@ -1,18 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "743f950a-d9df-4533-a292-aae142a578cc"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tests-jest": {
+    "tests-jest-v15": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,10 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tests-jest",
+            "outputPath": "dist/tests-jest-v15",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -48,12 +43,6 @@
                   "maximumError": "4kb"
                 }
               ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {
@@ -71,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tests-jest:build:production"
+              "browserTarget": "tests-jest-v15:build:production"
             },
             "development": {
-              "browserTarget": "tests-jest:build:development"
+              "browserTarget": "tests-jest-v15:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tests-jest:build"
+            "browserTarget": "tests-jest-v15:build"
           }
         },
         "test": {
@@ -101,6 +90,5 @@
         }
       }
     }
-  },
-  "defaultProject": "tests-jest"
+  }
 }
