@@ -20,14 +20,11 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
-      'should get the name',
-      waitForAsync(() => {
-        service.getName().subscribe((name: string) => {
-          expect(name).toBe('Fabian');
-        });
-      })
-    );
+    it('should get the name', waitForAsync(() => {
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('Fabian');
+      });
+    }));
 
     it('should get the name (fakeasync)', fakeAsync(() => {
       let value;
@@ -60,19 +57,16 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
-      'should get the name',
-      waitForAsync(() => {
-        const spy = spyOn(service, 'getName').and.returnValue(
-          of('SpyFabian').pipe(delay(500))
-        );
+    it('should get the name', waitForAsync(() => {
+      const spy = spyOn(service, 'getName').and.returnValue(
+        of('SpyFabian').pipe(delay(500))
+      );
 
-        service.getName().subscribe((name: string) => {
-          expect(name).toBe('SpyFabian');
-        });
-        expect(spy.calls.any()).toBe(true);
-      })
-    );
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('SpyFabian');
+      });
+      expect(spy.calls.any()).toBe(true);
+    }));
   });
 
   describe('AsyncService with fake service', () => {
@@ -97,14 +91,11 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    it(
-      'should get the name (async)',
-      waitForAsync(() => {
-        service.getName().subscribe((name: string) => {
-          expect(name).toBe('FakeFabian');
-        });
-      })
-    );
+    it('should get the name (async)', waitForAsync(() => {
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('FakeFabian');
+      });
+    }));
 
     it('should get the name (fakeasync)', fakeAsync(() => {
       let value;

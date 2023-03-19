@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
-import { getDebugElement, getInnerHtml } from '../../../helpers/DOM-helpers';
+import { getDebugElement, getInnerHtml } from '../../helpers/DOM-helpers';
 import { CustomHttpService } from '../../services/http-service/http.service';
 import { WithExternalServiceComponent } from './with-external-service.component';
 
@@ -34,28 +34,23 @@ describe('WithExternalServiceComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(
-    'should get data when loaded',
-    waitForAsync(() => {
-      expect(
-        getDebugElement<WithExternalServiceComponent>(fixture, 'span')
-      ).toBeFalsy();
+  it('should get data when loaded', waitForAsync(() => {
+    expect(
+      getDebugElement<WithExternalServiceComponent>(fixture, 'span')
+    ).toBeFalsy();
 
-      spyOn(service, 'getSingle').and.returnValue(
-        of(responseObject)
-      );
-      fixture.detectChanges(); // ngOnInit()
+    spyOn(service, 'getSingle').and.returnValue(of(responseObject));
+    fixture.detectChanges(); // ngOnInit()
 
-      expect(
-        getDebugElement<WithExternalServiceComponent>(fixture, 'span')
-      ).toBeDefined();
-      expect(
-        getDebugElement<WithExternalServiceComponent>(fixture, 'pre')
-      ).toBeDefined();
+    expect(
+      getDebugElement<WithExternalServiceComponent>(fixture, 'span')
+    ).toBeDefined();
+    expect(
+      getDebugElement<WithExternalServiceComponent>(fixture, 'pre')
+    ).toBeDefined();
 
-      expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe(
-        'Luke Skywalker'
-      );
-    })
-  );
+    expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe(
+      'Luke Skywalker'
+    );
+  }));
 });
