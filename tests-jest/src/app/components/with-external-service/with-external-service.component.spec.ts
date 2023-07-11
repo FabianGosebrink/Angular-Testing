@@ -17,7 +17,7 @@ describe('WithExternalServiceComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserModule, HttpClientTestingModule],
+      imports: [HttpClientTestingModule],
       declarations: [WithExternalServiceComponent],
       providers: [CustomHttpService],
     });

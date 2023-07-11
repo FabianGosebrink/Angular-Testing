@@ -3,11 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-inline-template',
   template: '<div>{{name}}</div>',
-  styleUrls: ['./inline-template.component.css']
+  styleUrls: ['./inline-template.component.css'],
 })
 export class InlineTemplateComponent implements OnInit {
   name: string;
-  constructor() {}
 
   ngOnInit() {
     this.name = 'Fabian';

@@ -16,6 +16,8 @@ describe('WithOutputComponent', () => {
   });
 
   beforeEach(() => {
+    global.console.log = jest.fn();
+
     fixture = TestBed.createComponent(WithOutputComponent);
     component = fixture.componentInstance;
     nestedFixture = TestBed.createComponent(WithOutputNestedComponent);
@@ -37,16 +39,13 @@ describe('WithOutputComponent', () => {
     expect(component.greet.emit).toHaveBeenCalledWith('Hi');
   });
 
-  test(
-    'should test the emitter with a simple subscribe',
-    waitForAsync(() => {
-      component.greet.subscribe((d) => {
-        expect(d).toBe('Hi');
-      });
+  test('should test the emitter with a simple subscribe', waitForAsync(() => {
+    component.greet.subscribe((d) => {
+      expect(d).toBe('Hi');
+    });
 
-      component.doGreet();
-    })
-  );
+    component.doGreet();
+  }));
 
   test('should emit the nested Eventemitter when clicking the nested button', () => {
     jest.spyOn(nestedComponent.greetFromNested, 'emit');

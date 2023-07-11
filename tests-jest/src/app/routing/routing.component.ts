@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 
 @Component({
-  template: `Search`,
+  selector: 'search-component',
+  template: '',
 })
 export class SearchComponent {}
 
 @Component({
-  template: `Home`,
+  selector: 'home-component',
+  template: '',
 })
 export class HomeComponent {}
 
