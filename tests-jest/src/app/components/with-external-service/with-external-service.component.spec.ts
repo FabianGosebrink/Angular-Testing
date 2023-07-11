@@ -1,6 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { BrowserModule } from '@angular/platform-browser';
 import { of } from 'rxjs';
 import { getDebugElement, getInnerHtml } from '../../helpers/DOM-helpers';
 import { CustomHttpService } from '../../services/http-service/http.service';
