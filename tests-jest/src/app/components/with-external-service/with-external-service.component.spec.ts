@@ -33,22 +33,15 @@ describe('WithExternalServiceComponent', () => {
   });
 
   test('should get data when loaded', waitForAsync(() => {
-    expect(
-      getDebugElement<WithExternalServiceComponent>(fixture, 'span')
-    ).toBeFalsy();
+    expect(getDebugElement(fixture, 'span')).toBeFalsy();
 
     jest.spyOn(service, 'getSingle').mockReturnValue(of(responseObject));
+
     fixture.detectChanges(); // ngOnInit()
 
-    expect(
-      getDebugElement<WithExternalServiceComponent>(fixture, 'span')
-    ).toBeDefined();
-    expect(
-      getDebugElement<WithExternalServiceComponent>(fixture, 'pre')
-    ).toBeDefined();
+    expect(getDebugElement(fixture, 'span')).toBeDefined();
+    expect(getDebugElement(fixture, 'pre')).toBeDefined();
 
-    expect(getInnerHtml<WithExternalServiceComponent>(fixture, 'pre')).toBe(
-      'Luke Skywalker'
-    );
+    expect(getInnerHtml(fixture, 'pre')).toBe('Luke Skywalker');
   }));
 });
