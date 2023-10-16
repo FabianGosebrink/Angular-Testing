@@ -11,8 +11,8 @@ describe('HighlightDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DummyComponent, HoverHighlightDirective],
-    });
+    declarations: [DummyComponent, HoverHighlightDirective],
+});
     fixture = TestBed.createComponent(DummyComponent);
     component = fixture.componentInstance;
     inputEl = fixture.debugElement.query(By.css('#forTesting'));

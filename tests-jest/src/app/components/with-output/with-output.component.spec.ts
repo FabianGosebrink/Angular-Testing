@@ -11,8 +11,8 @@ describe('WithOutputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WithOutputComponent, WithOutputNestedComponent],
-    });
+    declarations: [WithOutputComponent, WithOutputNestedComponent],
+});
   });
 
   beforeEach(() => {

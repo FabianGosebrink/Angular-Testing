@@ -22,9 +22,9 @@ describe('Router: App', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(routes)],
-      declarations: [HomeComponent, SearchComponent, RouterComponent],
-    });
+    imports: [RouterTestingModule.withRoutes(routes)],
+    declarations: [HomeComponent, SearchComponent, RouterComponent],
+});
 
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);

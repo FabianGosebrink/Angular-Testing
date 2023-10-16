@@ -8,8 +8,8 @@ describe('WithInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WithInputComponent],
-    });
+    declarations: [WithInputComponent],
+});
   });
 
   beforeEach(() => {

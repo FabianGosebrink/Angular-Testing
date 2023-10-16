@@ -8,8 +8,8 @@ describe('AsyncPipeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AsyncPipeComponent],
-    });
+    declarations: [AsyncPipeComponent],
+});
   });
 
   beforeEach(() => {

@@ -16,10 +16,10 @@ describe('WithExternalServiceComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [WithExternalServiceComponent],
-      providers: [CustomHttpService],
-    });
+    imports: [HttpClientTestingModule],
+    declarations: [WithExternalServiceComponent],
+    providers: [CustomHttpService],
+});
   });
 
   beforeEach(() => {
