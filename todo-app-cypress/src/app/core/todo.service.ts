@@ -1,27 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
-import { Todo } from '../models/todo.model';
+import { Observable, delay, of } from 'rxjs';
+import { Todo } from '../models/todo';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TodoService {
-  private existingTodos: Todo[] = [];
+  private existingTodos: Todo[] = [
+    { done: false, description: 'Todo 1', id: '1', created: new Date() },
+  ];
 
   getAllTodos(): Observable<Todo[]> {
-    return Observable.create((observer: Observer<Todo[]>) => {
-      setTimeout(() => {
-        observer.next(this.existingTodos);
-        observer.complete();
-      }, 200);
-    });
+    return of(this.existingTodos).pipe(delay(200));
   }
 
   getSingleTodo(id: string): Observable<Todo> {
-    return Observable.create((observer: Observer<Todo>) => {
-      setTimeout(() => {
-        observer.next(this.existingTodos.find((x) => x.id === id));
-        observer.complete();
-      }, 200);
-    });
+    const todo = this.existingTodos.find((x) => x.id === id);
+
+    return of(todo).pipe(delay(200));
   }
 
   addTodo(description: string): Todo {

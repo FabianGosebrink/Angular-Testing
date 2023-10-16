@@ -15,9 +15,8 @@ describe('TodoFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [TodoFormComponent],
-    }).compileComponents();
+    imports: [ReactiveFormsModule, TodoFormComponent]
+}).compileComponents();
   }));
 
   beforeEach(() => {

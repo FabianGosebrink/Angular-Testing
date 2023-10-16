@@ -1,17 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { Todo } from '../models/todo.model';
+import { Todo } from '../models/todo';
 import { TodoListComponent } from './todo-list.component';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
   let fixture: ComponentFixture<TodoListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TodoListComponent],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TodoListComponent],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoListComponent);
@@ -49,8 +49,8 @@ describe('TodoListComponent', () => {
     fixture.detectChanges();
     const allItems = fixture.debugElement.queryAll(By.css('li'));
 
-    const renderedText = allItems[0].nativeElement.querySelector('span')
-      .innerHTML;
+    const renderedText =
+      allItems[0].nativeElement.querySelector('span').innerHTML;
     expect(renderedText).toBe(todo.description);
   });
 

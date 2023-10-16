@@ -1,10 +1,13 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from '../models/todo.model';
+import { Todo } from '../models/todo';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
+  standalone: true,
+  imports: [NgFor, NgIf],
 })
 export class TodoListComponent {
   @Input() items: Todo[] = [];

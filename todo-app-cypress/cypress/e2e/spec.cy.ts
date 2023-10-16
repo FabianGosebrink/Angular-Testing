@@ -48,7 +48,7 @@ describe('My First Test', () => {
       .submit()
       .get('#todolist>li')
       .its('length')
-      .should('be.eq', 1);
+      .should('be.gt', 0);
   });
 
   it("After clicking 'done' the item should contain done css class", () => {

@@ -21,9 +21,8 @@ describe('ShellComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CoreModule, ReactiveFormsModule],
-      declarations: [ShellComponent, TodoFormComponent, TodoListComponent],
-    }).compileComponents();
+    imports: [CoreModule, ReactiveFormsModule, ShellComponent, TodoFormComponent, TodoListComponent]
+}).compileComponents();
   }));
 
   beforeEach(() => {
