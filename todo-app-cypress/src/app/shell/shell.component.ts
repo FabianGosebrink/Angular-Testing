@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { TodoService } from '../core/todo.service';
 import { Todo } from '../models/todo.model';
 
@@ -8,8 +8,9 @@ import { Todo } from '../models/todo.model';
   styleUrls: ['./shell.component.css'],
 })
 export class ShellComponent implements OnInit {
+  private readonly todoService = inject(TodoService);
+
   items: Todo[] = [];
-  constructor(public todoService: TodoService) {}
 
   ngOnInit() {
     this.todoService

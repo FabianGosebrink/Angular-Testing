@@ -4,8 +4,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [AppComponent],
-}).compileComponents();
+      imports: [AppComponent],
+    }).compileComponents();
   });
 
   it('should create the app', () => {
@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tests-jest-v15'`, () => {
+  it(`should have as title 'Angular Jest'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tests-jest-v15');
+    expect(app.title).toEqual('Angular Jest');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('tests-jest-v15 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'Angular Jest app is running!'
+    );
   });
 });

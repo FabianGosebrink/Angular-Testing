@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, Observer, timer } from 'rxjs';
-import { mapTo } from 'rxjs/operators';
+import { Injectable, inject } from '@angular/core';
+import { timer } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CustomHttpService {
-  constructor(private httpClient: HttpClient) {}
+  private readonly httpClient = inject(HttpClient);
 
   getSingle<T>(id: number) {
     return this.httpClient.get<T>(`http://replace.with.api/anything/${id}`);
@@ -27,6 +27,6 @@ export class CustomHttpService {
   }
 
   getLanguages() {
-    return timer(1000).pipe(mapTo(`['en', 'de', 'it']`));
+    return timer(1000).pipe(map(() => ['en', 'de', 'it']));
   }
 }

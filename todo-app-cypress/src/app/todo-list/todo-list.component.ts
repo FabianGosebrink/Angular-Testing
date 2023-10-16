@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../models/todo.model';
 
 @Component({
@@ -6,15 +6,9 @@ import { Todo } from '../models/todo.model';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent implements OnInit {
-  @Input()
-  items: Todo[] = [];
-  @Output()
-  markedAsDone = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit() {}
+export class TodoListComponent {
+  @Input() items: Todo[] = [];
+  @Output() markedAsDone = new EventEmitter();
 
   markAsDone(item: Todo) {
     this.markedAsDone.emit(item);

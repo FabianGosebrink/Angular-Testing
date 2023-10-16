@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
-import { Observable, Observer, of, timer } from 'rxjs';
+import { Observable, of, timer } from 'rxjs';
 import { delay, mapTo } from 'rxjs/operators';
 import { AsyncService } from './async.service';
 
@@ -9,10 +9,6 @@ describe('AsyncService', () => {
     let service: AsyncService;
 
     beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [AsyncService],
-      });
-
       service = TestBed.inject(AsyncService);
     });
 
@@ -20,14 +16,11 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    test(
-      'should get the name',
-      waitForAsync(() => {
-        service.getName().subscribe((name: string) => {
-          expect(name).toBe('Fabian');
-        });
-      })
-    );
+    test('should get the name', waitForAsync(() => {
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('Fabian');
+      });
+    }));
 
     test('should get the name (fakeasync)', fakeAsync(() => {
       let value;
@@ -49,10 +42,6 @@ describe('AsyncService', () => {
     let service: AsyncService;
 
     beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [AsyncService],
-      });
-
       service = TestBed.inject(AsyncService);
     });
 
@@ -60,19 +49,16 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    test(
-      'should get the name',
-      waitForAsync(() => {
-        const spy = jest
-          .spyOn(service, 'getName')
-          .mockReturnValue(of('SpyFabian').pipe(delay(500)));
+    test('should get the name', waitForAsync(() => {
+      const spy = jest
+        .spyOn(service, 'getName')
+        .mockReturnValue(of('SpyFabian').pipe(delay(500)));
 
-        service.getName().subscribe((name: string) => {
-          expect(name).toBe('SpyFabian');
-        });
-        expect(spy.mock.calls.length).toBe(1);
-      })
-    );
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('SpyFabian');
+      });
+      expect(spy.mock.calls.length).toBe(1);
+    }));
   });
 
   describe('AsyncService with fake service', () => {
@@ -97,14 +83,11 @@ describe('AsyncService', () => {
       expect(service).toBeTruthy();
     });
 
-    test(
-      'should get the name (async)',
-      waitForAsync(() => {
-        service.getName().subscribe((name: string) => {
-          expect(name).toBe('FakeFabian');
-        });
-      })
-    );
+    test('should get the name (async)', waitForAsync(() => {
+      service.getName().subscribe((name: string) => {
+        expect(name).toBe('FakeFabian');
+      });
+    }));
 
     test('should get the name (fakeasync)', fakeAsync(() => {
       let value;

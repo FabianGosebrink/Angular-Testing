@@ -3,12 +3,6 @@ import { BasicService } from './basic.service';
 
 describe('BasicService', () => {
   describe('Injecting in every single Test', () => {
-    beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [BasicService],
-      });
-    });
-
     test('should be created', inject(
       [BasicService],
       (service: BasicService) => {
@@ -19,12 +13,6 @@ describe('BasicService', () => {
 
   describe('Injecting in a seperate foreach (Suite)', () => {
     let service: BasicService;
-
-    beforeEach(() =>
-      TestBed.configureTestingModule({
-        providers: [BasicService],
-      })
-    );
 
     beforeEach(inject([BasicService], (s: BasicService) => {
       service = s;
@@ -39,10 +27,6 @@ describe('BasicService', () => {
     let service: BasicService;
 
     beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [BasicService],
-      });
-
       service = TestBed.inject(BasicService);
     });
 
@@ -55,10 +39,6 @@ describe('BasicService', () => {
     let service: BasicService;
 
     beforeEach(() => {
-      TestBed.configureTestingModule({
-        providers: [BasicService],
-      });
-
       service = TestBed.inject(BasicService);
     });
 

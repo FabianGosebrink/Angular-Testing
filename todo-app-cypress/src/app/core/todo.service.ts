@@ -6,8 +6,6 @@ import { Todo } from '../models/todo.model';
 export class TodoService {
   private existingTodos: Todo[] = [];
 
-  constructor() {}
-
   getAllTodos(): Observable<Todo[]> {
     return Observable.create((observer: Observer<Todo[]>) => {
       setTimeout(() => {
@@ -20,7 +18,7 @@ export class TodoService {
   getSingleTodo(id: string): Observable<Todo> {
     return Observable.create((observer: Observer<Todo>) => {
       setTimeout(() => {
-        observer.next(this.existingTodos.find(x => x.id === id));
+        observer.next(this.existingTodos.find((x) => x.id === id));
         observer.complete();
       }, 200);
     });
@@ -37,14 +35,14 @@ export class TodoService {
   }
 
   updateTodo(toUpdate: Todo): Todo {
-    this.existingTodos.map(obj =>
-      this.existingTodos.find(o => o.id === obj.id)
+    this.existingTodos.map((obj) =>
+      this.existingTodos.find((o) => o.id === obj.id)
     );
     return toUpdate;
   }
 
   deleteTodo(id: string) {
-    this.existingTodos = this.existingTodos.filter(item => item.id !== id);
+    this.existingTodos = this.existingTodos.filter((item) => item.id !== id);
   }
 
   private guid() {

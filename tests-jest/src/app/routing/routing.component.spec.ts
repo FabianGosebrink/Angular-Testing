@@ -1,11 +1,5 @@
 import { Location } from '@angular/common';
-import {
-  async,
-  fakeAsync,
-  TestBed,
-  tick,
-  waitForAsync,
-} from '@angular/core/testing';
+import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import {
@@ -22,9 +16,13 @@ describe('Router: App', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule.withRoutes(routes)],
-    declarations: [HomeComponent, SearchComponent, RouterComponent],
-});
+      imports: [
+        RouterTestingModule.withRoutes(routes),
+        HomeComponent,
+        SearchComponent,
+        RouterComponent,
+      ],
+    });
 
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
@@ -42,13 +40,10 @@ describe('Router: App', () => {
     expect(location.path()).toBe('/home');
   }));
 
-  test(
-    'navigate to "search" takes you to /search',
-    waitForAsync(() => {
-      fixture.detectChanges();
-      router.navigate(['/search']).then(() => {
-        expect(location.path()).toBe('/search');
-      });
-    })
-  );
+  test('navigate to "search" takes you to /search', waitForAsync(() => {
+    fixture.detectChanges();
+    router.navigate(['/search']).then(() => {
+      expect(location.path()).toBe('/search');
+    });
+  }));
 });

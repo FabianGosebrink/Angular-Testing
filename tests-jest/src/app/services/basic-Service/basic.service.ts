@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class BasicService {
-  constructor() {}
-
   add(x: number, y: number) {
     return x + y;
   }

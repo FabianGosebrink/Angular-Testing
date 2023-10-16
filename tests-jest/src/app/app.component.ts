@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
   imports: [NgSwitch, NgSwitchDefault, NgSwitchCase],
 })
 export class AppComponent {
-  title = 'tests-jest-v15';
+  title = 'Angular Jest';
 }

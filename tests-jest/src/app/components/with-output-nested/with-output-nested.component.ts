@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-with-output-nested',
@@ -6,12 +6,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./with-output-nested.component.css'],
   standalone: true,
 })
-export class WithOutputNestedComponent implements OnInit {
+export class WithOutputNestedComponent {
   @Output() greetFromNested = new EventEmitter<string>();
-
-  constructor() {}
-
-  ngOnInit() {}
 
   doGreet() {
     this.greetFromNested.emit('Hi from nested');
