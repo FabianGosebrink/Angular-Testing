@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { getInnerHtml } from '../../helpers/DOM-helpers';
 import { WithInputComponent } from './with-input.component';
 
 describe('WithInputComponent', () => {
@@ -8,8 +8,8 @@ describe('WithInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [WithInputComponent],
-});
+      imports: [WithInputComponent],
+    });
   });
 
   beforeEach(() => {
@@ -21,21 +21,13 @@ describe('WithInputComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  test(
-    'should correctly render the passed @Input value',
-    waitForAsync(() => {
-      expect(
-        fixture.debugElement.query(By.css('p')).nativeElement.innerHTML
-      ).toBe('');
+  test('should correctly render the passed @Input value', waitForAsync(() => {
+    expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('');
 
-      component.name = 'Fabian';
+    component.name = 'Fabian';
 
-      fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        expect(
-          fixture.debugElement.query(By.css('p')).nativeElement.innerHTML
-        ).toBe('Fabian');
-      });
-    })
-  );
+    fixture.detectChanges();
+
+    expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('Fabian');
+  }));
 });

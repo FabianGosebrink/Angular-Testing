@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { getInnerHtml } from '../../helpers/DOM-helpers';
 import { InlineTemplateComponent } from './inline-template.component';
 
 describe('InlineTemplateComponent', () => {
@@ -8,8 +8,8 @@ describe('InlineTemplateComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [InlineTemplateComponent],
-});
+      imports: [InlineTemplateComponent],
+    });
   });
 
   beforeEach(() => {
@@ -21,17 +21,15 @@ describe('InlineTemplateComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should set the name', () => {
-    expect(component.name).toBe(undefined);
-    fixture.detectChanges();
-    expect(component.name).not.toBe('');
-  });
-
   test('should display the name', () => {
-    expect(component.name).toBe(undefined);
-    fixture.detectChanges();
-    const div = fixture.debugElement.query(By.css('div'));
+    expect(component.name).toBe('Fabian');
+    const innerHtmlBefore = getInnerHtml(fixture, 'div');
+    expect(innerHtmlBefore).toBe('');
 
-    expect(div.nativeElement.innerHTML).toBe(component.name);
+    fixture.detectChanges();
+
+    const innerHtmlAfter = getInnerHtml(fixture, 'div');
+
+    expect(innerHtmlAfter).toBe(component.name);
   });
 });

@@ -10,22 +10,23 @@ describe('WithExternalServiceComponent', () => {
   let fixture: ComponentFixture<WithExternalServiceComponent>;
   let service: CustomHttpService;
 
-  const responseObject = {
-    name: 'Luke Skywalker',
-  };
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule],
-    declarations: [WithExternalServiceComponent],
-    providers: [CustomHttpService],
-});
+      imports: [HttpClientTestingModule, WithExternalServiceComponent],
+      providers: [CustomHttpService],
+    });
   });
 
   beforeEach(() => {
+    service = TestBed.inject(CustomHttpService);
+    jest.spyOn(service, 'getSingle').mockReturnValue(
+      of({
+        name: 'Luke Skywalker',
+      })
+    );
+
     fixture = TestBed.createComponent(WithExternalServiceComponent);
     component = fixture.componentInstance;
-    service = TestBed.inject(CustomHttpService);
   });
 
   test('should create', () => {
@@ -33,14 +34,13 @@ describe('WithExternalServiceComponent', () => {
   });
 
   test('should get data when loaded', waitForAsync(() => {
-    expect(getDebugElement(fixture, 'span')).toBeFalsy();
+    expect(getDebugElement(fixture, 'span')).toBe(null);
+    expect(getDebugElement(fixture, 'pre')).toBe(null);
 
-    jest.spyOn(service, 'getSingle').mockReturnValue(of(responseObject));
+    fixture.detectChanges();
 
-    fixture.detectChanges(); // ngOnInit()
-
-    expect(getDebugElement(fixture, 'span')).toBeDefined();
-    expect(getDebugElement(fixture, 'pre')).toBeDefined();
+    expect(getDebugElement(fixture, 'span')).toBeTruthy();
+    expect(getDebugElement(fixture, 'pre')).toBeTruthy();
 
     expect(getInnerHtml(fixture, 'pre')).toBe('Luke Skywalker');
   }));

@@ -5,10 +5,10 @@ describe('WithOutputNestedComponent', () => {
   let component: WithOutputNestedComponent;
   let fixture: ComponentFixture<WithOutputNestedComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-    declarations: [WithOutputNestedComponent],
-}).compileComponents();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [WithOutputNestedComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -11,8 +11,8 @@ describe('WithOutputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    declarations: [WithOutputComponent, WithOutputNestedComponent],
-});
+      imports: [WithOutputComponent],
+    });
   });
 
   beforeEach(() => {
@@ -20,8 +20,10 @@ describe('WithOutputComponent', () => {
 
     fixture = TestBed.createComponent(WithOutputComponent);
     component = fixture.componentInstance;
+
     nestedFixture = TestBed.createComponent(WithOutputNestedComponent);
     nestedComponent = nestedFixture.componentInstance;
+
     fixture.detectChanges();
   });
 
@@ -30,7 +32,7 @@ describe('WithOutputComponent', () => {
     expect(nestedComponent).toBeTruthy();
   });
 
-  test('should test the emitter with a Jasmine spy', () => {
+  test('should test the emitter with a spy', () => {
     jest.spyOn(component.greet, 'emit');
 
     const button = fixture.nativeElement.querySelector('button');
@@ -60,10 +62,13 @@ describe('WithOutputComponent', () => {
 
   test('should call the parent component method when eventEmitter fires', () => {
     jest.spyOn(component, 'greetFromNested');
+
     const nestedComp = fixture.debugElement.query(
       By.directive(WithOutputNestedComponent)
     ).componentInstance;
+
     nestedComp.greetFromNested.emit('Hi from nested');
+
     expect(component.greetFromNested).toHaveBeenCalledWith('Hi from nested');
   });
 
