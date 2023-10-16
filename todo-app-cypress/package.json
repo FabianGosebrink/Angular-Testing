@@ -10,7 +10,7 @@
     "test": "ng test",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "e2e:ci": "start-server-and-test start http://localhost:4200 cy:open",
+    "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run",
     "e2e": "ng e2e"
   },
   "private": true,
