@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Component } from '@angular/core';
+import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 @Component({
@@ -7,12 +7,6 @@ import { delay } from 'rxjs/operators';
   templateUrl: './async-pipe.component.html',
   styleUrls: ['./async-pipe.component.css'],
 })
-export class AsyncPipeComponent implements OnInit {
-  name$: Observable<string>;
-
-  constructor() {}
-
-  ngOnInit() {
-    this.name$ = of('Fabian').pipe(delay(200));
-  }
+export class AsyncPipeComponent {
+  name$ = of('Fabian').pipe(delay(200));
 }
