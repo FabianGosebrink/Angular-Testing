@@ -10,11 +10,11 @@ describe('WithExternalServiceComponent', () => {
   let fixture: ComponentFixture<WithExternalServiceComponent>;
   let service: CustomHttpService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, WithExternalServiceComponent],
       providers: [CustomHttpService],
-    });
+    }).compileComponents();
   });
 
   beforeEach(() => {

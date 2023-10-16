@@ -9,10 +9,10 @@ describe('WithOutputComponent', () => {
   let fixture: ComponentFixture<WithOutputComponent>;
   let nestedFixture: ComponentFixture<WithOutputNestedComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [WithOutputComponent],
-    });
+    }).compileComponents();
   });
 
   beforeEach(() => {

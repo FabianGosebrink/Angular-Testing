@@ -14,15 +14,15 @@ describe('Router: App', () => {
   let router: Router;
   let fixture;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes(routes),
         HomeComponent,
         SearchComponent,
         RouterComponent,
       ],
-    });
+    }).compileComponents();
 
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);

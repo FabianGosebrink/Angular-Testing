@@ -9,10 +9,10 @@ describe('HighlightDirective', () => {
   let fixture: ComponentFixture<DummyComponent>;
   let inputEl: DebugElement;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [DummyComponent, HoverHighlightDirective],
-    });
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DummyComponent);
     component = fixture.componentInstance;

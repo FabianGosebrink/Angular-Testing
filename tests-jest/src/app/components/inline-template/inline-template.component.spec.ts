@@ -6,10 +6,10 @@ describe('InlineTemplateComponent', () => {
   let component: InlineTemplateComponent;
   let fixture: ComponentFixture<InlineTemplateComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [InlineTemplateComponent],
-    });
+    }).compileComponents();
   });
 
   beforeEach(() => {

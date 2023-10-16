@@ -8,8 +8,7 @@ describe('FilterPipe', () => {
   });
 
   test('create an instance', () => {
-    const pipe = new FilterPipe();
-    expect(pipe).toBeTruthy();
+    expect(filterPipe).toBeTruthy();
   });
 
   test('filterPipe should filter', () => {

@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { getInnerHtml } from '../../helpers/DOM-helpers';
 import { AsyncPipeComponent } from './async-pipe.component';
 
@@ -6,10 +11,10 @@ describe('AsyncPipeComponent', () => {
   let component: AsyncPipeComponent;
   let fixture: ComponentFixture<AsyncPipeComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [AsyncPipeComponent],
-    });
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -22,13 +27,15 @@ describe('AsyncPipeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should correctly visualize the emitted values from the stream', waitForAsync(() => {
+  test('should correctly visualize the emitted values from the stream', fakeAsync(() => {
     expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('');
+
     fixture.detectChanges();
 
-    fixture.whenStable().then(() => {
-      fixture.detectChanges();
-      expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
-    });
+    tick(200);
+
+    fixture.detectChanges();
+
+    expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
   }));
 });

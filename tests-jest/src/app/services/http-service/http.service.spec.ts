@@ -9,13 +9,11 @@ describe('CustomHttpService', () => {
   let service: CustomHttpService;
   let httpMock: HttpTestingController;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [CustomHttpService],
     });
 
-    // inject the service
     service = TestBed.inject(CustomHttpService);
     httpMock = TestBed.inject(HttpTestingController);
   });
@@ -24,26 +22,23 @@ describe('CustomHttpService', () => {
     expect(service).toBeTruthy();
   });
 
-  test(
-    'should get the correct star wars character',
-    waitForAsync(() => {
-      service.getSingle(1).subscribe((data: any) => {
-        expect(data.name).toBe('Luke Skywalker');
-      });
+  test('should get the correct star wars character', waitForAsync(() => {
+    service.getSingle(1).subscribe((data: any) => {
+      expect(data.name).toBe('Luke Skywalker');
+    });
 
-      const req = httpMock.expectOne(
-        `http://replace.with.api/anything/1`,
-        'call to api'
-      );
-      expect(req.request.method).toBe('GET');
+    const req = httpMock.expectOne(
+      `http://replace.with.api/anything/1`,
+      'call to api'
+    );
+    expect(req.request.method).toBe('GET');
 
-      req.flush({
-        name: 'Luke Skywalker',
-      });
+    req.flush({
+      name: 'Luke Skywalker',
+    });
 
-      httpMock.verify();
-    })
-  );
+    httpMock.verify();
+  }));
 
   test('should post the correct data', () => {
     service.post<any>({ firstname: 'firstname' }).subscribe((data: any) => {
@@ -97,15 +92,12 @@ describe('CustomHttpService', () => {
     httpMock.verify();
   });
 
-  test(
-    'should return available languages',
-    waitForAsync(() => {
-      service.getLanguages().subscribe((x) => {
-        expect(x).toContain('en');
-        expect(x).toContain('de');
-        expect(x).toContain('it');
-        expect(x).toBeDefined();
-      });
-    })
-  );
+  test('should return available languages', waitForAsync(() => {
+    service.getLanguages().subscribe((x) => {
+      expect(x).toContain('en');
+      expect(x).toContain('de');
+      expect(x).toContain('it');
+      expect(x).toBeDefined();
+    });
+  }));
 });

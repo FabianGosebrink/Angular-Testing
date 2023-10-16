@@ -6,10 +6,10 @@ describe('WithInputComponent', () => {
   let component: WithInputComponent;
   let fixture: ComponentFixture<WithInputComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [WithInputComponent],
-    });
+    }).compileComponents();
   });
 
   beforeEach(() => {
