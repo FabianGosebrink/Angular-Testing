@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tests-jest-v15": {
+    "tests": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,15 +11,22 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tests-jest-v15",
+            "outputPath": "dist/tests",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -39,12 +46,9 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -53,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tests-jest-v15:build:production"
+              "buildTarget": "tests:build:production"
             },
             "development": {
-              "buildTarget": "tests-jest-v15:build:development"
+              "buildTarget": "tests:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -64,23 +68,19 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tests-jest-v15:build"
+            "buildTarget": "tests:build"
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "tsconfig.spec.json",
-            "configPath": "./jest.config.ts",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
-            "scripts": []
+            "configPath": "./jest.config.ts"
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "6f456145-2d95-41ab-9694-58c51eb1fb35"
+    "analytics": "e21e57e0-528f-4a00-b76b-03b2855e6b8d"
   }
 }
