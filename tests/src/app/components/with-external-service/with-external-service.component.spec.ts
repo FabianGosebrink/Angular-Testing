@@ -1,7 +1,7 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { getDebugElement, getInnerHtml } from '../../helpers/DOM-helpers';
+import { provideMock } from '../../helpers/auto-mock';
 import { CustomHttpService } from '../../services/http-service/http.service';
 import { WithExternalServiceComponent } from './with-external-service.component';
 
@@ -12,8 +12,8 @@ describe('WithExternalServiceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, WithExternalServiceComponent],
-      providers: [CustomHttpService],
+      imports: [WithExternalServiceComponent],
+      providers: [provideMock(CustomHttpService)],
     }).compileComponents();
   });
 
