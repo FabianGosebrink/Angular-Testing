@@ -1,3 +1,5 @@
-<span *ngIf="result$ | async as result">
-  <pre>{{ result.name }}</pre>
-</span>
+@if (result$ | async; as result) {
+  <span>
+    <pre>{{ result.name }}</pre>
+  </span>
+}
