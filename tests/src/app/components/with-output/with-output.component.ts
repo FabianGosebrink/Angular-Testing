@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, output } from '@angular/core';
 import { WithOutputNestedComponent } from '../with-output-nested/with-output-nested.component';
 
 @Component({
@@ -11,8 +11,11 @@ import { WithOutputNestedComponent } from '../with-output-nested/with-output-nes
 export class WithOutputComponent {
   @Output() greet = new EventEmitter<string>();
 
+  greet2 = output<string>();
+
   doGreet() {
     this.greet.emit('Hi');
+    this.greet2.emit('Hi2');
   }
 
   greetFromNested(event) {

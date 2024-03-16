@@ -41,6 +41,15 @@ describe('WithOutputComponent', () => {
     expect(component.greet.emit).toHaveBeenCalledWith('Hi');
   });
 
+  test('should test the emitter with a spy 2', () => {
+    const spy = jest.spyOn(component.greet2, 'emit');
+
+    const button = fixture.nativeElement.querySelector('button');
+    button.click();
+
+    expect(spy).toHaveBeenCalledWith('Hi2');
+  });
+
   test('should test the emitter with a simple subscribe', waitForAsync(() => {
     component.greet.subscribe((d) => {
       expect(d).toBe('Hi');
