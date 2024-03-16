@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-with-input',
@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class WithInputComponent {
   @Input() name: string;
+
+  signalName = input<string>();
 }

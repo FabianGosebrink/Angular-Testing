@@ -30,4 +30,14 @@ describe('WithInputComponent', () => {
 
     expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('Fabian');
   }));
+
+  test('should correctly render the passed @Input value', waitForAsync(() => {
+    expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('');
+
+    fixture.componentRef.setInput('signalName', 'Fabian2');
+
+    fixture.detectChanges();
+
+    expect(getInnerHtml<WithInputComponent>(fixture, 'span')).toBe('Fabian2');
+  }));
 });
