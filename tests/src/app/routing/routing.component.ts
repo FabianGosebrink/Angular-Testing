@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'search-component',
@@ -20,7 +19,7 @@ export class HomeComponent {}
   selector: 'router-component',
   template: `<router-outlet></router-outlet>`,
   standalone: true,
-  imports: [RouterTestingModule],
+  imports: [RouterModule],
 })
 export class RouterComponent {}
 

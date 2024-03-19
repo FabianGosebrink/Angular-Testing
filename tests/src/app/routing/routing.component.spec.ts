@@ -1,7 +1,6 @@
 import { Location } from '@angular/common';
 import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { Router, RouterModule } from '@angular/router';
 import {
   HomeComponent,
   RouterComponent,
@@ -17,7 +16,7 @@ describe('Router: App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes(routes),
+        RouterModule.forRoot(routes),
         HomeComponent,
         SearchComponent,
         RouterComponent,
