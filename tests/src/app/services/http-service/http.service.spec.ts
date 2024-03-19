@@ -40,7 +40,7 @@ describe('CustomHttpService', () => {
     httpMock.verify();
   }));
 
-  test('should post the correct data', () => {
+  test('should post the correct data', waitForAsync(() => {
     service.post<any>({ firstname: 'firstname' }).subscribe((data: any) => {
       expect(data.firstname).toBe('firstname');
     });
@@ -56,9 +56,9 @@ describe('CustomHttpService', () => {
     });
 
     httpMock.verify();
-  });
+  }));
 
-  test('should put the correct data', () => {
+  test('should put the correct data', waitForAsync(() => {
     service.put<any>(3, { firstname: 'firstname' }).subscribe((data: any) => {
       expect(data.firstname).toBe('firstname');
     });
@@ -74,9 +74,9 @@ describe('CustomHttpService', () => {
     });
 
     httpMock.verify();
-  });
+  }));
 
-  test('should delete the correct data', () => {
+  test('should delete the correct data', waitForAsync(() => {
     service.delete(3).subscribe((data: any) => {
       expect(data).toBe(3);
     });
@@ -90,7 +90,7 @@ describe('CustomHttpService', () => {
     req.flush(3);
 
     httpMock.verify();
-  });
+  }));
 
   test('should return available languages', waitForAsync(() => {
     service.getLanguages().subscribe((x) => {
