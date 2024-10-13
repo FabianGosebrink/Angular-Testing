@@ -7,7 +7,7 @@ import { Component, Input, input } from '@angular/core';
   standalone: true,
 })
 export class WithInputComponent {
-  @Input() name: string;
+  @Input() name = "";
 
-  signalName = input<string>();
+  signalName = input<string>("");
 }

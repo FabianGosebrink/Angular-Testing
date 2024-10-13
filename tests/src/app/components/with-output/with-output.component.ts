@@ -18,7 +18,7 @@ export class WithOutputComponent {
     this.greet2.emit('Hi2');
   }
 
-  greetFromNested(event) {
+  greetFromNested(event: string) {
     console.log(event);
   }
 }
