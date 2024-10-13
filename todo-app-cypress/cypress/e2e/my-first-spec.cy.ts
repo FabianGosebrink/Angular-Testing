@@ -12,7 +12,7 @@ describe('My First Test', () => {
   });
 
   it('Application has the correct h1 tag!', () => {
-    cy.get('h1').contains('Welcome to app!');
+    cy.get('h1').contains('Welcome to todo-app-cypress-2!');
   });
 
   it('Button has correct naming', () => {

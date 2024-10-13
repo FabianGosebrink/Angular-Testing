@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0308c344-b79a-4766-abe4-86b242703cbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/cypress.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/e2e/spec.cy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/fixtures/example.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/cypress/fixtures/example.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/support/commands.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/cypress/support/commands.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/support/component-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/cypress/support/component-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/support/component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/cypress/support/component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/support/e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/cypress/support/e2e.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/cypress/videos/spec.cy.ts.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/core/todo.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/core/todo.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/models/todo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/shell/shell.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/shell/shell.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/shell/shell.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/shell/shell.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-form/todo-form.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-form/todo-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-form/todo-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-form/todo-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-list/todo-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-list/todo-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-list/todo-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/app/todo-list/todo-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-app-cypress/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-app-cypress/tsconfig.spec.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2nO8FNvD3PrciqF8R4nsfgh3usL" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-WS-241.15989.105" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0308c344-b79a-4766-abe4-86b242703cbe" name="Changes" comment="" />
+      <created>1728832657384</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728832657384</updated>
+      <workItem from="1728832658492" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
