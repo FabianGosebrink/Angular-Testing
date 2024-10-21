@@ -18,7 +18,7 @@ export class CustomHttpService {
   put<T>(id: number, item: any) {
     return this.httpClient.put<T>(
       `http://replace.with.api/anything/${id}`,
-      item
+      item,
     );
   }
 

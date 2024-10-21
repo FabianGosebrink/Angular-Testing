@@ -21,7 +21,7 @@ export class HttpService {
   patch<T>(url: string, body: any, options?: {}): Observable<T> {
     const headers = new HttpHeaders().set(
       'Content-Type',
-      'application/json-patch+json'
+      'application/json-patch+json',
     );
 
     return this.http.patch<T>(url, body, { ...options, headers });

@@ -1,10 +1,10 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ParentComponent} from './parent.component';
-import {getNativeElement} from '../../helpers/DOM-helpers';
-import {By} from '@angular/platform-browser';
-import {ChildComponent} from '../nested-child/child.component';
-import {MockComponent} from 'ng-mocks';
+import { ParentComponent } from './parent.component';
+import { getNativeElement } from '../../helpers/DOM-helpers';
+import { By } from '@angular/platform-browser';
+import { ChildComponent } from '../nested-child/child.component';
+import { MockComponent } from 'ng-mocks';
 
 // @Component({
 //   selector: 'app-child',
@@ -24,9 +24,9 @@ describe('ParentComponent', () => {
       .overrideComponent(ParentComponent, {
         // remove: { imports: [ChildComponent] },
         // add: { imports: [MockComponent(ChildComponent)] }
-        set: { imports: [MockComponent(ChildComponent)] }
+        set: { imports: [MockComponent(ChildComponent)] },
       })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ParentComponent);
     component = fixture.componentInstance;
@@ -47,7 +47,9 @@ describe('ParentComponent', () => {
       fixture.detectChanges();
 
       // assert
-      expect(fixture.debugElement.query(By.directive(ChildComponent))).toBeDefined();
+      expect(
+        fixture.debugElement.query(By.directive(ChildComponent)),
+      ).toBeDefined();
     });
   });
 });

@@ -3,7 +3,7 @@ import { ActivatedRoute, convertToParamMap, Params } from '@angular/router';
 import { BehaviorSubject, of } from 'rxjs';
 
 export function provideActivatedRoute(
-  initialRouteParams: TestRouteParams
+  initialRouteParams: TestRouteParams,
 ): Provider[] {
   const activatedRouteMock = new ActivatedRouteMock(initialRouteParams);
 

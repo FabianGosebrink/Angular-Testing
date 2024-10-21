@@ -1,9 +1,9 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ChildComponent} from './child.component';
-import {MockProvider} from 'ng-mocks';
-import {HttpService} from '../../services/http-base-service/http.service';
-import {of} from 'rxjs';
+import { ChildComponent } from './child.component';
+import { MockProvider } from 'ng-mocks';
+import { HttpService } from '../../services/http-base-service/http.service';
+import { of } from 'rxjs';
 
 describe('ChildComponent', () => {
   let component: ChildComponent;
@@ -13,15 +13,14 @@ describe('ChildComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ChildComponent],
-      providers: [MockProvider(HttpService)]
-    })
-    .compileComponents();
+      providers: [MockProvider(HttpService)],
+    }).compileComponents();
 
     httpService = TestBed.inject(HttpService);
 
     global.console.log = jest.fn();
 
-    jest.spyOn(httpService, 'get').mockReturnValue(of({}))
+    jest.spyOn(httpService, 'get').mockReturnValue(of({}));
 
     fixture = TestBed.createComponent(ChildComponent);
     component = fixture.componentInstance;

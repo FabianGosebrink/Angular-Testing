@@ -7,7 +7,7 @@ describe('BasicService', () => {
       [BasicService],
       (service: BasicService) => {
         expect(service).toBeTruthy();
-      }
+      },
     ));
   });
 

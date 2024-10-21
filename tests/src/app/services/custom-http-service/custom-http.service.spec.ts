@@ -29,7 +29,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/1`,
-      'call to api'
+      'call to api',
     );
     expect(req.request.method).toBe('GET');
 
@@ -47,7 +47,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything`,
-      'post to api'
+      'post to api',
     );
     expect(req.request.method).toBe('POST');
 
@@ -65,7 +65,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/3`,
-      'put to api'
+      'put to api',
     );
     expect(req.request.method).toBe('PUT');
 
@@ -83,7 +83,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/3`,
-      'delete to api'
+      'delete to api',
     );
     expect(req.request.method).toBe('DELETE');
 

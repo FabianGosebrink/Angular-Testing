@@ -1,6 +1,6 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {WithOutputComponent} from './with-output.component';
-import {getNativeElement} from '../../helpers/DOM-helpers';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WithOutputComponent } from './with-output.component';
+import { getNativeElement } from '../../helpers/DOM-helpers';
 
 describe('WithOutputComponent', () => {
   let component: WithOutputComponent;

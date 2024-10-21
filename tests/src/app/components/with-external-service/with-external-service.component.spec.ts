@@ -22,7 +22,7 @@ describe('WithExternalServiceComponent', () => {
     jest.spyOn(service, 'getSingle').mockReturnValue(
       of({
         name: 'Luke Skywalker',
-      })
+      }),
     );
 
     fixture = TestBed.createComponent(WithExternalServiceComponent);
