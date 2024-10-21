@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:watch": "ng test --watch",
-    "test:coverage": "ng test --coverage"
+    "test:coverage": "ng test --coverage",
+    "run:prettier": "npx prettier . --write"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-preset-angular": "^14.2.4",
     "ng-mocks": "^14.13.1",
+    "prettier": "3.3.3",
     "typescript": "~5.5.2"
   }
 }
