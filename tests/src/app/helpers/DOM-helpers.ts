@@ -19,5 +19,5 @@ export function getInnerHtml<T>(
   fixture: ComponentFixture<T>,
   searchItem: string,
 ) {
-  return getDebugElement(fixture, searchItem).nativeElement.innerHTML;
+  return getNativeElement(fixture, searchItem).innerHTML;
 }
