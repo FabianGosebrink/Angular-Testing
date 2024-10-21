@@ -12,5 +12,5 @@ import { CustomHttpService } from '../../services/custom-http-service/custom-htt
 export class WithExternalServiceComponent {
   private readonly httpService = inject(CustomHttpService);
 
-  result$ = this.httpService.getSingle<any>(1);
+  result$ = this.httpService.getSingle(1);
 }

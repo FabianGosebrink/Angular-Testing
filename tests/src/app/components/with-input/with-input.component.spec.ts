@@ -31,7 +31,7 @@ describe('WithInputComponent', () => {
     expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('Fabian');
   }));
 
-  test('should correctly render the passed @Input value', waitForAsync(() => {
+  test('should correctly render the passed signal input value', waitForAsync(() => {
     expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('');
 
     fixture.componentRef.setInput('signalName', 'Fabian2');
