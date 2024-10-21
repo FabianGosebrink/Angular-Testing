@@ -27,5 +27,4 @@ describe('CapitalizePipe', () => {
     expect(result).toBe('Angular');
   });
 
-
 });

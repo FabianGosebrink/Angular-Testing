@@ -3,7 +3,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { CustomHttpService } from './http.service';
+import { CustomHttpService } from './custom-http.service';
 
 describe('CustomHttpService', () => {
   let service: CustomHttpService;

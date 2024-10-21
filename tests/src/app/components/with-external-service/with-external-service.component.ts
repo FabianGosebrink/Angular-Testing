@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { CustomHttpService } from '../../services/http-service/http.service';
+import { CustomHttpService } from '../../services/custom-http-service/custom-http.service';
 
 @Component({
   selector: 'app-with-external-service',
