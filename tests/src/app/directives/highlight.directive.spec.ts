@@ -1,8 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { DummyComponent } from './dummy.component';
 import { HoverHighlightDirective } from './highlight.directive';
+import { getDebugElement } from '../helpers/DOM-helpers';
 
 describe('HighlightDirective', () => {
   let component: DummyComponent;
@@ -16,7 +16,7 @@ describe('HighlightDirective', () => {
 
     fixture = TestBed.createComponent(DummyComponent);
     component = fixture.componentInstance;
-    inputEl = fixture.debugElement.query(By.css('#forTesting'));
+    inputEl = getDebugElement(fixture, '#forTesting');
   });
 
   test('should create an instance', () => {
