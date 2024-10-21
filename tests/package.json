@@ -9,7 +9,8 @@
     "test": "ng test",
     "test:watch": "ng test --watch",
     "test:coverage": "ng test --coverage",
-    "run:prettier": "npx prettier . --write"
+    "run:prettier": "npx prettier . --write",
+    "check:prettier": "npx prettier . --check"
   },
   "private": true,
   "dependencies": {

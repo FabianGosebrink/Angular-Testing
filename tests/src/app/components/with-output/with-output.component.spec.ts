@@ -65,7 +65,7 @@ describe('WithOutputComponent', () => {
     button.click();
 
     expect(nestedComponent.greetFromNested.emit).toHaveBeenCalledWith(
-      'Hi from nested'
+      'Hi from nested',
     );
   });
 
@@ -73,7 +73,7 @@ describe('WithOutputComponent', () => {
     jest.spyOn(component, 'greetFromNested');
 
     const nestedComp = fixture.debugElement.query(
-      By.directive(WithOutputNestedComponent)
+      By.directive(WithOutputNestedComponent),
     ).componentInstance;
 
     nestedComp.greetFromNested.emit('Hi from nested');
@@ -84,7 +84,7 @@ describe('WithOutputComponent', () => {
   test('should call the parent component method when the nested button is clicked', () => {
     jest.spyOn(component, 'greetFromNested');
     const nestedComp = fixture.debugElement.query(
-      By.directive(WithOutputNestedComponent)
+      By.directive(WithOutputNestedComponent),
     );
 
     const nestedButton = nestedComp.query(By.css('button'));

@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0308c344-b79a-4766-abe4-86b242703cbe" name="Changes" comment="Adding git ignore">
-      <change beforePath="$PROJECT_DIR$/tests/src/app/components/with-external-service/with-external-service.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/src/app/components/with-external-service/with-external-service.component.ts" afterDir="false" />
+    <list default="true" id="0308c344-b79a-4766-abe4-86b242703cbe" name="Changes" comment="Added prettier">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/tests/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/app/components/with-output/with-output.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/src/app/components/with-output/with-output.component.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -28,12 +37,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "code.cleanup.on.save": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\_git\\FabianGosebrink\\Angular-Testing\\tests\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "C:\\_git\\FabianGosebrink\\Angular-Testing\\tests\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -72,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729512966645</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added prettier">
+      <option name="closed" value="true" />
+      <created>1729514003161</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729514003161</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update custom http Service" />
     <MESSAGE value="Adding git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding git ignore" />
+    <MESSAGE value="Added prettier" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added prettier" />
   </component>
 </project>
