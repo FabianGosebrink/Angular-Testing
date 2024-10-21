@@ -4,6 +4,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpService } from './http.service';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('HttpService', () => {
   let service: HttpService;
@@ -11,7 +12,7 @@ describe('HttpService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideHttpClientTesting()],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
 
     service = TestBed.inject(HttpService);
@@ -24,7 +25,7 @@ describe('HttpService', () => {
 
   describe('post', () => {
     it('should post to the correct url', waitForAsync(() => {
-      service.post<any>('some-url', { any: 'thing' }).subscribe((data) => {
+      service.post('some-url', { any: 'thing' }).subscribe((data) => {
         expect(data).toEqual({ any: 'thing' });
         expect(req.request.method).toBe('POST');
         expect(req.request.headers.keys().length).toBe(0);
@@ -40,7 +41,7 @@ describe('HttpService', () => {
 
   describe('put', () => {
     it('should put to the correct url', waitForAsync(() => {
-      service.put<any>('some-url', { any: 'thing' }).subscribe((data) => {
+      service.put('some-url', { any: 'thing' }).subscribe((data) => {
         expect(data).toEqual({ any: 'thing' });
         expect(req.request.method).toBe('PUT');
         expect(req.request.headers.keys().length).toBe(0);
@@ -56,7 +57,7 @@ describe('HttpService', () => {
 
   describe('patch', () => {
     it('should patch to the correct url', waitForAsync(() => {
-      service.patch<any>('some-url', { any: 'thing' }).subscribe((data) => {
+      service.patch('some-url', { any: 'thing' }).subscribe((data) => {
         expect(data).toEqual({ any: 'thing' });
         expect(req.request.method).toBe('PATCH');
         expect(req.request.headers.keys().length).toBe(1);
@@ -72,7 +73,7 @@ describe('HttpService', () => {
 
   describe('delete', () => {
     it('should delete to the correct url', waitForAsync(() => {
-      service.delete<any>('some-url').subscribe(() => {
+      service.delete('some-url').subscribe(() => {
         expect(req.request.method).toBe('DELETE');
         expect(req.request.headers.keys().length).toBe(0);
       });
@@ -91,7 +92,7 @@ describe('HttpService', () => {
 
       const bodyData = { firstName: 'firstName' };
 
-      service.get<any>(url).subscribe((data: any) => {
+      service.get(url).subscribe((data: any) => {
         expect(data.firstName).toBe('firstName');
       });
 
