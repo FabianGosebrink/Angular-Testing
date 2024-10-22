@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { HttpService } from '../../services/http-base-service/http.service';
+import { HttpService } from '../../services/http/http.service';
 
 @Component({
   selector: 'app-child',
