@@ -17,7 +17,11 @@ describe('AsyncService', () => {
     });
 
     test('should get the name', waitForAsync(() => {
+      // arrange
+
+      // act
       service.getName().subscribe((name: string) => {
+        // assert
         expect(name).toBe('Fabian');
       });
     }));

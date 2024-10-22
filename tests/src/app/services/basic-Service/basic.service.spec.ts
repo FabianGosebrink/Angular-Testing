@@ -43,12 +43,24 @@ describe('BasicService', () => {
     });
 
     test('should add properly: injection method 1', () => {
-      expect(service.add(2, 3)).toBe(5);
+      // arrange
+
+      // act
+      const result = service.add(2, 3);
+
+      // assert
+      expect(result).toBe(5);
     });
 
     test('should add properly: (Spy)', () => {
+      // arrange
       jest.spyOn(service, 'add').mockReturnValue(6);
-      expect(service.add(2, 3)).toBe(6);
+
+      // act
+      const result = service.add(2, 3);
+
+      // assert
+      expect(result).toBe(6);
     });
   });
 });

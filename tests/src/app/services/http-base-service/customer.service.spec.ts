@@ -20,12 +20,15 @@ describe('CustomerService', () => {
   });
 
   it('should get all customers', waitForAsync(() => {
+    // arrange
     const getAllCustomersSpy = jest
       .spyOn(httpService, 'get')
       .mockReturnValue(of([]));
 
+    // act
     const result$ = customerService.getAllCustomers();
 
+    // assert
     result$.subscribe((result) => {
       expect(getAllCustomersSpy).toHaveBeenCalledTimes(1);
       expect(result).toEqual([]);

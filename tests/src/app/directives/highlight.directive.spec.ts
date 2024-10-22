@@ -26,13 +26,16 @@ describe('HighlightDirective', () => {
   });
 
   test('hovering over span shall trigger colors', () => {
+    // arrange
     inputEl.triggerEventHandler('mouseover', null);
     fixture.detectChanges();
     expect(inputEl.nativeElement.style.backgroundColor).toBe('blue');
 
+    // act
     inputEl.triggerEventHandler('mouseout', null);
     fixture.detectChanges();
 
+    // assert
     expect(inputEl.nativeElement.style.backgroundColor).toBe('inherit');
   });
 });
