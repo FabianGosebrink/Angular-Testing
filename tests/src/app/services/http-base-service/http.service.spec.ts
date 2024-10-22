@@ -88,13 +88,10 @@ describe('HttpService', () => {
 
   describe('get', () => {
     it("has not headers if url is not 'apiIntegration'", waitForAsync(() => {
-      // arrange
       const url = `any-other-url`;
       const bodyData = { firstName: 'firstName' };
 
-      // act
       service.get(url).subscribe((data: any) => {
-        // assert
         expect(data.firstName).toBe('firstName');
       });
 
