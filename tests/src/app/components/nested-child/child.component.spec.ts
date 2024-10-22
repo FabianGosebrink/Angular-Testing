@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChildComponent } from './child.component';
 import { MockProvider } from 'ng-mocks';
-import { HttpService } from '../../services/http-base-service/http.service';
+import { HttpService } from '../../services/http/http.service';
 import { of } from 'rxjs';
 
 describe('ChildComponent', () => {
