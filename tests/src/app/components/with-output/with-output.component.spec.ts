@@ -23,20 +23,26 @@ describe('WithOutputComponent', () => {
   });
 
   test('should test the emitter with a spy', () => {
-    jest.spyOn(component.greet, 'emit');
-
+    // arrange
+    const emitSpy = jest.spyOn(component.greet, 'emit');
     const button = getNativeElement(fixture, 'button');
+
+    // act
     button.click();
 
-    expect(component.greet.emit).toHaveBeenCalledWith('Hi');
+    // assert
+    expect(emitSpy).toHaveBeenCalledWith('Hi');
   });
 
   test('should test the emitter with a spy 2', () => {
+    // arrange
     const spy = jest.spyOn(component.greet2, 'emit');
-
     const button = getNativeElement(fixture, 'button');
+
+    // act
     button.click();
 
+    // assert
     expect(spy).toHaveBeenCalledWith('Hi2');
   });
 });

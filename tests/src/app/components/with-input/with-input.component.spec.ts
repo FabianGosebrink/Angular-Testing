@@ -22,22 +22,28 @@ describe('WithInputComponent', () => {
   });
 
   test('should correctly render the passed @Input value', waitForAsync(() => {
-    expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('');
+    // arrange
+    const pBefore = getInnerHtml<WithInputComponent>(fixture, 'p');
 
+    // act
     component.name = 'Fabian';
-
     fixture.detectChanges();
 
+    // assert
+    expect(pBefore).toBe('');
     expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('Fabian');
   }));
 
   test('should correctly render the passed signal input value', waitForAsync(() => {
-    expect(getInnerHtml<WithInputComponent>(fixture, 'p')).toBe('');
+    // arrange
+    const pBefore = getInnerHtml<WithInputComponent>(fixture, 'p');
 
+    // act
     fixture.componentRef.setInput('signalName', 'Fabian2');
-
     fixture.detectChanges();
 
+    // assert
+    expect(pBefore).toBe('');
     expect(getInnerHtml<WithInputComponent>(fixture, 'span')).toBe('Fabian2');
   }));
 });
