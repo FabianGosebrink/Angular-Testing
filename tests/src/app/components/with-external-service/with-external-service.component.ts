@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { CustomHttpService } from '../../services/http-service/http.service';
+import { CustomHttpService } from './services/custom-http.service';
 
 @Component({
   selector: 'app-with-external-service',
@@ -12,5 +12,5 @@ import { CustomHttpService } from '../../services/http-service/http.service';
 export class WithExternalServiceComponent {
   private readonly httpService = inject(CustomHttpService);
 
-  result$ = this.httpService.getSingle<any>(1);
+  result$ = this.httpService.getSingle(1);
 }

@@ -22,14 +22,17 @@ describe('InlineTemplateComponent', () => {
   });
 
   test('should display the name', () => {
-    expect(component.name).toBe('Fabian');
+    // arrange
     const innerHtmlBefore = getInnerHtml(fixture, 'div');
-    expect(innerHtmlBefore).toBe('');
 
+    // act
     fixture.detectChanges();
 
+    // assert
     const innerHtmlAfter = getInnerHtml(fixture, 'div');
 
+    expect(component.name).toBe('Fabian');
+    expect(innerHtmlBefore).toBe('');
     expect(innerHtmlAfter).toBe(component.name);
   });
 });

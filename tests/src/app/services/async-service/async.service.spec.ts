@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { Observable, of, timer } from 'rxjs';
-import { delay, mapTo } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 import { AsyncService } from './async.service';
 
 describe('AsyncService', () => {
@@ -17,7 +17,11 @@ describe('AsyncService', () => {
     });
 
     test('should get the name', waitForAsync(() => {
+      // arrange
+
+      // act
       service.getName().subscribe((name: string) => {
+        // assert
         expect(name).toBe('Fabian');
       });
     }));
@@ -65,7 +69,7 @@ describe('AsyncService', () => {
     @Injectable()
     class AsyncServiceMock {
       getName(): Observable<string> {
-        return timer(500).pipe(mapTo('FakeFabian'));
+        return timer(500).pipe(map(() => 'FakeFabian'));
       }
     }
 
@@ -89,7 +93,7 @@ describe('AsyncService', () => {
       });
     }));
 
-    test('should get the name (fakeasync)', fakeAsync(() => {
+    test('should get the name (fakeAsync)', fakeAsync(() => {
       let value;
       service.getName().subscribe((name: string) => {
         value = name;

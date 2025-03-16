@@ -1,10 +1,10 @@
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpService } from './http.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class CustomerService {
-  private readonly httpService = inject(HttpService);
+  private readonly httpService = inject(HttpClient);
 
   getAllCustomers(): Observable<any[]> {
     const url = `get-all-customers`;

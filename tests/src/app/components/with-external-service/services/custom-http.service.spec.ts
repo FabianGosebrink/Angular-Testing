@@ -1,17 +1,19 @@
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { CustomHttpService } from './http.service';
+
+import { CustomHttpService } from './custom-http.service';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('CustomHttpService', () => {
   let service: CustomHttpService;
   let httpMock: HttpTestingController;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
 
     service = TestBed.inject(CustomHttpService);
@@ -29,7 +31,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/1`,
-      'call to api'
+      'call to api',
     );
     expect(req.request.method).toBe('GET');
 
@@ -47,7 +49,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything`,
-      'post to api'
+      'post to api',
     );
     expect(req.request.method).toBe('POST');
 
@@ -65,7 +67,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/3`,
-      'put to api'
+      'put to api',
     );
     expect(req.request.method).toBe('PUT');
 
@@ -83,7 +85,7 @@ describe('CustomHttpService', () => {
 
     const req = httpMock.expectOne(
       `http://replace.with.api/anything/3`,
-      'delete to api'
+      'delete to api',
     );
     expect(req.request.method).toBe('DELETE');
 

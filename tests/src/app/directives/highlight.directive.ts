@@ -5,7 +5,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
   standalone: true,
 })
 export class HoverHighlightDirective {
-  @HostBinding('style.background-color') backgroundColor = "";
+  @HostBinding('style.background-color') backgroundColor = '';
 
   @HostListener('mouseover')
   onHover() {

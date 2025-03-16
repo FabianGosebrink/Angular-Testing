@@ -1,7 +1,7 @@
 import {
   ComponentFixture,
-  TestBed,
   fakeAsync,
+  TestBed,
   tick,
 } from '@angular/core/testing';
 import { getInnerHtml } from '../../helpers/DOM-helpers';
@@ -28,14 +28,16 @@ describe('AsyncPipeComponent', () => {
   });
 
   test('should correctly visualize the emitted values from the stream', fakeAsync(() => {
-    expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('');
+    // arrange
+    const spanBefore = getInnerHtml(fixture, 'span');
 
+    // act
     fixture.detectChanges();
-
     tick(200);
-
     fixture.detectChanges();
 
+    // assert
+    expect(spanBefore).toBe('');
     expect(getInnerHtml<AsyncPipeComponent>(fixture, 'span')).toBe('Fabian');
   }));
 });

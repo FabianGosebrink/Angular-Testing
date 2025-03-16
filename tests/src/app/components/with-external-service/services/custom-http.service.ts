@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -18,7 +18,7 @@ export class CustomHttpService {
   put<T>(id: number, item: any) {
     return this.httpClient.put<T>(
       `http://replace.with.api/anything/${id}`,
-      item
+      item,
     );
   }
 

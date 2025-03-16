@@ -1,5 +1,11 @@
 import { Location } from '@angular/common';
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+  waitForAsync,
+} from '@angular/core/testing';
 import { Router, RouterModule } from '@angular/router';
 import {
   HomeComponent,

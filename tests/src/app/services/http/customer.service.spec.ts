@@ -1,8 +1,9 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { provideMock } from '../../helpers/auto-mock';
 import { CustomerService } from './customer.service';
 import { HttpService } from './http.service';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('CustomerService', () => {
   let customerService: CustomerService;
@@ -10,7 +11,8 @@ describe('CustomerService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideMock(HttpService)],
+      // providers: [provideMock(HttpService)],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
 
     customerService = TestBed.inject(CustomerService);
@@ -18,12 +20,15 @@ describe('CustomerService', () => {
   });
 
   it('should get all customers', waitForAsync(() => {
+    // arrange
     const getAllCustomersSpy = jest
       .spyOn(httpService, 'get')
       .mockReturnValue(of([]));
 
+    // act
     const result$ = customerService.getAllCustomers();
 
+    // assert
     result$.subscribe((result) => {
       expect(getAllCustomersSpy).toHaveBeenCalledTimes(1);
       expect(result).toEqual([]);
