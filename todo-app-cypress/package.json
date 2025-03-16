@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "cy:open": "cypress open",
+    "cy:open:component": "cypress open --component",
     "cy:run": "cypress run",
     "e2e": "start-server-and-test start http://localhost:4200 cy:open",
     "e2e:ci": "start-server-and-test start http://localhost:4200 cy:run"
