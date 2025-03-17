@@ -18,8 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-
-import { mount } from 'cypress/angular'
+import {mount} from 'cypress/angular'
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
@@ -28,12 +27,22 @@ import { mount } from 'cypress/angular'
 declare global {
   namespace Cypress {
     interface Chainable {
-      mount: typeof mount
+      mount: typeof mount,
+      getBySel(dataTestAttribute: string, args?: any): Chainable<JQuery<HTMLElement>>;
+      getBySelLike(dataTestPrefixAttribute: string, args?: any): Chainable<JQuery<HTMLElement>>;
     }
   }
 }
 
 Cypress.Commands.add('mount', mount)
+
+Cypress.Commands.add('getBySel', (selector, ...args) => {
+  return cy.get(`[data-cy=${selector}]`, ...args)
+})
+
+Cypress.Commands.add('getBySelLike', (selector, ...args) => {
+  return cy.get(`[data-cy*=${selector}]`, ...args)
+})
 
 // Example use:
 // cy.mount(MyComponent)
