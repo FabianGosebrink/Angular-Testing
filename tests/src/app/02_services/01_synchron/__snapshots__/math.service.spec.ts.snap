@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MathService add with snapshots should add 1 and 2 1`] = `3`;
+
+exports[`MathService add with snapshots should add 3 and 4 1`] = `7`;
+
+exports[`MathService add with snapshots should add 23 and 11 1`] = `34`;

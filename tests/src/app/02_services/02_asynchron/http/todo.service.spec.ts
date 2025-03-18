@@ -41,6 +41,7 @@ describe('TodoService', () => {
       // assert
       result$.subscribe((result) => {
         expect(result).toEqual(response);
+        expect(getSpy).toHaveBeenCalled();
       });
     }));
   });

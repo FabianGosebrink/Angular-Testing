@@ -56,4 +56,29 @@ describe('MathService', () => {
       });
     });
   });
+
+  describe('add with snapshots', () => {
+    [
+      {
+        first: 1,
+        second: 2,
+      },
+      {
+        first: 3,
+        second: 4,
+      },
+      {
+        first: 23,
+        second: 11,
+      },
+    ].forEach(({ first, second }) => {
+      it(`should add ${first} and ${second}`, () => {
+        // act
+        const result = service.add(first, second);
+
+        // assert
+        expect(result).toMatchSnapshot();
+      });
+    });
+  });
 });
