@@ -28,8 +28,8 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/core": "^19.2.3",
     "@angular-devkit/build-angular": "^19.1.6",
+    "@angular-devkit/core": "^19.2.3",
     "@angular/cli": "^19.1.6",
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
@@ -40,6 +40,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-mocks": "^14.13.4",
     "start-server-and-test": "^2.0.8",
     "typescript": "~5.5.2"
   }

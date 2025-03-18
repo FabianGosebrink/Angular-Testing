@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable, delay, of } from 'rxjs';
-import { Todo } from '../models/todo.models';
+import {Injectable} from '@angular/core';
+import {delay, Observable, of} from 'rxjs';
+import {Todo} from '../models/todo.models';
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {
   private existingTodos: Todo[] = [
-    { done: false, description: 'Todo 1', id: '1', created: new Date() },
+    { done: false, description: 'Todo From Service', id: '1', created: new Date() },
   ];
 
   getAllTodos(): Observable<Todo[]> {
