@@ -2,8 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ParentComponent } from './parent.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { getDirective, getNativeElement } from '../../../helpers/DOM-helpers';
-import { ChildComponent } from '../child/child.component';
+import {
+  getDebugElement,
+  getNativeElement,
+} from '../../../helpers/DOM-helpers';
 
 describe('ParentComponent', () => {
   let component: ParentComponent;
@@ -31,14 +33,14 @@ describe('ParentComponent', () => {
     it('should make child visible', () => {
       // arrange
       const button = getNativeElement(fixture, 'button');
-      const childComponentBefore = getDirective(fixture, ChildComponent);
+      const childComponentBefore = getDebugElement(fixture, 'app-child');
 
       // act
       button.click();
       fixture.detectChanges();
 
       // assert
-      expect(getDirective(fixture, ChildComponent)).toBeDefined();
+      expect(getNativeElement(fixture, 'app-child')).toBeTruthy();
       expect(childComponentBefore).toBeFalsy();
     });
   });
