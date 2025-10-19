@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { getInnerHtml } from '../../../helpers/DOM-helpers';
 import { InlineTemplateComponent } from './inline-template.component';
+import { By } from '@angular/platform-browser';
 
 describe('InlineTemplateComponent', () => {
   let component: InlineTemplateComponent;
@@ -23,13 +23,13 @@ describe('InlineTemplateComponent', () => {
 
   it('should display the name', () => {
     // arrange
-    const innerHtmlBefore = getInnerHtml(fixture, 'div');
+    const innerHtmlBefore = fixture.debugElement.query(By.css('div')).nativeElement.innerHTML;
 
     // act
     fixture.detectChanges();
 
     // assert
-    const innerHtmlAfter = getInnerHtml(fixture, 'div');
+    const innerHtmlAfter = fixture.debugElement.query(By.css('div')).nativeElement.innerHTML;
 
     expect(component.name).toBe('Fabian');
     expect(innerHtmlBefore).toBe('');

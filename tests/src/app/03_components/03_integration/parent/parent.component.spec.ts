@@ -1,10 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ParentComponent } from './parent.component';
-import {
-  getDebugElement,
-  getNativeElement,
-} from '../../../helpers/DOM-helpers';
+import { By } from '@angular/platform-browser';
 
 describe('ParentComponent', () => {
   let component: ParentComponent;
@@ -27,8 +24,8 @@ describe('ParentComponent', () => {
   describe('toggle hint', () => {
     it('should show hint when button was clicked', () => {
       // arrange
-      const button = getNativeElement(fixture, 'button');
-      const hintBefore = getDebugElement(fixture, 'p');
+      const button = fixture.debugElement.query(By.css('button')).nativeElement;
+      const hintBefore = fixture.debugElement.query(By.css('p'));
 
       // act
       button.click();
@@ -36,7 +33,7 @@ describe('ParentComponent', () => {
 
       // assert
       expect(hintBefore).toBeFalsy();
-      expect(getNativeElement(fixture, 'p')).toBeDefined();
+      expect(fixture.debugElement.query(By.css('p')).nativeElement).toBeDefined();
     });
   });
 });

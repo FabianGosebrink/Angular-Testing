@@ -16,11 +16,17 @@ export class PersonDetailComponent {
   readonly id = input.required<string>();
 
   readonly personResource = rxResource({
-    request: this.id,
-    loader: (param) => this.personService.load(param.request),
+    params: this.id,
+    stream: ({ params }) => this.personService.load(params),
   });
 
-  readonly person = computed(() => this.personResource.value());
+  readonly person = computed(() => {
+    if (!this.personResource.hasValue()) {
+      return;
+    }
+
+    return this.personResource.value();
+  });
 
   readonly title = computed(() => `Person with ID ${this.id()}`);
 
