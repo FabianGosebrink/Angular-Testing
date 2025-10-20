@@ -1,4 +1,4 @@
-import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PersonDetailComponent } from './person-detail.component';
 import { MockProviders } from 'ng-mocks';
 import { LoggerService } from '../services/logger.service';
@@ -26,12 +26,12 @@ describe('PersonDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
   describe('_logId', () => {
-    it('should log id', () => {
+    test('should log id', () => {
       // arrange
       const logSpy = jest.spyOn(logger, 'info');
       const newId = 'myNewId';
@@ -46,7 +46,7 @@ describe('PersonDetailComponent', () => {
   });
 
   describe('title', () => {
-    it('should return title with latest Id', () => {
+    test('should return title with latest Id', () => {
       // arrange
       const id = '123456789';
       const expected = `Person with ID ${id}`;
@@ -62,7 +62,7 @@ describe('PersonDetailComponent', () => {
   });
 
   describe('person', () => {
-    it('should load new person on id change', fakeAsync(() => {
+    test('should load new person on id change', async () => {
       // arrange
       const id = '998877665544332211';
       const person: Person = {
@@ -76,14 +76,14 @@ describe('PersonDetailComponent', () => {
       fixture.componentRef.setInput('id', id);
       fixture.detectChanges();
 
-      fixture.whenStable().then(() => {
-        // act
-        const result = component.person();
+      await fixture.whenStable();
 
-        // assert
-        expect(loadSpy).toHaveBeenCalledWith(id);
-        expect(result).toEqual(person);
-      });
-    }));
+      // act
+      const result = component.person();
+
+      // assert
+      expect(loadSpy).toHaveBeenCalledWith(id);
+      expect(result).toEqual(person);
+    });
   });
 });

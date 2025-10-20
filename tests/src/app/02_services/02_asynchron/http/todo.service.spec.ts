@@ -18,12 +18,12 @@ describe('TodoService', () => {
     service = TestBed.inject(TodoService);
   });
 
-  it('should be created', () => {
+  test('should be created', () => {
     expect(service).toBeTruthy();
   });
 
   describe('loadTodos', () => {
-    it('should load todos', waitForAsync(() => {
+    test('should load todos', waitForAsync(() => {
       // arrange
       const response = [
         {

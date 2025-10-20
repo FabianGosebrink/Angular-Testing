@@ -9,12 +9,12 @@ describe('MathService', () => {
     service = TestBed.inject(MathService);
   });
 
-  it('should be created', () => {
+  test('should be created', () => {
     expect(service).toBeTruthy();
   });
 
   describe('add', () => {
-    it('should add two numbers', () => {
+    test('should add two numbers', () => {
       // arrange
       const first = 5;
       const second = 11;
@@ -46,7 +46,7 @@ describe('MathService', () => {
         expected: 34,
       },
     ].forEach(({ first, second, expected }) => {
-      it(`should return ${expected} when adding ${first} and ${second}`, () => {
+      test(`should return ${expected} when adding ${first} and ${second}`, () => {
         // act
         const result = service.add(first, second);
 
@@ -71,7 +71,7 @@ describe('MathService', () => {
         second: 11,
       },
     ].forEach(({ first, second }) => {
-      it(`should add ${first} and ${second}`, () => {
+      test(`should add ${first} and ${second}`, () => {
         // act
         const result = service.add(first, second);
 

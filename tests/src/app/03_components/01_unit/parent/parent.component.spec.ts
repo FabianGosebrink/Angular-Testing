@@ -21,12 +21,12 @@ describe('ParentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
   describe('onClick', () => {
-    it('should emit buttonClicked output', () => {
+    test('should emit buttonClicked output', () => {
       // arrange
       const emitSpy = jest.spyOn(component.buttonClicked, 'emit');
 

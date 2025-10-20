@@ -17,12 +17,12 @@ describe('ParentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
   describe('toggle hint', () => {
-    it('should show hint when button was clicked', () => {
+    test('should show hint when button was clicked', () => {
       // arrange
       const button = fixture.debugElement.query(By.css('button')).nativeElement;
       const hintBefore = fixture.debugElement.query(By.css('p'));

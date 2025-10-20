@@ -17,11 +17,11 @@ describe('InlineTemplateComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display the name', () => {
+  test('should display the name', () => {
     // arrange
     const innerHtmlBefore = fixture.debugElement.query(By.css('div'))
       .nativeElement.innerHTML;

@@ -32,7 +32,7 @@ describe('ProductDetailEffects', () => {
   });
 
   describe('loadProduct$', () => {
-    it('should load products', waitForAsync(() => {
+    test('should load products', waitForAsync(() => {
       // arrange
       const id = '11111';
       const product: Product = {
@@ -63,7 +63,7 @@ describe('ProductDetailEffects', () => {
       });
     }));
 
-    it('should not load products when id is undefined', waitForAsync(() => {
+    test('should not load products when id is undefined', waitForAsync(() => {
       // arrange
       const id = undefined;
       const product: Product = {

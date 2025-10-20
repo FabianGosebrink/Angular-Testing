@@ -12,11 +12,11 @@ describe('CapitalizePipe', () => {
     pipe = TestBed.inject(CapitalizePipe);
   });
 
-  it('create an instance', () => {
+  test('create an instance', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should return capitalized string', () => {
+  test('should return capitalized string', () => {
     // arrange
     const value = 'angular';
 

@@ -10,7 +10,7 @@ describe('AgeValidator', () => {
     ];
 
     testCases.forEach(({ input, result }) => {
-      it(`should return ${JSON.stringify(result)} when age is ${input}`, () => {
+      test(`should return ${JSON.stringify(result)} when age is ${input}`, () => {
         const validatorFn = AgeValidator.ageValidator;
 
         const res = validatorFn(

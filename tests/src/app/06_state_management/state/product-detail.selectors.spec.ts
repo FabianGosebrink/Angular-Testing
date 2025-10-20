@@ -8,7 +8,7 @@ import { selectProductDetail } from './product-detail.selectors';
 
 describe('ProductDetailSelectors', () => {
   describe('selectProductDetail', () => {
-    it('should select product detail from state', () => {
+    test('should select product detail from state', () => {
       // arrange
       const product: Product = {
         id: '444',

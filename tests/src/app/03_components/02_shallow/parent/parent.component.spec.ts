@@ -21,12 +21,12 @@ describe('ParentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
   describe('onClick', () => {
-    it('should make child visible', () => {
+    test('should make child visible', () => {
       // arrange
       const button = fixture.debugElement.query(By.css('button')).nativeElement;
       const childComponentBefore = fixture.debugElement.query(

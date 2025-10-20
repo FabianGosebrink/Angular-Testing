@@ -21,12 +21,12 @@ describe('SearchComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
   describe('searchValueChanged', () => {
-    it('should emit search value after delay', fakeAsync(() => {
+    test('should emit search value after delay', fakeAsync(() => {
       // arrange
       const searchValue = 'my search value';
       let result: string | undefined;

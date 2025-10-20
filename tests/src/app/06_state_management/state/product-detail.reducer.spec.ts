@@ -9,7 +9,7 @@ import {
 
 describe('ProductDetailReducer', () => {
   describe('loadProductSuccess', () => {
-    it('should add product to state', () => {
+    test('should add product to state', () => {
       // arrange
       const product: Product = {
         id: '444',
@@ -30,7 +30,7 @@ describe('ProductDetailReducer', () => {
   });
 
   describe('loadProduct', () => {
-    it('should set product to null', () => {
+    test('should set product to null', () => {
       // arrange
       const product: Product = {
         id: '444',
