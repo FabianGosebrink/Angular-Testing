@@ -1,5 +1,4 @@
 import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
-
 import { PersonDetailComponent } from './person-detail.component';
 import { MockProviders } from 'ng-mocks';
 import { LoggerService } from '../services/logger.service';

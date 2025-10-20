@@ -12,25 +12,25 @@ import { Todo } from '../../models/todo.models';
   imports: [TodoFormComponent, TodoListComponent],
 })
 export class ShellComponent implements OnInit {
-  private readonly todoService = inject(TodoService);
+  readonly #todoService = inject(TodoService);
 
   items: Todo[] = [];
 
   ngOnInit() {
-    this.todoService
+    this.#todoService
       .getAllTodos()
       .subscribe((items: Todo[]) => (this.items = items));
   }
 
   addTodo(description: string) {
-    this.todoService.addTodo(description);
-    this.todoService
+    this.#todoService.addTodo(description);
+    this.#todoService
       .getAllTodos()
       .subscribe((items: Todo[]) => (this.items = items));
   }
 
   markAsDone(todo: Todo) {
     todo.done = true;
-    this.todoService.updateTodo(todo);
+    this.#todoService.updateTodo(todo);
   }
 }

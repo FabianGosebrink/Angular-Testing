@@ -19,10 +19,10 @@ function checkValueDefined<T>() {
   providedIn: 'root',
 })
 export class ProductDetailService {
-  private readonly http = inject(HttpClient);
+  readonly #http = inject(HttpClient);
 
   loadProductDetail(id: string): Observable<Product> {
-    return this.http.get<Product[]>('http/products.json').pipe(
+    return this.#http.get<Product[]>('http/products.json').pipe(
       map((products) => products.find((p) => p.id === id)),
       checkValueDefined(),
     );

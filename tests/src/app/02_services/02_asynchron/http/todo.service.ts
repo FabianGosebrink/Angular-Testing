@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TodoService {
-  private readonly http = inject(HttpClient);
+  readonly #http = inject(HttpClient);
 
   loadTodos(): Observable<any> {
-    return this.http.get('my/fancy/url');
+    return this.#http.get('my/fancy/url');
   }
 }

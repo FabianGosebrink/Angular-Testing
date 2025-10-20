@@ -10,14 +10,14 @@ import { rxResource } from '@angular/core/rxjs-interop';
   styleUrl: './person-detail.component.scss',
 })
 export class PersonDetailComponent {
-  private readonly logger = inject(LoggerService);
-  private readonly personService = inject(PersonService);
+  readonly #logger = inject(LoggerService);
+  readonly #personService = inject(PersonService);
 
   readonly id = input.required<string>();
 
   readonly personResource = rxResource({
     params: this.id,
-    stream: ({ params }) => this.personService.load(params),
+    stream: ({ params }) => this.#personService.load(params),
   });
 
   readonly person = computed(() => {
@@ -31,6 +31,6 @@ export class PersonDetailComponent {
   readonly title = computed(() => `Person with ID ${this.id()}`);
 
   readonly _logId = effect(() => {
-    this.logger.info(this.id());
+    this.#logger.info(this.id());
   });
 }
