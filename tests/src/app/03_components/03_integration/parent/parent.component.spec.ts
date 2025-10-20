@@ -33,7 +33,9 @@ describe('ParentComponent', () => {
 
       // assert
       expect(hintBefore).toBeFalsy();
-      expect(fixture.debugElement.query(By.css('p')).nativeElement).toBeDefined();
+      expect(
+        fixture.debugElement.query(By.css('p')).nativeElement,
+      ).toBeDefined();
     });
   });
 });
