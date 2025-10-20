@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { outputFromObservable } from '@angular/core/rxjs-interop';
-import { delay, distinctUntilChanged, filter, map } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +15,7 @@ export class SearchComponent {
   readonly searchValueChanged = outputFromObservable(
     this.searchValueControl.valueChanges.pipe(
       distinctUntilChanged(),
-      delay(400),
+      debounceTime(400),
       map((value) => value?.trim()),
       filter(Boolean),
     ),
