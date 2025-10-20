@@ -3,7 +3,7 @@ import { createActionGroup, props } from '@ngrx/store';
 import { Product } from './product-detail.state';
 
 export const ProductDetailActions = createActionGroup({
-  source: '[Product Detail]',
+  source: 'Product Detail',
   events: {
     'Load Product': props<{ id: string | undefined }>(),
     'Load Product Success': props<{ product: Product }>(),
