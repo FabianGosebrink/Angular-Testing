@@ -1,51 +1,59 @@
-# Angular Testing Workshop
+# AngularTesting2
 
-This repository contains materials for an **Angular testing workshop**, focusing on:
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
 
-- **Cypress** and **Playwright** for end-to-end testing.
-- Sample Angular applications with pre-built test cases.
-- Test cases to cover all sync and async situations
-- Comprehensive setup for modern Angular testing techniques.
+## Development server
 
-## Prerequisites
+To start a local development server, run:
 
-Before you begin, ensure you have installed:
+```bash
+ng serve
+```
 
-- [Node.js](https://nodejs.org/)
-- [Angular CLI](https://angular.io/cli)
-- [Cypress](https://www.cypress.io/)
-- [Playwright](https://playwright.dev/)
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Getting Started
+## Code scaffolding
 
-1. Clone this repository:
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-   ```bash
-   git clone https://github.com/FabianGosebrink/Angular-Testing.git
-   ```
+```bash
+ng generate component component-name
+```
 
-2. Navigate to the project directory:
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-   ```bash
-   cd Angular-Testing/<your directory>
-   ```
+```bash
+ng generate --help
+```
 
-3. Install dependencies:
+## Building
 
-   ```bash
-   npm install
-   ```
+To build the project run:
 
-## Structure
+```bash
+ng build
+```
 
-- `todo-app-cypress/`: Angular application set up with Cypress tests.
-- `todo-app-playwright/`: Angular application set up with Playwright tests.
-- `tests/`: General tests and utilities.
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Contributing
+## Running unit tests
 
-Feel free to contribute by submitting issues or pull requests.
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
-## License
+```bash
+ng test
+```
 
-This project is licensed under the MIT License.
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
