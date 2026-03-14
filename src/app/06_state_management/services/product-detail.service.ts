@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, pipe } from 'rxjs';
+import { map, Observable, OperatorFunction } from 'rxjs';
 import { Product } from '../state/product-detail.state';
 
-function checkValueDefined<T>() {
-  return pipe(
-    map((value: T | undefined) => {
-      if (value === undefined) {
-        throw new Error('Value is undefined');
-      }
+const PRODUCTS_URL = 'http/products.json';
 
-      return value as T;
-    }),
-  );
+function throwIfUndefined<T>(message: string): OperatorFunction<T | undefined, T> {
+  return map((value) => {
+    if (value === undefined) {
+      throw new Error(message);
+    }
+
+    return value;
+  });
 }
 
 @Injectable({
@@ -22,9 +22,9 @@ export class ProductDetailService {
   readonly #http = inject(HttpClient);
 
   loadProductDetail(id: string): Observable<Product> {
-    return this.#http.get<Product[]>('http/products.json').pipe(
-      map((products) => products.find((p) => p.id === id)),
-      checkValueDefined(),
+    return this.#http.get<Product[]>(PRODUCTS_URL).pipe(
+      map((products) => products.find((product) => product.id === id)),
+      throwIfUndefined(`Product with id "${id}" was not found`),
     );
   }
 }
