@@ -1,0 +1,13 @@
+<h1>Time Tracker</h1>
+
+@if (!isTracking()) {
+  <button matButton="filled" (click)="startTracking()">Start Tracking</button>
+} @else {
+  <button matButton="filled" (click)="stopTracking()">Stop Tracking</button>
+}
+
+@if (isTracking()) {
+  <span class="running" data-testid="running-info">Running...</span>
+} @else {
+  <span class="stopped" data-testid="stopped-info">Stopped</span>
+}
