@@ -18,7 +18,7 @@ describe('ParentComponent', () => {
 
     fixture = TestBed.createComponent(ParentComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    await fixture.whenStable();
   });
 
   test('should create', () => {

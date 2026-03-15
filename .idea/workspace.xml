@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="added vitest browser-mode project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/child/child.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/child/child.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/child/child.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/child/child.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/child/child.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/child/child.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +94,8 @@
     "Vitest.CapitalizePipe.executor": "Run",
     "Vitest.HighlightDirective.hovering over span shall trigger colors.executor": "Run",
     "Vitest.InlineTemplateComponent.should display the name.executor": "Run",
+    "Vitest.MathService.add with snapshots.should add ${first} and ${second}.executor": "Run",
+    "Vitest.MathService.add.should return $expected when adding $first and $second.executor": "Run",
     "Vitest.ParentComponent.onClick.executor": "Run",
     "Vitest.ParentComponent.toggle hint.executor": "Run",
     "Vitest.PersonDetailComponent._logId.executor": "Run",
@@ -134,7 +139,7 @@
       <recent name="$PROJECT_DIR$/tests/src/app/01_pipes" />
     </key>
   </component>
-  <component name="RunManager" selected="Vitest.ParentComponent.toggle hint">
+  <component name="RunManager" selected="Vitest.MathService.add with snapshots.should add ${first} and ${second}">
     <configuration name="HighlightDirective.hovering over span shall trigger colors" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
@@ -149,17 +154,33 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="InlineTemplateComponent.should display the name" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+    <configuration name="MathService.add with snapshots.should add ${first} and ${second}" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
       <working-dir value="$PROJECT_DIR$/vitest" />
       <vitest-options value="--run" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" />
       <test-names>
-        <test-name value="InlineTemplateComponent" />
-        <test-name value="should display the name" />
+        <test-name value="MathService" />
+        <test-name value="add with snapshots" />
+        <test-name value="should add ${first} and ${second}" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="MathService.add.should return $expected when adding $first and $second" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" />
+      <test-names>
+        <test-name value="MathService" />
+        <test-name value="add" />
+        <test-name value="should return $expected when adding $first and $second" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -191,27 +212,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="PersonDetailComponent.person" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
-      <working-dir value="$PROJECT_DIR$/vitest" />
-      <vitest-options value="--run" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" />
-      <test-names>
-        <test-name value="PersonDetailComponent" />
-        <test-name value="person" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Vitest.MathService.add with snapshots.should add ${first} and ${second}" />
+        <item itemvalue="Vitest.MathService.add.should return $expected when adding $first and $second" />
         <item itemvalue="Vitest.ParentComponent.toggle hint" />
         <item itemvalue="Vitest.HighlightDirective.hovering over span shall trigger colors" />
         <item itemvalue="Vitest.ParentComponent.onClick" />
-        <item itemvalue="Vitest.InlineTemplateComponent.should display the name" />
-        <item itemvalue="Vitest.PersonDetailComponent.person" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +247,7 @@
       <workItem from="1746426646295" duration="599000" />
       <workItem from="1760961181742" duration="17182000" />
       <workItem from="1773436496487" duration="2128000" />
-      <workItem from="1773526722493" duration="4113000" />
+      <workItem from="1773526722493" duration="6190000" />
     </task>
     <servers />
   </component>

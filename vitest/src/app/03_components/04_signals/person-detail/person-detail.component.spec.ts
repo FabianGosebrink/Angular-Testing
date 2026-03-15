@@ -23,7 +23,7 @@ describe('PersonDetailComponent', () => {
     fixture = TestBed.createComponent(PersonDetailComponent);
     fixture.componentRef.setInput('id', 'mySuperId');
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    await fixture.whenStable();
   });
 
   test('should create', () => {
