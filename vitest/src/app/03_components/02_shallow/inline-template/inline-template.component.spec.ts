@@ -21,17 +21,15 @@ describe('InlineTemplateComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  test('should display the name', () => {
+  test('should display the name', async () => {
     // arrange
-    const innerHtmlBefore = fixture.debugElement.query(By.css('div'))
-      .nativeElement.innerHTML;
+    const innerHtmlBefore = fixture.debugElement.query(By.css('div')).nativeElement.innerHTML;
 
     // act
-    fixture.detectChanges();
+    await fixture.whenStable();
 
     // assert
-    const innerHtmlAfter = fixture.debugElement.query(By.css('div'))
-      .nativeElement.innerHTML;
+    const innerHtmlAfter = fixture.debugElement.query(By.css('div')).nativeElement.innerHTML;
 
     expect(component.name).toBe('Fabian');
     expect(innerHtmlBefore).toBe('');

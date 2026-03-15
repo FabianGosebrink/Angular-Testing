@@ -22,20 +22,18 @@ describe('ParentComponent', () => {
   });
 
   describe('toggle hint', () => {
-    test('should show hint when button was clicked', () => {
+    test('should show hint when button was clicked', async () => {
       // arrange
       const button = fixture.debugElement.query(By.css('button')).nativeElement;
       const hintBefore = fixture.debugElement.query(By.css('p'));
 
       // act
       button.click();
-      fixture.detectChanges();
+      await fixture.whenStable();
 
       // assert
       expect(hintBefore).toBeFalsy();
-      expect(
-        fixture.debugElement.query(By.css('p')).nativeElement,
-      ).toBeDefined();
+      expect(fixture.debugElement.query(By.css('p')).nativeElement).toBeDefined();
     });
   });
 });

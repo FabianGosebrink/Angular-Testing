@@ -26,16 +26,14 @@ describe('ParentComponent', () => {
   });
 
   describe('onClick', () => {
-    test('should make child visible', () => {
+    test('should make child visible', async () => {
       // arrange
       const button = fixture.debugElement.query(By.css('button')).nativeElement;
-      const childComponentBefore = fixture.debugElement.query(
-        By.css('app-child'),
-      );
+      const childComponentBefore = fixture.debugElement.query(By.css('app-child'));
 
       // act
       button.click();
-      fixture.detectChanges();
+      await fixture.whenStable();
 
       // assert
       expect(fixture.debugElement.query(By.css('app-child'))).toBeTruthy();

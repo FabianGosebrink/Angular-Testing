@@ -31,14 +31,14 @@ describe('PersonDetailComponent', () => {
   });
 
   describe('_logId', () => {
-    test('should log id', () => {
+    test('should log id', async () => {
       // arrange
       const logSpy = vi.spyOn(logger, 'info');
       const newId = 'myNewId';
 
       // act
       fixture.componentRef.setInput('id', newId);
-      fixture.detectChanges();
+      await fixture.whenStable();
 
       // assert
       expect(logSpy).toHaveBeenCalledWith(newId);

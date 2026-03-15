@@ -16,9 +16,7 @@ describe('HighlightDirective', () => {
 
     fixture = TestBed.createComponent(DummyComponent);
     component = fixture.componentInstance;
-    highlightedEl = fixture.debugElement.query(
-      By.directive(HoverHighlightDirective),
-    );
+    highlightedEl = fixture.debugElement.query(By.directive(HoverHighlightDirective));
   });
 
   test('should create an instance', () => {
@@ -28,15 +26,12 @@ describe('HighlightDirective', () => {
   test('hovering over span shall trigger colors', async () => {
     // arrange
     highlightedEl.triggerEventHandler('mouseover');
-    fixture.detectChanges();
     await fixture.whenStable();
 
-    const backgroundColorBefore =
-      highlightedEl.nativeElement.style.backgroundColor;
+    const backgroundColorBefore = highlightedEl.nativeElement.style.backgroundColor;
 
     // act
     highlightedEl.triggerEventHandler('mouseout');
-    fixture.detectChanges();
     await fixture.whenStable();
 
     // assert
