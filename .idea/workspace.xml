@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="replace component setup fixture.detectChanges with await fixture.whenStable">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2nkTtdKYbggd4oXbClN1s3HhTO2" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cypress.all tests in my-first-spec.cy.ts (1).executor&quot;: &quot;Run&quot;,
+    &quot;Cypress.all tests in my-first-spec.cy.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Cypress.all tests in todo-list.component.cy.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.AgeValidator.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.AsyncService.AsyncService with fake service.should get the name (async).executor&quot;: &quot;Run&quot;,
+    &quot;Jest.CapitalizePipe.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.CapitalizePipe.should create.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.CapitalizePipe.transform.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.HttpService.HttpService.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.InlineTemplateComponent.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.InlineTemplateComponent.should display the name.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.LoggerService.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.MathService.add with snapshots.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.MathService.add.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.MathService.add.should add ${first} and ${second} and return ${expected}.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.MathService.add.should add ${first} and ${second}.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.MathService.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.ParentComponent.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.ParentComponent.hint toggle.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.ParentComponent.onClick (1).executor&quot;: &quot;Run&quot;,
+    &quot;Jest.ParentComponent.onClick.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.ParentComponent.should create.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.ParentComponent.toggle hint.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.PersonDetailComponent._logId.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.PersonDetailComponent.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.PersonDetailComponent.person.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.PersonDetailComponent.title.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.SearchComponent.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.SearchComponent.searchValueChanged.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.SearchComponent.searchValueChanged.should emit output after 400ms delay.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.TodoService.loadTodos.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.TodoService.should be created.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.TodoService.should create instance.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Vitest.CapitalizePipe.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.HighlightDirective.hovering over span shall trigger colors.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.InlineTemplateComponent.should display the name.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.MathService.add with snapshots.should add ${first} and ${second}.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.MathService.add.should return $expected when adding $first and $second.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.ParentComponent.onClick.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.ParentComponent.toggle hint.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.PersonDetailComponent._logId.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.PersonDetailComponent.person.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;browser-mode&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/timhonermann/src/Angular-Testing/tests/src/app/06_state_management/state&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/timhonermann/src/Angular-Testing/tests/node_modules/@angular/cli&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.cy:open.executor&quot;: &quot;Run&quot;,
+    &quot;npm.cy:run.executor&quot;: &quot;Run&quot;,
+    &quot;npm.e2e.executor&quot;: &quot;Run&quot;,
+    &quot;npm.e2e:ci.executor&quot;: &quot;Run&quot;,
+    &quot;npm.e2e:codegen.executor&quot;: &quot;Run&quot;,
+    &quot;npm.e2e:start-codegen.executor&quot;: &quot;Run&quot;,
+    &quot;npm.e2e:ui.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test:coverage.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test:watch.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/src/app/06_state_management/state" />
+      <recent name="$PROJECT_DIR$/tests/src/app/06_state_management/services" />
+      <recent name="$PROJECT_DIR$/tests/src/app/02_components/03_integration" />
+      <recent name="$PROJECT_DIR$/tests/src/app/02_components/02_shallow" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vitest" />
+      <recent name="$PROJECT_DIR$/tests/src/app/05_forms" />
+      <recent name="$PROJECT_DIR$/tests/src/app/04_directives" />
+      <recent name="$PROJECT_DIR$/tests/src/app/02_components/02_shallow" />
+      <recent name="$PROJECT_DIR$/tests/src/app/01_pipes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Vitest.MathService.add with snapshots.should add ${first} and ${second}">
+    <configuration name="HighlightDirective.hovering over span shall trigger colors" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" />
+      <test-names>
+        <test-name value="HighlightDirective" />
+        <test-name value="hovering over span shall trigger colors" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="MathService.add with snapshots.should add ${first} and ${second}" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" />
+      <test-names>
+        <test-name value="MathService" />
+        <test-name value="add with snapshots" />
+        <test-name value="should add ${first} and ${second}" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="MathService.add.should return $expected when adding $first and $second" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" />
+      <test-names>
+        <test-name value="MathService" />
+        <test-name value="add" />
+        <test-name value="should return $expected when adding $first and $second" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ParentComponent.onClick" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" />
+      <test-names>
+        <test-name value="ParentComponent" />
+        <test-name value="onClick" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ParentComponent.toggle hint" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" />
+      <test-names>
+        <test-name value="ParentComponent" />
+        <test-name value="toggle hint" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Vitest.MathService.add with snapshots.should add ${first} and ${second}" />
+        <item itemvalue="Vitest.MathService.add.should return $expected when adding $first and $second" />
+        <item itemvalue="Vitest.ParentComponent.toggle hint" />
+        <item itemvalue="Vitest.HighlightDirective.hovering over span shall trigger colors" />
+        <item itemvalue="Vitest.ParentComponent.onClick" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="" />
+      <created>1729516289389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729516289389</updated>
+      <workItem from="1729516290699" duration="8688000" />
+      <workItem from="1729594463313" duration="5682000" />
+      <workItem from="1742217151429" duration="12960000" />
+      <workItem from="1742287404368" duration="16976000" />
+      <workItem from="1742994225644" duration="2993000" />
+      <workItem from="1743366744060" duration="85000" />
+      <workItem from="1746426646295" duration="599000" />
+      <workItem from="1760961181742" duration="17182000" />
+      <workItem from="1773436496487" duration="2128000" />
+      <workItem from="1773526722493" duration="8015000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="rearranged complete workshop one day before" />
+    <MESSAGE value="added vitest browser-mode project" />
+    <MESSAGE value="replace component setup fixture.detectChanges with await fixture.whenStable" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace component setup fixture.detectChanges with await fixture.whenStable" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
