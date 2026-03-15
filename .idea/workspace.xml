@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="replace component setup fixture.detectChanges with await fixture.whenStable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest-browser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest-browser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
