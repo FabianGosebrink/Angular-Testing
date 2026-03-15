@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "npx vitest",
+    "test:coverage": "npx vitest --coverage"
   },
   "prettier": {
     "printWidth": 100,
@@ -41,6 +42,7 @@
     "@angular/cli": "^21.0.4",
     "@angular/compiler-cli": "^21.0.0",
     "@vitest/browser-playwright": "^4.0.0",
+    "@vitest/coverage-v8": "^4.1.0",
     "jsdom": "^27.1.0",
     "playwright": "^1.54.0",
     "prettier": "^3.8.1",
