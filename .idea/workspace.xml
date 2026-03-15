@@ -6,8 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="replace component setup fixture.detectChanges with await fixture.whenStable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest-browser/src/app/features/time-tracker/time-tracker.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest-browser/src/app/features/time-tracker/time-tracker.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/01_pipes/capitalize.pipe.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/01_pipes/capitalize.pipe.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/02_services/02_asynchron/http/todo.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/02_services/02_asynchron/http/todo.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/age.validator.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/age.validator.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.effects.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.effects.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.reducer.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.reducer.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.selectors.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.selectors.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +107,7 @@
     &quot;Vitest.ParentComponent.toggle hint.executor&quot;: &quot;Run&quot;,
     &quot;Vitest.PersonDetailComponent._logId.executor&quot;: &quot;Run&quot;,
     &quot;Vitest.PersonDetailComponent.person.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;browser-mode&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;2026-03-15-live-coding&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/timhonermann/src/Angular-Testing/tests/src/app/06_state_management/state&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -114,7 +127,7 @@
     &quot;npm.test:watch.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/timhonermann/src/Angular-Testing/vitest/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>

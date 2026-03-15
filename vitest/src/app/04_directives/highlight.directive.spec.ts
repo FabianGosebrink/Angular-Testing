@@ -2,7 +2,6 @@ import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DummyComponent } from './dummy.component';
 import { HoverHighlightDirective } from './highlight.directive';
-import { By } from '@angular/platform-browser';
 
 describe('HighlightDirective', () => {
   let fixture: ComponentFixture<DummyComponent>;
@@ -14,26 +13,5 @@ describe('HighlightDirective', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(DummyComponent);
-    highlightedEl = fixture.debugElement.query(By.directive(HoverHighlightDirective));
-  });
-
-  test('should create an instance', () => {
-    expect(highlightedEl).toBeTruthy();
-  });
-
-  test('hovering over span shall trigger colors', async () => {
-    // arrange
-    highlightedEl.triggerEventHandler('mouseover');
-    await fixture.whenStable();
-
-    const backgroundColorHovered = highlightedEl.nativeElement.style.backgroundColor;
-
-    // act
-    highlightedEl.triggerEventHandler('mouseout');
-    await fixture.whenStable();
-
-    // assert
-    expect(backgroundColorHovered).toBe('blue');
-    expect(highlightedEl.nativeElement.style.backgroundColor).toBe('inherit');
   });
 });

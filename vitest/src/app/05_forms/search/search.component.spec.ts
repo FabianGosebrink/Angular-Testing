@@ -19,29 +19,4 @@ describe('SearchComponent', () => {
   test('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  describe('searchValueChanged', () => {
-    test('should emit search value after delay', async () => {
-      // arrange
-      vi.useFakeTimers();
-      const searchValue = 'my search value';
-      let result: string | undefined;
-
-      component.searchValueChanged.subscribe((value) => {
-        result = value;
-      });
-
-      // act
-      component.searchValueControl.setValue(searchValue);
-      await vi.advanceTimersByTimeAsync(200);
-
-      // assert
-      expect(result).toBeUndefined();
-
-      await vi.advanceTimersByTimeAsync(200);
-      expect(result).toBe(searchValue);
-
-      vi.useRealTimers();
-    });
-  });
 });
