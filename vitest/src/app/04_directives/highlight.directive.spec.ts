@@ -5,7 +5,6 @@ import { HoverHighlightDirective } from './highlight.directive';
 import { By } from '@angular/platform-browser';
 
 describe('HighlightDirective', () => {
-  let component: DummyComponent;
   let fixture: ComponentFixture<DummyComponent>;
   let highlightedEl: DebugElement;
 
@@ -15,7 +14,6 @@ describe('HighlightDirective', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(DummyComponent);
-    component = fixture.componentInstance;
     highlightedEl = fixture.debugElement.query(By.directive(HoverHighlightDirective));
   });
 
@@ -28,14 +26,14 @@ describe('HighlightDirective', () => {
     highlightedEl.triggerEventHandler('mouseover');
     await fixture.whenStable();
 
-    const backgroundColorBefore = highlightedEl.nativeElement.style.backgroundColor;
+    const backgroundColorHovered = highlightedEl.nativeElement.style.backgroundColor;
 
     // act
     highlightedEl.triggerEventHandler('mouseout');
     await fixture.whenStable();
 
     // assert
-    expect(backgroundColorBefore).toBe('blue');
+    expect(backgroundColorHovered).toBe('blue');
     expect(highlightedEl.nativeElement.style.backgroundColor).toBe('inherit');
   });
 });

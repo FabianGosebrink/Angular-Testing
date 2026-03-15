@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="added vitest browser-mode project">
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="replace component setup fixture.detectChanges with await fixture.whenStable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/child/child.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/child/child.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/child/child.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/child/child.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/child/child.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/child/child.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/04_directives/dummy.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/04_directives/dummy.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +242,7 @@
       <workItem from="1746426646295" duration="599000" />
       <workItem from="1760961181742" duration="17182000" />
       <workItem from="1773436496487" duration="2128000" />
-      <workItem from="1773526722493" duration="6190000" />
+      <workItem from="1773526722493" duration="8015000" />
     </task>
     <servers />
   </component>
@@ -257,7 +252,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rearranged complete workshop one day before" />
     <MESSAGE value="added vitest browser-mode project" />
-    <option name="LAST_COMMIT_MESSAGE" value="added vitest browser-mode project" />
+    <MESSAGE value="replace component setup fixture.detectChanges with await fixture.whenStable" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace component setup fixture.detectChanges with await fixture.whenStable" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
