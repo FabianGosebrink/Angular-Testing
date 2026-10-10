@@ -19,6 +19,9 @@ describe('PersonDetailComponent', () => {
 
     logger = TestBed.inject(LoggerService);
     personService = TestBed.inject(PersonService);
+    vi.spyOn(personService, 'load').mockReturnValue(
+      of({ id: 'mySuperId', name: 'Initial Person' }),
+    );
 
     fixture = TestBed.createComponent(PersonDetailComponent);
     fixture.componentRef.setInput('id', 'mySuperId');
