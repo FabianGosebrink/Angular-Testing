@@ -21,19 +21,25 @@ describe('HighlightDirective', () => {
     expect(highlightedEl).toBeTruthy();
   });
 
-  test('hovering over span shall trigger colors', async () => {
-    // arrange
+  test('should set background color to blue on hover', async () => {
+    // act
     highlightedEl.triggerEventHandler('mouseover');
     await fixture.whenStable();
 
-    const backgroundColorHovered = highlightedEl.nativeElement.style.backgroundColor;
+    // assert
+    expect(highlightedEl.nativeElement.style.backgroundColor).toBe('blue');
+  });
+
+  test('should reset background color when mouse leaves', async () => {
+    // arrange
+    highlightedEl.triggerEventHandler('mouseover');
+    await fixture.whenStable();
 
     // act
     highlightedEl.triggerEventHandler('mouseout');
     await fixture.whenStable();
 
     // assert
-    expect(backgroundColorHovered).toBe('blue');
     expect(highlightedEl.nativeElement.style.backgroundColor).toBe('inherit');
   });
 });

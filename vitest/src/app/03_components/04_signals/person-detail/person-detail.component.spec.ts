@@ -51,13 +51,11 @@ describe('PersonDetailComponent', () => {
       const id = '123456789';
       const expected = `Person with ID ${id}`;
 
+      // act
       fixture.componentRef.setInput('id', id);
 
-      // act
-      const result = component.title();
-
       // assert
-      expect(result).toBe(expected);
+      expect(component.title()).toBe(expected);
     });
   });
 
@@ -71,16 +69,13 @@ describe('PersonDetailComponent', () => {
       };
       const loadSpy = vi.spyOn(personService, 'load').mockReturnValue(of(person));
 
-      fixture.componentRef.setInput('id', id);
-
-      await fixture.whenStable();
-
       // act
-      const result = component.person();
+      fixture.componentRef.setInput('id', id);
+      await fixture.whenStable();
 
       // assert
       expect(loadSpy).toHaveBeenCalledWith(id);
-      expect(result).toEqual(person);
+      expect(component.person()).toEqual(person);
     });
   });
 });
