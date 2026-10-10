@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`.">
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.effects.ts" afterDir="false" />
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/logger.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/logger.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/person.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/person.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/testing/auto-mock.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/tsconfig.app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,61 +52,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="6.873812298018588E-68" />
-      <entry key="MS500" value="3.76696659350071E-14" />
-      <entry key="S2" value="6.030175394855776E-4" />
-      <entry key="S5" value="0.07602949978243798" />
-      <entry key="S10" value="0.3881022080650312" />
-      <entry key="S30" value="1.1566630938751241" />
-      <entry key="S60" value="1.5207596955087215" />
-      <entry key="M2" value="1.7439420227768279" />
-      <entry key="M5" value="1.907826309406634" />
-      <entry key="M10" value="2.1544558201207957" />
-      <entry key="M15" value="2.47094795137293" />
-      <entry key="M30" value="3.2152921851023044" />
-      <entry key="H1" value="3.9145380295485075" />
-      <entry key="H2" value="4.397719305090399" />
-      <entry key="H4" value="4.682274286333217" />
-      <entry key="D1" value="4.94458219095823" />
-      <entry key="W1" value="4.99202063607469" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="S5" value="1.000000279974739" />
+      <entry key="S10" value="1.0005291263922307" />
+      <entry key="S30" value="1.0808822346094697" />
+      <entry key="S60" value="1.284400170472178" />
+      <entry key="M2" value="1.535362917170828" />
+      <entry key="M5" value="1.9066475841089594" />
+      <entry key="M10" value="2.442061846874619" />
+      <entry key="M15" value="2.926235018640306" />
+      <entry key="M30" value="4.01118536865636" />
+      <entry key="H1" value="5.106662256628226" />
+      <entry key="H2" value="5.920358918810089" />
+      <entry key="H4" value="6.421500177757003" />
+      <entry key="D1" value="6.897673586487888" />
+      <entry key="W1" value="6.985229617795721" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.201714573475151E-176" />
+      <entry key="S5" value="6.340931259420872E-71" />
+      <entry key="S10" value="7.962996458256698E-36" />
+      <entry key="S30" value="1.9969116048840022E-12" />
+      <entry key="S60" value="1.4131212279503846E-6" />
+      <entry key="M2" value="0.0011887477562335857" />
+      <entry key="M5" value="0.06761388398401058" />
+      <entry key="M10" value="0.26002669859845273" />
+      <entry key="M15" value="0.4073914980479897" />
+      <entry key="M30" value="0.6382722757945778" />
+      <entry key="H1" value="0.7989194426189526" />
+      <entry key="H2" value="0.8938229369505756" />
+      <entry key="H4" value="0.945422094596152" />
+      <entry key="D1" value="0.9906896471987263" />
+      <entry key="W1" value="0.9986646117049705" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3523089219885472E-8" />
-      <entry key="MS500" value="0.026681803574738337" />
-      <entry key="S2" value="0.4046035035723769" />
-      <entry key="S5" value="0.762926617943805" />
-      <entry key="S10" value="1.1980471612894374" />
-      <entry key="S30" value="2.07314243946992" />
-      <entry key="S60" value="2.4745109262354337" />
-      <entry key="M2" value="2.7194583059829704" />
-      <entry key="M5" value="2.8976620944286804" />
-      <entry key="M10" value="3.149252298360111" />
-      <entry key="M15" value="3.4674052212662985" />
-      <entry key="M30" value="4.21344140571704" />
-      <entry key="H1" value="4.91357652791854" />
-      <entry key="H2" value="5.397226207329219" />
-      <entry key="H4" value="5.682024116903742" />
-      <entry key="D1" value="5.944539941061211" />
-      <entry key="W1" value="5.992014586052404" />
+      <entry key="MS100" value="0.004274584770549764" />
+      <entry key="MS500" value="0.33587585643032414" />
+      <entry key="S2" value="0.7612804844157165" />
+      <entry key="S5" value="0.8966397662493547" />
+      <entry key="S10" value="0.9474027724961942" />
+      <entry key="S30" value="1.0609389854999116" />
+      <entry key="S60" value="1.2719479803648701" />
+      <entry key="M2" value="1.528786847179636" />
+      <entry key="M5" value="1.9698875525049755" />
+      <entry key="M10" value="2.698765829020649" />
+      <entry key="M15" value="3.3308396175440795" />
+      <entry key="M30" value="4.647588621953213" />
+      <entry key="H1" value="5.904465571484224" />
+      <entry key="H2" value="6.8135660885000355" />
+      <entry key="H4" value="7.366597981386094" />
+      <entry key="D1" value="7.88830671128221" />
+      <entry key="W1" value="7.983886091533348" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -184,6 +187,8 @@
     "npm.e2e:codegen.executor": "Run",
     "npm.e2e:start-codegen.executor": "Run",
     "npm.e2e:ui.executor": "Run",
+    "npm.start.executor": "Run",
+    "npm.test.executor": "Run",
     "npm.test:coverage.executor": "Run",
     "npm.test:watch.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/prettier",
@@ -207,7 +212,7 @@
       <recent name="$PROJECT_DIR$/tests/src/app/01_pipes" />
     </key>
   </component>
-  <component name="RunManager" selected="Vitest.MathService.add with snapshots.should add ${first} and ${second}">
+  <component name="RunManager" selected="npm.start">
     <configuration name="HighlightDirective.hovering over span shall trigger colors" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
@@ -252,20 +257,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ParentComponent.onClick" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
-      <working-dir value="$PROJECT_DIR$/vitest" />
-      <vitest-options value="--run" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" />
-      <test-names>
-        <test-name value="ParentComponent" />
-        <test-name value="onClick" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="ParentComponent.toggle hint" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
@@ -280,13 +271,23 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/vitest/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Vitest.MathService.add with snapshots.should add ${first} and ${second}" />
         <item itemvalue="Vitest.MathService.add.should return $expected when adding $first and $second" />
         <item itemvalue="Vitest.ParentComponent.toggle hint" />
         <item itemvalue="Vitest.HighlightDirective.hovering over span shall trigger colors" />
-        <item itemvalue="Vitest.ParentComponent.onClick" />
       </list>
     </recent_temporary>
   </component>
@@ -341,7 +342,23 @@
       <option name="project" value="LOCAL" />
       <updated>1791636116085</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Extended error handling in `Load Product Failure` to include `Error` type and streamlined `loadProduct$` effect implementation.">
+      <option name="closed" value="true" />
+      <created>1791636324789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1791636324789</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives.">
+      <option name="closed" value="true" />
+      <created>1791637154768</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1791637154768</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +372,9 @@
     <MESSAGE value="updated to Angular 22 and Vitest 5, adjusted tsconfig for new Angular compiler options" />
     <MESSAGE value="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages." />
     <MESSAGE value="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`." />
+    <MESSAGE value="Extended error handling in `Load Product Failure` to include `Error` type and streamlined `loadProduct$` effect implementation." />
+    <MESSAGE value="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
