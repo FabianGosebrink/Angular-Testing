@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.ts" afterDir="false" />
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`.">
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/06_state_management/state/product-detail.effects.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,61 +49,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0048560803977706" />
-      <entry key="MS500" value="1.55521519346919" />
-      <entry key="S2" value="2.4453293013098314" />
-      <entry key="S5" value="2.7556969705109555" />
-      <entry key="S10" value="2.8737597305584908" />
-      <entry key="S30" value="2.956976211553027" />
-      <entry key="S60" value="2.9783678792283084" />
-      <entry key="M2" value="2.9891537104124124" />
-      <entry key="M5" value="2.995654206951539" />
-      <entry key="M10" value="2.997825888751562" />
-      <entry key="M15" value="2.998550322424724" />
-      <entry key="M30" value="2.9992750261397854" />
-      <entry key="H1" value="2.9996374792952936" />
-      <entry key="H2" value="2.9998187312031903" />
-      <entry key="H4" value="2.9999093634903797" />
-      <entry key="D1" value="2.9999848936218303" />
-      <entry key="W1" value="2.9999978419387943" />
+      <entry key="MS100" value="6.873812298018588E-68" />
+      <entry key="MS500" value="3.76696659350071E-14" />
+      <entry key="S2" value="6.030175394855776E-4" />
+      <entry key="S5" value="0.07602949978243798" />
+      <entry key="S10" value="0.3881022080650312" />
+      <entry key="S30" value="1.1566630938751241" />
+      <entry key="S60" value="1.5207596955087215" />
+      <entry key="M2" value="1.7439420227768279" />
+      <entry key="M5" value="1.907826309406634" />
+      <entry key="M10" value="2.1544558201207957" />
+      <entry key="M15" value="2.47094795137293" />
+      <entry key="M30" value="3.2152921851023044" />
+      <entry key="H1" value="3.9145380295485075" />
+      <entry key="H2" value="4.397719305090399" />
+      <entry key="H4" value="4.682274286333217" />
+      <entry key="D1" value="4.94458219095823" />
+      <entry key="W1" value="4.99202063607469" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0" />
+      <entry key="M10" value="1.0" />
+      <entry key="M15" value="1.0" />
+      <entry key="M30" value="1.0" />
+      <entry key="H1" value="1.0" />
+      <entry key="H2" value="1.0" />
+      <entry key="H4" value="1.0" />
+      <entry key="D1" value="1.0" />
+      <entry key="W1" value="1.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.3236709006920697" />
-      <entry key="MS500" value="1.1612142697377648" />
-      <entry key="S2" value="2.2451853582331287" />
-      <entry key="S5" value="2.660547727133542" />
-      <entry key="S10" value="2.823263405934178" />
-      <entry key="S30" value="2.9394523379206694" />
-      <entry key="S60" value="2.969516684002038" />
-      <entry key="M2" value="2.9847055839865564" />
-      <entry key="M5" value="2.993869521828064" />
-      <entry key="M10" value="2.9969326381186043" />
-      <entry key="M15" value="2.9979546200375324" />
-      <entry key="M30" value="2.9989770739206443" />
-      <entry key="H1" value="2.9994884779212834" />
-      <entry key="H2" value="2.9997442241990684" />
-      <entry key="H4" value="2.9998721084089137" />
-      <entry key="D1" value="2.999978684222213" />
-      <entry key="W1" value="2.9999969548763334" />
+      <entry key="MS100" value="1.3523089219885472E-8" />
+      <entry key="MS500" value="0.026681803574738337" />
+      <entry key="S2" value="0.4046035035723769" />
+      <entry key="S5" value="0.762926617943805" />
+      <entry key="S10" value="1.1980471612894374" />
+      <entry key="S30" value="2.07314243946992" />
+      <entry key="S60" value="2.4745109262354337" />
+      <entry key="M2" value="2.7194583059829704" />
+      <entry key="M5" value="2.8976620944286804" />
+      <entry key="M10" value="3.149252298360111" />
+      <entry key="M15" value="3.4674052212662985" />
+      <entry key="M30" value="4.21344140571704" />
+      <entry key="H1" value="4.91357652791854" />
+      <entry key="H2" value="5.397226207329219" />
+      <entry key="H4" value="5.682024116903742" />
+      <entry key="D1" value="5.944539941061211" />
+      <entry key="W1" value="5.992014586052404" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -119,79 +118,80 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cypress.all tests in my-first-spec.cy.ts (1).executor&quot;: &quot;Run&quot;,
-    &quot;Cypress.all tests in my-first-spec.cy.ts.executor&quot;: &quot;Run&quot;,
-    &quot;Cypress.all tests in todo-list.component.cy.ts.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.AgeValidator.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.AsyncService.AsyncService with fake service.should get the name (async).executor&quot;: &quot;Run&quot;,
-    &quot;Jest.CapitalizePipe.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.CapitalizePipe.should create.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.CapitalizePipe.transform.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.HttpService.HttpService.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.InlineTemplateComponent.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.InlineTemplateComponent.should display the name.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.LoggerService.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.MathService.add with snapshots.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.MathService.add.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.MathService.add.should add ${first} and ${second} and return ${expected}.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.MathService.add.should add ${first} and ${second}.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.MathService.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.ParentComponent.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.ParentComponent.hint toggle.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.ParentComponent.onClick (1).executor&quot;: &quot;Run&quot;,
-    &quot;Jest.ParentComponent.onClick.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.ParentComponent.should create.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.ParentComponent.toggle hint.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.PersonDetailComponent._logId.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.PersonDetailComponent.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.PersonDetailComponent.person.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.PersonDetailComponent.title.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.SearchComponent.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.SearchComponent.searchValueChanged.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.SearchComponent.searchValueChanged.should emit output after 400ms delay.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.TodoService.loadTodos.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.TodoService.should be created.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.TodoService.should create instance.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Vitest.CapitalizePipe.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.HighlightDirective.hovering over span shall trigger colors.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.InlineTemplateComponent.should display the name.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.MathService.add with snapshots.should add ${first} and ${second}.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.MathService.add.should return $expected when adding $first and $second.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.ParentComponent.onClick.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.ParentComponent.toggle hint.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.PersonDetailComponent._logId.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.PersonDetailComponent.person.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/timhonermann/src/Angular-Testing/tests/src/app/06_state_management/state&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/timhonermann/src/Angular-Testing/tests/node_modules/@angular/cli&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.cy:open.executor&quot;: &quot;Run&quot;,
-    &quot;npm.cy:run.executor&quot;: &quot;Run&quot;,
-    &quot;npm.e2e.executor&quot;: &quot;Run&quot;,
-    &quot;npm.e2e:ci.executor&quot;: &quot;Run&quot;,
-    &quot;npm.e2e:codegen.executor&quot;: &quot;Run&quot;,
-    &quot;npm.e2e:start-codegen.executor&quot;: &quot;Run&quot;,
-    &quot;npm.e2e:ui.executor&quot;: &quot;Run&quot;,
-    &quot;npm.test:coverage.executor&quot;: &quot;Run&quot;,
-    &quot;npm.test:watch.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cypress.all tests in my-first-spec.cy.ts (1).executor": "Run",
+    "Cypress.all tests in my-first-spec.cy.ts.executor": "Run",
+    "Cypress.all tests in todo-list.component.cy.ts.executor": "Run",
+    "Jest.AgeValidator.executor": "Run",
+    "Jest.AsyncService.AsyncService with fake service.should get the name (async).executor": "Run",
+    "Jest.CapitalizePipe.executor": "Run",
+    "Jest.CapitalizePipe.should create.executor": "Run",
+    "Jest.CapitalizePipe.transform.executor": "Run",
+    "Jest.HttpService.HttpService.executor": "Run",
+    "Jest.InlineTemplateComponent.executor": "Run",
+    "Jest.InlineTemplateComponent.should display the name.executor": "Run",
+    "Jest.LoggerService.executor": "Run",
+    "Jest.MathService.add with snapshots.executor": "Run",
+    "Jest.MathService.add.executor": "Run",
+    "Jest.MathService.add.should add ${first} and ${second} and return ${expected}.executor": "Run",
+    "Jest.MathService.add.should add ${first} and ${second}.executor": "Run",
+    "Jest.MathService.executor": "Run",
+    "Jest.ParentComponent.executor": "Run",
+    "Jest.ParentComponent.hint toggle.executor": "Run",
+    "Jest.ParentComponent.onClick (1).executor": "Run",
+    "Jest.ParentComponent.onClick.executor": "Run",
+    "Jest.ParentComponent.should create.executor": "Run",
+    "Jest.ParentComponent.toggle hint.executor": "Run",
+    "Jest.PersonDetailComponent._logId.executor": "Run",
+    "Jest.PersonDetailComponent.executor": "Run",
+    "Jest.PersonDetailComponent.person.executor": "Run",
+    "Jest.PersonDetailComponent.title.executor": "Run",
+    "Jest.SearchComponent.executor": "Run",
+    "Jest.SearchComponent.searchValueChanged.executor": "Run",
+    "Jest.SearchComponent.searchValueChanged.should emit output after 400ms delay.executor": "Run",
+    "Jest.TodoService.loadTodos.executor": "Run",
+    "Jest.TodoService.should be created.executor": "Run",
+    "Jest.TodoService.should create instance.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Vitest.CapitalizePipe.executor": "Run",
+    "Vitest.HighlightDirective.hovering over span shall trigger colors.executor": "Run",
+    "Vitest.InlineTemplateComponent.should display the name.executor": "Run",
+    "Vitest.MathService.add with snapshots.should add ${first} and ${second}.executor": "Run",
+    "Vitest.MathService.add.should return $expected when adding $first and $second.executor": "Run",
+    "Vitest.ParentComponent.onClick.executor": "Run",
+    "Vitest.ParentComponent.toggle hint.executor": "Run",
+    "Vitest.PersonDetailComponent._logId.executor": "Run",
+    "Vitest.PersonDetailComponent.person.executor": "Run",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/timhonermann/src/Angular-Testing/tests/src/app/06_state_management/state",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/timhonermann/src/Angular-Testing/tests/node_modules/@angular/cli",
+    "nodejs_package_manager_path": "npm",
+    "npm.cy:open.executor": "Run",
+    "npm.cy:run.executor": "Run",
+    "npm.e2e.executor": "Run",
+    "npm.e2e:ci.executor": "Run",
+    "npm.e2e:codegen.executor": "Run",
+    "npm.e2e:start-codegen.executor": "Run",
+    "npm.e2e:ui.executor": "Run",
+    "npm.test:coverage.executor": "Run",
+    "npm.test:watch.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests/src/app/06_state_management/state" />
@@ -333,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791632748583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`.">
+      <option name="closed" value="true" />
+      <created>1791636116085</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1791636116085</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +354,8 @@
     <MESSAGE value="added README with examples and instructions for testing Angular apps using Vitest" />
     <MESSAGE value="updated to Angular 22 and Vitest 5, adjusted tsconfig for new Angular compiler options" />
     <MESSAGE value="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages." />
+    <MESSAGE value="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

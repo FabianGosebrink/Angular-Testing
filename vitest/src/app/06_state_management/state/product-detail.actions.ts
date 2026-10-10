@@ -7,6 +7,6 @@ export const ProductDetailActions = createActionGroup({
   events: {
     'Load Product': props<{ id: string | undefined }>(),
     'Load Product Success': props<{ product: Product }>(),
-    'Load Product Failure': props<{ error: HttpErrorResponse }>(),
+    'Load Product Failure': props<{ error: HttpErrorResponse | Error }>(),
   },
 });
