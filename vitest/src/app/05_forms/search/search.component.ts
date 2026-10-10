@@ -14,9 +14,9 @@ export class SearchComponent {
 
   readonly searchValueChanged = outputFromObservable(
     this.searchValueControl.valueChanges.pipe(
+      map((value) => value?.trim()),
       distinctUntilChanged(),
       debounceTime(400),
-      map((value) => value?.trim()),
       filter(Boolean),
     ),
   );

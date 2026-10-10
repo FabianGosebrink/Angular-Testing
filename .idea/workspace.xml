@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="added README with examples and instructions for testing Angular apps using Vitest">
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest-browser/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest-browser/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest-browser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest-browser/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest-browser/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest-browser/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest-browser/vitest.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +47,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0048560803977706" />
+      <entry key="MS500" value="1.55521519346919" />
+      <entry key="S2" value="2.4453293013098314" />
+      <entry key="S5" value="2.7556969705109555" />
+      <entry key="S10" value="2.8737597305584908" />
+      <entry key="S30" value="2.956976211553027" />
+      <entry key="S60" value="2.9783678792283084" />
+      <entry key="M2" value="2.9891537104124124" />
+      <entry key="M5" value="2.995654206951539" />
+      <entry key="M10" value="2.997825888751562" />
+      <entry key="M15" value="2.998550322424724" />
+      <entry key="M30" value="2.9992750261397854" />
+      <entry key="H1" value="2.9996374792952936" />
+      <entry key="H2" value="2.9998187312031903" />
+      <entry key="H4" value="2.9999093634903797" />
+      <entry key="D1" value="2.9999848936218303" />
+      <entry key="W1" value="2.9999978419387943" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.3236709006920697" />
+      <entry key="MS500" value="1.1612142697377648" />
+      <entry key="S2" value="2.2451853582331287" />
+      <entry key="S5" value="2.660547727133542" />
+      <entry key="S10" value="2.823263405934178" />
+      <entry key="S30" value="2.9394523379206694" />
+      <entry key="S60" value="2.969516684002038" />
+      <entry key="M2" value="2.9847055839865564" />
+      <entry key="M5" value="2.993869521828064" />
+      <entry key="M10" value="2.9969326381186043" />
+      <entry key="M15" value="2.9979546200375324" />
+      <entry key="M30" value="2.9989770739206443" />
+      <entry key="H1" value="2.9994884779212834" />
+      <entry key="H2" value="2.9997442241990684" />
+      <entry key="H4" value="2.9998721084089137" />
+      <entry key="D1" value="2.999978684222213" />
+      <entry key="W1" value="2.9999969548763334" />
+    </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -271,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791631485381</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages.">
+      <option name="closed" value="true" />
+      <created>1791632748583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1791632748583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +344,9 @@
     <MESSAGE value="added vitest browser-mode project" />
     <MESSAGE value="replace component setup fixture.detectChanges with await fixture.whenStable" />
     <MESSAGE value="added README with examples and instructions for testing Angular apps using Vitest" />
-    <option name="LAST_COMMIT_MESSAGE" value="added README with examples and instructions for testing Angular apps using Vitest" />
+    <MESSAGE value="updated to Angular 22 and Vitest 5, adjusted tsconfig for new Angular compiler options" />
+    <MESSAGE value="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgraded dependencies and configurations to Angular 22 and updated Vitest-related packages." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

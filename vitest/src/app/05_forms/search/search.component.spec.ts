@@ -21,9 +21,16 @@ describe('SearchComponent', () => {
   });
 
   describe('searchValueChanged', () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
     test('should emit search value after delay', async () => {
       // arrange
-      vi.useFakeTimers();
       const searchValue = 'my search value';
       let result: string | undefined;
 
@@ -40,8 +47,6 @@ describe('SearchComponent', () => {
 
       await vi.advanceTimersByTimeAsync(200);
       expect(result).toBe(searchValue);
-
-      vi.useRealTimers();
     });
   });
 });
