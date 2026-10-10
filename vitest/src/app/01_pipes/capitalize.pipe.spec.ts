@@ -1,15 +1,11 @@
 import { CapitalizePipe } from './capitalize.pipe';
-import { TestBed } from '@angular/core/testing';
 
+// A pure pipe has no dependencies, so it does not need the TestBed.
 describe('CapitalizePipe', () => {
   let pipe: CapitalizePipe;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [CapitalizePipe],
-    });
-
-    pipe = TestBed.inject(CapitalizePipe);
+    pipe = new CapitalizePipe();
   });
 
   test('create an instance', () => {
@@ -25,5 +21,16 @@ describe('CapitalizePipe', () => {
 
     // assert
     expect(result).toBe('Angular');
+  });
+
+  test('should return empty string when value is empty', () => {
+    // arrange
+    const value = '';
+
+    // act
+    const result = pipe.transform(value);
+
+    // assert
+    expect(result).toBe('');
   });
 });

@@ -30,5 +30,26 @@ describe('ProductDetailSelectors', () => {
       // assert
       expect(result).toEqual(product);
     });
+
+    test('should return product from feature state with projector', () => {
+      // arrange
+      const product: Product = {
+        id: '444',
+        name: 'My Product',
+        price: 99,
+        category: ProductCategory.BOOK_FANTASY,
+        imageUrl: 'some.url/foo',
+      };
+      const featureState = {
+        ...initialProductDetailState,
+        product,
+      };
+
+      // act
+      const result = selectProductDetail.projector(featureState);
+
+      // assert
+      expect(result).toEqual(product);
+    });
   });
 });

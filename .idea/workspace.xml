@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/logger.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/logger.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/person.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/services/person.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/src/app/testing/auto-mock.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vitest/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/tsconfig.app.json" afterDir="false" />
-    </list>
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Removed obsolete auto-mocking utils, cleaned up tsconfig options, and replaced `@Injectable` with `@Service` decorators in services." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -358,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791637154768</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed obsolete auto-mocking utils, cleaned up tsconfig options, and replaced `@Injectable` with `@Service` decorators in services.">
+      <option name="closed" value="true" />
+      <created>1791637876812</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1791637876812</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +376,8 @@
     <MESSAGE value="Refactored search component to optimize timer usage in tests and adjusted value transformation order in `searchValueChanged`." />
     <MESSAGE value="Extended error handling in `Load Product Failure` to include `Error` type and streamlined `loadProduct$` effect implementation." />
     <MESSAGE value="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored tests to simplify input handling, remove unused mocks, and improve event assertions across components and directives." />
+    <MESSAGE value="Removed obsolete auto-mocking utils, cleaned up tsconfig options, and replaced `@Injectable` with `@Service` decorators in services." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed obsolete auto-mocking utils, cleaned up tsconfig options, and replaced `@Injectable` with `@Service` decorators in services." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

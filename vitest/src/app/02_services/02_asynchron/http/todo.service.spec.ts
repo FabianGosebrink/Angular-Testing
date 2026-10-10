@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TodoService } from './todo.service';
+import { Todo, TodoService } from './todo.service';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom, of } from 'rxjs';
 import { provideMock } from '../../../testing/auto-mock';
@@ -25,7 +25,7 @@ describe('TodoService', () => {
   describe('loadTodos', () => {
     test('should load todos', async () => {
       // arrange
-      const response = [
+      const response: Todo[] = [
         {
           id: '1',
           value: 'Foo',
@@ -38,7 +38,7 @@ describe('TodoService', () => {
 
       // assert
       expect(result).toEqual(response);
-      expect(getSpy).toHaveBeenCalled();
+      expect(getSpy).toHaveBeenCalledWith('my/fancy/url');
     });
   });
 });

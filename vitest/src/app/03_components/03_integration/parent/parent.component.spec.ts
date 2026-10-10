@@ -32,8 +32,27 @@ describe('ParentComponent', () => {
       await fixture.whenStable();
 
       // assert
+      const hintAfter = fixture.debugElement.query(By.css('p'));
+
       expect(hintBefore).toBeFalsy();
-      expect(fixture.debugElement.query(By.css('p')).nativeElement).toBeDefined();
+      expect(hintAfter.nativeElement.textContent).toContain('This is a hint');
+    });
+
+    test('should hide hint when button was clicked twice', async () => {
+      // arrange
+      const button = fixture.debugElement.query(By.css('button')).nativeElement;
+      button.click();
+      await fixture.whenStable();
+
+      const hintBefore = fixture.debugElement.query(By.css('p'));
+
+      // act
+      button.click();
+      await fixture.whenStable();
+
+      // assert
+      expect(hintBefore).toBeTruthy();
+      expect(fixture.debugElement.query(By.css('p'))).toBeNull();
     });
   });
 });
