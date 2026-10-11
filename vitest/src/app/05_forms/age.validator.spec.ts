@@ -1,24 +1,32 @@
-import { FormControl } from '@angular/forms';
-import { AgeValidator } from './age.validator';
+import { signal } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { form } from '@angular/forms/signals';
+import { validAge } from './age.validator';
 
-describe('AgeValidator', () => {
-  describe('ageValidator', () => {
-    const testCases = [
-      { input: -1, result: { ageNotValid: true } },
-      { input: 0, result: null },
-      { input: 50, result: null },
-      { input: 100, result: null },
-      { input: 101, result: { ageNotValid: true } },
-    ];
+describe('validAge', () => {
+  const testCases = [
+    { input: -1, errors: ['ageNotValid'] },
+    { input: 0, errors: [] },
+    { input: 50, errors: [] },
+    { input: 100, errors: [] },
+    { input: 101, errors: ['ageNotValid'] },
+  ];
 
-    testCases.forEach(({ input, result }) => {
-      test(`should return ${JSON.stringify(result)} when age is ${input}`, () => {
-        const validatorFn = AgeValidator.ageValidator;
+  testCases.forEach(({ input, errors }) => {
+    test(`should return ${JSON.stringify(errors)} when age is ${input}`, () => {
+      // arrange
+      const age = signal(input);
 
-        const res = validatorFn(new FormControl<number>(input, { nonNullable: true }));
+      // act
+      // form() needs an injection context, the TestBed provides one
+      const ageForm = TestBed.runInInjectionContext(() => form(age, validAge));
 
-        expect(res).toEqual(result);
-      });
+      // assert
+      expect(
+        ageForm()
+          .errors()
+          .map((error) => error.kind),
+      ).toEqual(errors);
     });
   });
 });

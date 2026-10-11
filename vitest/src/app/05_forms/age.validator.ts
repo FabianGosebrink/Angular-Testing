@@ -1,15 +1,18 @@
-import { AbstractControl } from '@angular/forms';
+import { SchemaPath, validate } from '@angular/forms/signals';
 
-export class AgeValidator {
-  static ageValidator(control: AbstractControl<number>) {
-    if (control.value < 0) {
-      return { ageNotValid: true };
+const MIN_AGE = 0;
+const MAX_AGE = 100;
+
+export function validAge(path: SchemaPath<number>): void {
+  validate(path, ({ value }) => {
+    if (isValidAge(value())) {
+      return null;
     }
 
-    if (control.value > 100) {
-      return { ageNotValid: true };
-    }
+    return { kind: 'ageNotValid', message: `Age must be between ${MIN_AGE} and ${MAX_AGE}` };
+  });
+}
 
-    return null;
-  }
+function isValidAge(age: number): boolean {
+  return age >= MIN_AGE && age <= MAX_AGE;
 }
