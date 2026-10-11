@@ -1,23 +1,17 @@
-import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { outputFromObservable } from '@angular/core/rxjs-interop';
-import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs';
+import { Component, signal } from '@angular/core';
+import { outputFromObservable, toObservable } from '@angular/core/rxjs-interop';
+import { debounce, form, FormField } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-search',
-  imports: [],
+  imports: [FormField],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })
 export class SearchComponent {
-  readonly searchValueControl = new FormControl('');
+  readonly searchValue = signal('');
 
-  readonly searchValueChanged = outputFromObservable(
-    this.searchValueControl.valueChanges.pipe(
-      map((value) => value?.trim()),
-      distinctUntilChanged(),
-      debounceTime(400),
-      filter(Boolean),
-    ),
-  );
+  readonly searchForm = form(this.searchValue, (path) => debounce(path, 400));
+
+  readonly searchValueChanged = outputFromObservable(toObservable(this.searchValue));
 }
