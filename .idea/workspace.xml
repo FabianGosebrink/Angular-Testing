@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Removed obsolete auto-mocking utils, cleaned up tsconfig options, and replaced `@Injectable` with `@Service` decorators in services." />
+    <list default="true" id="43a2185f-dda8-4ea7-93f4-cab78d64f731" name="Changes" comment="Removed obsolete auto-mocking utils, cleaned up tsconfig options, and replaced `@Injectable` with `@Service` decorators in services.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/01_pipes/capitalize.pipe.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/01_pipes/capitalize.pipe.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/__snapshots__/math.service.spec.ts.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/02_services/02_asynchron/http/todo.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/02_services/02_asynchron/http/todo.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/age.validator.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/age.validator.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,61 +60,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.000000279974739" />
-      <entry key="S10" value="1.0005291263922307" />
-      <entry key="S30" value="1.0808822346094697" />
-      <entry key="S60" value="1.284400170472178" />
-      <entry key="M2" value="1.535362917170828" />
-      <entry key="M5" value="1.9066475841089594" />
-      <entry key="M10" value="2.442061846874619" />
-      <entry key="M15" value="2.926235018640306" />
-      <entry key="M30" value="4.01118536865636" />
-      <entry key="H1" value="5.106662256628226" />
-      <entry key="H2" value="5.920358918810089" />
-      <entry key="H4" value="6.421500177757003" />
-      <entry key="D1" value="6.897673586487888" />
-      <entry key="W1" value="6.985229617795721" />
+      <entry key="MS100" value="8.502333769487611E-30" />
+      <entry key="MS500" value="1.7938408330254128E-6" />
+      <entry key="S2" value="0.07305389045201223" />
+      <entry key="S5" value="0.6722485388758744" />
+      <entry key="S10" value="1.5635556553614403" />
+      <entry key="S30" value="6.476129989492593" />
+      <entry key="S60" value="12.455231418215034" />
+      <entry key="M2" value="19.260252252146365" />
+      <entry key="M5" value="30.436181754954628" />
+      <entry key="M10" value="40.308907455214666" />
+      <entry key="M15" value="45.72366207308921" />
+      <entry key="M30" value="53.36121506475376" />
+      <entry key="H1" value="58.70087618974549" />
+      <entry key="H2" value="62.02725817069769" />
+      <entry key="H4" value="63.91937302113465" />
+      <entry key="D1" value="65.63876121761298" />
+      <entry key="W1" value="65.94802034625798" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="3.201714573475151E-176" />
-      <entry key="S5" value="6.340931259420872E-71" />
-      <entry key="S10" value="7.962996458256698E-36" />
-      <entry key="S30" value="1.9969116048840022E-12" />
-      <entry key="S60" value="1.4131212279503846E-6" />
-      <entry key="M2" value="0.0011887477562335857" />
-      <entry key="M5" value="0.06761388398401058" />
-      <entry key="M10" value="0.26002669859845273" />
-      <entry key="M15" value="0.4073914980479897" />
-      <entry key="M30" value="0.6382722757945778" />
-      <entry key="H1" value="0.7989194426189526" />
-      <entry key="H2" value="0.8938229369505756" />
-      <entry key="H4" value="0.945422094596152" />
-      <entry key="D1" value="0.9906896471987263" />
-      <entry key="W1" value="0.9986646117049705" />
+      <entry key="MS100" value="1.000000000003638" />
+      <entry key="MS500" value="1.0053496305421628" />
+      <entry key="S2" value="1.3861595937516766" />
+      <entry key="S5" value="2.016164170406194" />
+      <entry key="S10" value="2.4208698594081675" />
+      <entry key="S30" value="2.788760325233686" />
+      <entry key="S60" value="3.0508955793760104" />
+      <entry key="M2" value="4.0683198519113475" />
+      <entry key="M5" value="7.487879764608525" />
+      <entry key="M10" value="10.932468710286152" />
+      <entry key="M15" value="12.816226217801107" />
+      <entry key="M30" value="15.371584569663511" />
+      <entry key="H1" value="17.01536023756534" />
+      <entry key="H2" value="17.959087285477178" />
+      <entry key="H4" value="18.466528119290324" />
+      <entry key="D1" value="18.909200246150117" />
+      <entry key="W1" value="18.986981284499" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.004274584770549764" />
-      <entry key="MS500" value="0.33587585643032414" />
-      <entry key="S2" value="0.7612804844157165" />
-      <entry key="S5" value="0.8966397662493547" />
-      <entry key="S10" value="0.9474027724961942" />
-      <entry key="S30" value="1.0609389854999116" />
-      <entry key="S60" value="1.2719479803648701" />
-      <entry key="M2" value="1.528786847179636" />
-      <entry key="M5" value="1.9698875525049755" />
-      <entry key="M10" value="2.698765829020649" />
-      <entry key="M15" value="3.3308396175440795" />
-      <entry key="M30" value="4.647588621953213" />
-      <entry key="H1" value="5.904465571484224" />
-      <entry key="H2" value="6.8135660885000355" />
-      <entry key="H4" value="7.366597981386094" />
-      <entry key="D1" value="7.88830671128221" />
-      <entry key="W1" value="7.983886091533348" />
+      <entry key="MS100" value="1.1389562886580716E-4" />
+      <entry key="MS500" value="0.1644781063983815" />
+      <entry key="S2" value="0.9993526313517086" />
+      <entry key="S5" value="2.403806462261264" />
+      <entry key="S10" value="3.8068243814083336" />
+      <entry key="S30" value="9.193403912100788" />
+      <entry key="S60" value="15.464641896566189" />
+      <entry key="M2" value="23.29672534140513" />
+      <entry key="M5" value="37.89434794753264" />
+      <entry key="M10" value="51.2161488529777" />
+      <entry key="M15" value="58.51886911777283" />
+      <entry key="M30" value="68.71921925734154" />
+      <entry key="H1" value="75.70838604488893" />
+      <entry key="H2" value="79.98210132316007" />
+      <entry key="H4" value="82.38369089630338" />
+      <entry key="D1" value="84.54758002242544" />
+      <entry key="W1" value="84.93494680761468" />
     </decayedShown>
   </component>
   <component name="OptimizeOnSaveOptions">
@@ -157,14 +171,19 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Vitest.CapitalizePipe.executor": "Run",
     "Vitest.HighlightDirective.hovering over span shall trigger colors.executor": "Run",
+    "Vitest.InlineTemplateComponent.executor": "Run",
     "Vitest.InlineTemplateComponent.should display the name.executor": "Run",
     "Vitest.MathService.add with snapshots.should add ${first} and ${second}.executor": "Run",
     "Vitest.MathService.add.should return $expected when adding $first and $second.executor": "Run",
+    "Vitest.ParentComponent.executor": "Run",
     "Vitest.ParentComponent.onClick.executor": "Run",
     "Vitest.ParentComponent.toggle hint.executor": "Run",
     "Vitest.PersonDetailComponent._logId.executor": "Run",
+    "Vitest.PersonDetailComponent.executor": "Run",
     "Vitest.PersonDetailComponent.person.executor": "Run",
-    "git-widget-placeholder": "main",
+    "Vitest.SearchComponent.executor": "Run",
+    "Vitest.validAge.executor": "Run",
+    "git-widget-placeholder": "2026-10-12-live-coding",
     "javascript.preferred.runtime.type.id": "node",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/timhonermann/src/Angular-Testing/tests/src/app/06_state_management/state",
@@ -187,7 +206,7 @@
     "npm.test:watch.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "/Users/timhonermann/src/Angular-Testing/vitest-browser/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -206,82 +225,79 @@
       <recent name="$PROJECT_DIR$/tests/src/app/01_pipes" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="HighlightDirective.hovering over span shall trigger colors" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
-      <working-dir value="$PROJECT_DIR$/vitest" />
-      <vitest-options value="--run" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/04_directives/highlight.directive.spec.ts" />
-      <test-names>
-        <test-name value="HighlightDirective" />
-        <test-name value="hovering over span shall trigger colors" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="MathService.add with snapshots.should add ${first} and ${second}" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
-      <working-dir value="$PROJECT_DIR$/vitest" />
-      <vitest-options value="--run" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" />
-      <test-names>
-        <test-name value="MathService" />
-        <test-name value="add with snapshots" />
-        <test-name value="should add ${first} and ${second}" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="MathService.add.should return $expected when adding $first and $second" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
-      <working-dir value="$PROJECT_DIR$/vitest" />
-      <vitest-options value="--run" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/02_services/01_synchron/math.service.spec.ts" />
-      <test-names>
-        <test-name value="MathService" />
-        <test-name value="add" />
-        <test-name value="should return $expected when adding $first and $second" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="ParentComponent.toggle hint" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Vitest.SearchComponent">
+    <configuration name="InlineTemplateComponent" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
       <working-dir value="$PROJECT_DIR$/vitest" />
       <vitest-options value="--run" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/03_integration/parent/parent.component.spec.ts" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/02_shallow/inline-template/inline-template.component.spec.ts" />
       <test-names>
-        <test-name value="ParentComponent" />
-        <test-name value="toggle hint" />
+        <test-name value="InlineTemplateComponent" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/vitest/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
+    <configuration name="ParentComponent" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
       <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/01_unit/parent/parent.component.spec.ts" />
+      <test-names>
+        <test-name value="ParentComponent" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="PersonDetailComponent" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/03_components/04_signals/person-detail/person-detail.component.spec.ts" />
+      <test-names>
+        <test-name value="PersonDetailComponent" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="SearchComponent" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/05_forms/search/search.component.spec.ts" />
+      <test-names>
+        <test-name value="SearchComponent" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="validAge" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/vitest/node_modules/@angular/cli" />
+      <working-dir value="$PROJECT_DIR$/vitest" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/vitest/src/app/05_forms/age.validator.spec.ts" />
+      <test-names>
+        <test-name value="validAge" />
+      </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
-        <item itemvalue="Vitest.MathService.add with snapshots.should add ${first} and ${second}" />
-        <item itemvalue="Vitest.MathService.add.should return $expected when adding $first and $second" />
-        <item itemvalue="Vitest.ParentComponent.toggle hint" />
-        <item itemvalue="Vitest.HighlightDirective.hovering over span shall trigger colors" />
+        <item itemvalue="Vitest.SearchComponent" />
+        <item itemvalue="Vitest.validAge" />
+        <item itemvalue="Vitest.PersonDetailComponent" />
+        <item itemvalue="Vitest.InlineTemplateComponent" />
+        <item itemvalue="Vitest.ParentComponent" />
       </list>
     </recent_temporary>
   </component>

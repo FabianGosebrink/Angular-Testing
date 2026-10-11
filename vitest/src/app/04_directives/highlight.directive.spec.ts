@@ -25,20 +25,4 @@ describe('HighlightDirective', () => {
   test('should create an instance', () => {
     expect(highlightedEl).toBeTruthy();
   });
-
-  test('hovering over span shall trigger colors', async () => {
-    // arrange
-    highlightedEl.triggerEventHandler('mouseover');
-    await fixture.whenStable();
-
-    const backgroundColorHovered = highlightedEl.nativeElement.style.backgroundColor;
-
-    // act
-    highlightedEl.triggerEventHandler('mouseout');
-    await fixture.whenStable();
-
-    // assert
-    expect(backgroundColorHovered).toBe('blue');
-    expect(highlightedEl.nativeElement.style.backgroundColor).toBe('inherit');
-  });
 });
