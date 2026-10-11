@@ -45,7 +45,7 @@ The examples live in numbered folders under `src/app`, roughly ordered from simp
 | `03_components/03_integration` | Rendering parent and child components together |
 | `03_components/04_signals` | Components and services built on signals |
 | `04_directives` | Testing an attribute directive (`HighlightDirective`) through a host component |
-| `05_forms` | Custom validators and a reactive search form (including timers) |
+| `05_forms` | Signal Forms: a custom validator schema and a debounced search form, tested through the DOM with fake timers |
 | `06_state_management` | NgRx: reducers, selectors, effects and the related service |
 
 ### Auto-mocking helper
