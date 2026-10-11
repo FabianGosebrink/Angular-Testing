@@ -39,11 +39,11 @@ describe('SearchComponent', () => {
       });
 
       // act
-      component.searchValueControl.setValue(searchValue);
-      await vi.advanceTimersByTimeAsync(200);
+      component.searchForm().controlValue.set(searchValue);
+      await vi.advanceTimersByTimeAsync(201);
 
       // assert
-      expect(result).toBeUndefined();
+      expect(result).toBe('');
 
       await vi.advanceTimersByTimeAsync(200);
       expect(result).toBe(searchValue);

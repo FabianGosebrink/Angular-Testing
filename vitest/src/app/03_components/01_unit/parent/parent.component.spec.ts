@@ -12,7 +12,10 @@ describe('ParentComponent', () => {
       imports: [ParentComponent],
     })
       .overrideComponent(ParentComponent, {
-        set: { imports: [], schemas: [CUSTOM_ELEMENTS_SCHEMA] },
+        set: {
+          imports: [],
+          schemas: [CUSTOM_ELEMENTS_SCHEMA],
+        },
       })
       .compileComponents();
 

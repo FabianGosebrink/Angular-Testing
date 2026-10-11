@@ -1,11 +1,15 @@
+import { TestBed } from '@angular/core/testing';
 import { CapitalizePipe } from './capitalize.pipe';
 
-// A pure pipe has no dependencies, so it does not need the TestBed.
 describe('CapitalizePipe', () => {
   let pipe: CapitalizePipe;
 
   beforeEach(() => {
-    pipe = new CapitalizePipe();
+    TestBed.configureTestingModule({
+      providers: [CapitalizePipe],
+    });
+
+    pipe = TestBed.inject(CapitalizePipe);
   });
 
   test('create an instance', () => {
