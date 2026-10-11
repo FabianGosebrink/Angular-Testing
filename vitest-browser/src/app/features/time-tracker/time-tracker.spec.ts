@@ -31,4 +31,30 @@ describe('TimeTracker', () => {
     await expect.element(page.getByRole('button')).toHaveTextContent('Start Tracking');
     await expect.element(page.getByTestId('stopped-info')).toHaveTextContent('Stopped');
   });
+
+  describe('Visual Regression Testing', () => {
+    test('Time Tracker Stopped', async () => {
+      // arrange
+      const fixture = TestBed.createComponent(TimeTracker);
+
+      // act
+      await fixture.whenStable();
+
+      // assert
+      await expect(page.elementLocator(fixture.nativeElement)).toMatchScreenshot();
+    });
+
+    test('Time Tracker Started', async () => {
+      // arrange
+      const fixture = TestBed.createComponent(TimeTracker);
+      await fixture.whenStable();
+
+      // act
+      await page.getByRole('button').click();
+      await fixture.whenStable();
+
+      // assert
+      await expect(page.elementLocator(fixture.nativeElement)).toMatchScreenshot();
+    });
+  });
 });
